@@ -33,7 +33,7 @@ Changes from iteration 002 of MCDC: re-set in Archivo (Instrument Serif, DM Mono
 
 | Material | Source | Used on |
 |---|---|---|
-| Portrait of Joseph in his workshop (`assets/jm/joseph-workshop-*.webp`) | Approved by the client, 23 Nov 2026; uncropped on desktop, 4:5 crop centred on Joseph for phones; no grading; metadata stripped, colour profile kept; credit to confirm | The Hatmaker |
+| Portrait of Joseph in his workshop (`assets/jm/joseph-workshop-*.webp`) | Approved by the client, 23 Nov 2026; uncropped on desktop, 4:5 crop centred on Joseph for phones; no grading; metadata stripped, colour profile kept| The Hatmaker; homepage (4:5 crop) |
 | Cowboy George, red ink, and white line version | Existing drawing for Joseph Martin (`assets/jm/`, `assets/mcdc/`) | Home, MCDC, George patch |
 | Double Decker Arts Festival poster (Oxford, MS, April 26–27, 2024) | Existing Tangerine work for Joseph Martin | The Hatmaker |
 | “Martin Survives!” / “Don’t Call It Luck!” posters (Collage Studio, Jackson) | Existing Tangerine work; quotation transcribed from the poster | The Hatmaker; “Fourth Time’s the Charm” patch |
@@ -60,7 +60,7 @@ Changes from iteration 002 of MCDC: re-set in Archivo (Instrument Serif, DM Mono
 ## Still required
 
 - **Product photography:** each hat in profile on a matched ground (O1) so the annotations sit on the real hat; three-quarter, crown-down and detail macros (O2–O4).
-- **The portrait at full resolution** (the supplied file is 1,124 px wide) and the photographer’s credit; a close portrait (M2); **shop photography** (H1–H5).
+- **The portrait at full resolution** (the supplied file is 1,124 px wide); a close portrait (M2); **shop photography** (H1–H5).
 - **Calibrated felt swatches** (T1) to correct on-screen colours.
 - **Joseph’s words:** biography (150–250 words), one line per hat, care notes, commission FAQ.
 - **Current logo and label files**, and who made them.
@@ -68,6 +68,13 @@ Changes from iteration 002 of MCDC: re-set in Archivo (Instrument Serif, DM Mono
 - **Jacket photography:** the flat from above, then worn.
 - **Confirmations:** AHAB price and category; ORIS availability; WOODROW/CECH/RALPH details; one turnaround per kind of hat; how a commission joins the waitlist (inquiry vs buying the Custom Felt Hat listing); the handover step; whether shop fittings are by appointment.
 - **Permission** to publish the Jackson/Oxford history and the shop address on a new site.
+
+## Internal tracking (not shown on the site)
+
+| Item | Status | Action |
+|---|---|---|
+| Photographer credit for the workshop portrait | **Unconfirmed.** No credit appears anywhere on the site. | Ask Joseph who took it and how they want to be credited; then add the credit to the Hatmaker caption and the Notes page |
+| Full-resolution portrait file | Supplied file is 1,124 × 730 px | Request the photographer’s original |
 
 ## Prototype vs production
 

@@ -16,7 +16,10 @@
 .intro-p{grid-column:8 / 12;margin:clamp(32px,4vw,56px) 0 0;max-width:42ch}
 .contents{margin-top:clamp(72px,9vw,140px)}
 .maker{align-items:end}
-.maker .slot{grid-column:1 / 6;--ar:4/5}
+.maker .portrait{grid-column:1 / 6;margin:0}
+.maker .portrait a{display:block}
+.maker .portrait img{display:block;width:100%;height:auto;max-width:584px;background:#2A2622}
+.maker .portrait figcaption{margin-top:12px;padding-top:12px;border-top:1px solid color-mix(in srgb,currentColor 28%,transparent);max-width:584px;color:var(--mute)}
 .maker .txt{grid-column:7 / 12;display:grid;gap:28px;align-content:end}
 .maker .txt p{margin:0;max-width:44ch}
 .club{align-items:center}
@@ -128,15 +131,15 @@
   <section class="sec wrap" aria-labelledby="mk">
     <div class="sh label"><span>02 / The Hatmaker</span><span>Nashville, Tennessee</span></div>
     <div class="g12 maker" style="margin-top:32px">
-      <figure class="slot">
-        <span class="sid label"><span>M1 · Portrait</span><span>4 : 5</span></span>
-        <p><b>Photograph to be made</b>Joseph at the bench, window light from camera left, waist up, a hat in his hands.</p>
+      <figure class="portrait">
+        <a href="hatmaker/index.html" tabindex="-1" aria-hidden="true"><img src="assets/jm/joseph-workshop-portrait-584.webp" width="584" height="730" loading="lazy" alt=""></a>
+        <figcaption class="label">Joseph Martin in the workshop</figcaption>
       </figure>
       <div class="txt">
         <h2 class="display d-m" id="mk">Joseph<br>Benjamin<br>Martin</h2>
         <p class="lede-s">He grew up in Mississippi, set up as a full-time craftsman in Jackson, and now makes hats in Nashville.</p>
-        <p class="muted">He calls his own story <i>Fourth Time’s a Charm</i>. It belongs in his words, and this page will carry them.</p>
-        <a class="link" href="hatmaker/index.html">The Hatmaker</a>
+        <p class="muted">He calls his own story <i>Fourth Time’s a Charm</i>.</p>
+        <a class="link" href="hatmaker/index.html" style="justify-self:start">Meet the hatmaker</a>
       </div>
     </div>
   </section>
