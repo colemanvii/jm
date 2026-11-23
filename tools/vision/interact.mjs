@@ -41,13 +41,13 @@ const ctx = await browser.newContext({ viewport: { width: 1440, height: 900 }, r
 const p = await ctx.newPage();
 
 // 2. Felt switcher
-await p.goto(base + '/hats/hat.html?h=oris');
+await p.goto(base + '/hats/hat.html#oris');
 ok(await p.textContent('#hat-name') === 'Oris', 'product: Oris by default');
 await p.click('label.felt:has(input[value=cerelia])');
-ok(await p.textContent('#hat-name') === 'Cerelia' && p.url().includes('h=cerelia'), 'product: switch to Cerelia updates name and URL');
+ok(await p.textContent('#hat-name') === 'Cerelia' && p.url().includes('#cerelia'), 'product: switch to Cerelia updates name and URL');
 ok((await p.getAttribute('[data-k=href]', 'href')).endsWith('/products/primavera'), 'product: order link follows the hat');
 ok((await p.$$('[data-k=rows] > div')).length >= 8, 'product: specification rendered');
-await p.goto(base + '/hats/hat.html?h=nope');
+await p.goto(base + '/hats/hat.html#nope');
 ok(await p.textContent('#hat-name') === 'Oris', 'product: unknown hat falls back to Oris');
 
 // 3. Jacket
@@ -78,7 +78,8 @@ await p.click('#next');
 ok(await p.isVisible('#done') && (await p.textContent('#done')).includes('nothing was sent'), 'inquiry: confirmation states nothing was sent');
 
 // 5. Inquiry: club shortcut
-await p.goto(base + '/commission/index.html?about=club#inquiry');
+await p.goto('about:blank');
+await p.goto(base + '/commission/index.html#club');
 await p.click('#next');
 ok(await p.isVisible('#nm'), 'inquiry: club path skips hat questions');
 

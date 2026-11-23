@@ -10,7 +10,7 @@ A coherent, navigable prototype of the future Joseph Martin website, built from 
 |---|---|---|---|
 | 1 | Homepage | `/index.html` | Introduce the house: the drawing, the four felts, the maker, the club, the commission |
 | 2 | Hats | `/hats/index.html` | The collection (four felts, four hats), the other made-to-order designs, anatomy, custom |
-| 2b | Product page | `/hats/hat.html?h=oris` (also `ahab`, `artemis`, `cerelia`) | Study B’s hero unchanged, plus specification, details to photograph, ordering, the other felts |
+| 2b | Product page | `/hats/hat.html#oris` (also `ahab`, `artemis`, `cerelia`) | Study B’s hero unchanged, plus specification, details to photograph, ordering, the other felts |
 | 3 | The Hatmaker | `/hatmaker/index.html` | Joseph’s record from verifiable sources, a labelled place for his own words, the shop, printed matter |
 | 4 | Music City Driving Club | `/music-city-driving-club/index.html` | Capsule 001: the jacket as an annotated technical drawing, the patches, the sketchbook, photography briefs |
 | 5 | Commission | `/commission/index.html` | The offer, the process, and a working prototype of the inquiry journey |

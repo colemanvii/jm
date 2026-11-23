@@ -14,7 +14,7 @@ No build step. Serve the repository root with any static server, for example `py
 
 ```
 index.html                      homepage
-hats/index.html, hats/hat.html  collection; product page (?h=oris|ahab|artemis|cerelia)
+hats/index.html, hats/hat.html  collection; product page (#oris, #ahab, #artemis, #cerelia)
 hatmaker/                       The Hatmaker
 music-city-driving-club/        Capsule 001
 commission/                     process + inquiry prototype

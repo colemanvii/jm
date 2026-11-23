@@ -27,7 +27,7 @@ const base = `http://localhost:${server.address().port}`;
 const pages = [
   ['1-home', '/index.html'],
   ['2a-hats', '/hats/index.html'],
-  ['2b-hat-oris', '/hats/hat.html?h=oris'],
+  ['2b-hat-oris', '/hats/hat.html#oris'],
   ['3-hatmaker', '/hatmaker/index.html'],
   ['4-mcdc', '/music-city-driving-club/index.html'],
   ['5-commission', '/commission/index.html'],

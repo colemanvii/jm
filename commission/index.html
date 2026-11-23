@@ -301,7 +301,8 @@
   });
   back.addEventListener('click',function(){if(i>0){i--;show();focusStep()}});
   document.getElementById('again').addEventListener('click',function(){form.reset();i=0;form.hidden=false;document.getElementById('done').hidden=true;document.getElementById('sizefld').hidden=true;show()});
-  var pre=new URLSearchParams(location.search).get('about');
+  var pre=location.hash==='#club'?'club':new URLSearchParams(location.search).get('about');
+  if(location.hash==='#club') setTimeout(function(){document.getElementById('inquiry').scrollIntoView()},0);
   if(pre&&ABOUT[pre]){var r=form.querySelector('[name=about][value='+pre+']');if(r)r.checked=true}
   show();
 })();

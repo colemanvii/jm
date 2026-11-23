@@ -195,13 +195,13 @@
     }).join('');
     q('others').innerHTML=ORDER.filter(function(k){return k!==id}).map(function(k){
       var o=H[k];
-      return '<a href="hat.html?h='+k+'" data-h="'+k+'" style="--c:'+o.c+';--t:'+o.on+'"><span class="label" style="display:flex;justify-content:space-between"><span>'+esc(o.colour)+'</span><span>'+esc(o.price)+'</span></span><span class="nm">'+esc(o.name)+'</span></a>';
+      return '<a href="hat.html#'+k+'" data-h="'+k+'" style="--c:'+o.c+';--t:'+o.on+'"><span class="label" style="display:flex;justify-content:space-between"><span>'+esc(o.colour)+'</span><span>'+esc(o.price)+'</span></span><span class="nm">'+esc(o.name)+'</span></a>';
     }).join('');
     document.querySelectorAll('input[name=felt]').forEach(function(r){r.checked=(r.value===id)});
   }
   function go(id,push){
     if(!H[id]) id='oris';
-    if(push) history.replaceState(null,'','hat.html?h='+id);
+    if(push) history.replaceState(null,'','#'+id);
     if(reduce||!push){render(id);return}
     base.classList.add('swapping');
     setTimeout(function(){render(id);base.classList.remove('swapping')},300);
@@ -209,7 +209,9 @@
   document.querySelectorAll('input[name=felt]').forEach(function(r){
     r.addEventListener('change',function(){go(r.value,true)});
   });
-  go(new URLSearchParams(location.search).get('h')||'oris',false);
+  function fromUrl(){return location.hash.slice(1)||new URLSearchParams(location.search).get('h')||'oris'}
+  addEventListener('hashchange',function(){go(fromUrl(),false);scrollTo(0,0)});
+  go(fromUrl(),false);
 })();
 </script>
 </body>
