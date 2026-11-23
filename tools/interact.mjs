@@ -38,6 +38,17 @@ for (const [label, opts] of [['desktop', { viewport: { width: 1440, height: 900 
   await p.screenshot({ path: shot(`c-archive-${label}-detail`) });
   await p.click('#dlg-next'); ok((await p.textContent('#dlg-title')) !== 'Artemis', `C ${label}: next entry`);
   await p.keyboard.press('Escape'); ok(!(await p.isVisible('#dlg')), `C ${label}: Escape closes detail`);
+  // D: menu (phone) and hats reel (desktop)
+  await p.goto(url('d-world'));
+  if (label === 'phone') {
+    await p.click('#menu-open'); ok(await p.isVisible('#menu ul'), `D ${label}: menu opens`);
+    await p.screenshot({ path: shot(`d-world-${label}-menu`) });
+    await p.click('#menu a[href="#club"]'); ok(!(await p.isVisible('#menu ul')), `D ${label}: menu link closes menu`);
+  } else {
+    const before = await p.$eval('#reel', r => r.scrollLeft);
+    await p.click('#next'); await p.waitForTimeout(400);
+    ok((await p.$eval('#reel', r => r.scrollLeft)) > before, `D ${label}: reel advances`);
+  }
   await ctx.close();
 }
 await b.close();

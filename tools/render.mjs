@@ -22,7 +22,7 @@ const server = createServer(async (req, res) => {
 const base = `http://localhost:${server.address().port}`;
 
 // Study 001 is excluded by default: it loads remote Unsplash images (pass '001' to include it).
-const all = ['index', 'a-portrait', 'b-object', 'c-archive', 'wordmark'];
+const all = ['index', 'a-portrait', 'b-object', 'c-archive', 'd-world', 'wordmark'];
 const studies = process.argv.slice(2).length ? process.argv.slice(2) : all;
 const sizes = [
   { name: 'desktop', opts: { viewport: { width: 1440, height: 900 }, deviceScaleFactor: 1 } },

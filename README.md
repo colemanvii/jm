@@ -5,13 +5,14 @@ Creative direction: Tangerine. **This is not the live site.** Nothing here chang
 
 ## Status
 
-Phases 1–3 (discovery, three concept studies, comparative critique) are done. **The next step needs a decision: which direction to develop.** See [docs/CRITIQUE.md](docs/CRITIQUE.md).
+Phases 1–3 (discovery, three concept studies, comparative critique) are done, plus Study D. **The next step needs a decision: which direction to develop.** See [docs/CRITIQUE.md](docs/CRITIQUE.md).
 
 | Study | Path | Idea |
 |---|---|---|
 | A — The Portrait | `studies/a-portrait/` | The maker first: frontispiece portrait facing a title page; chapters |
 | B — The Object | `studies/b-object/` | The hat first: felt as colour system, anatomy as graphic language |
 | C — The Living Archive | `studies/c-archive/` | The workshop first: a filterable archive of hats, materials, process, people, notes |
+| D — The World | `studies/d-world/` | Joseph first, then his world: hats, drawings, people, Music City Driving Club. Seen through the lens of DropOut Companies (see [docs/STUDY-D.md](docs/STUDY-D.md)) |
 | Wordmark | `studies/wordmark/` | Six typographic directions on screen, label, lining and card |
 | Study 001 | `studies/001/` | The original first study, unchanged |
 
@@ -46,6 +47,7 @@ docs/
   DISCOVERY.md          audit of the current site, verified facts, limitations
   REFERENCES.md         13 references and the principles taken from them
   CRITIQUE.md           comparative critique, recommendation, measured results
+  STUDY-D.md            Study D research (DropOut Companies), principles, rationale, critique
   DECISIONS.md          design decision log and typography notes
   PHOTOGRAPHY.md        photography standards and full shot list
   CONTENT.md            facts to confirm, interview questions, copy needed
