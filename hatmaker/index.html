@@ -5,6 +5,8 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>The Hatmaker — Joseph Martin</title>
 <meta name="description" content="Joseph Benjamin Martin: from Mississippi to a hat shop on Villa Place in Nashville.">
+<link rel="preload" as="image" href="../assets/jm/joseph-workshop-1124.webp" media="(min-width:761px)">
+<link rel="preload" as="image" href="../assets/jm/joseph-workshop-portrait-584.webp" media="(max-width:760px)">
 <meta name="robots" content="noindex">
 <meta name="theme-color" content="#111110">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 32 32%22%3E%3Crect width=%2232%22 height=%2232%22 fill=%22%238E5A2C%22/%3E%3Ctext x=%2216%22 y=%2221%22 font-family=%22Arial%22 font-size=%2211%22 letter-spacing=%221%22 fill=%22%23F3EFE7%22 text-anchor=%22middle%22%3EJM%3C/text%3E%3C/svg%3E">
@@ -12,11 +14,14 @@
 <link rel="stylesheet" href="../assets/vision/vision.css">
 <style>
 .opening{padding-bottom:clamp(56px,7vw,112px)}
-.op{padding-top:clamp(40px,5vw,72px);align-items:end}
-.op .slot{grid-column:1 / 7;--ar:4/5;--sg:#24211E}
-.op .t{grid-column:8 / 13;display:grid;gap:28px;align-content:end}
+.portrait{margin:clamp(24px,3vw,40px) 0 0}
+.portrait img{display:block;width:100%;height:auto;max-width:1344px;margin-inline:auto;background:#2A2622}
+.op{align-items:end;margin-top:clamp(28px,3.4vw,48px);padding-top:18px;border-top:1px solid var(--rule-d)}
+.op .t{grid-column:1 / 7;display:grid;gap:20px}
 .op h1{font-size:clamp(72px,9.6vw,176px)}
+.op .c{grid-column:8 / 13;display:grid;gap:28px;padding-bottom:6px}
 .op p{margin:0;max-width:40ch}
+.op .cap{display:flex;justify-content:space-between;gap:16px;max-width:none;padding-top:12px;border-top:1px solid var(--rule-d);opacity:.75}
 .charm{align-items:start}
 .charm h2{grid-column:1 / 7}
 .charm .c{grid-column:7 / 12;display:grid;gap:24px}
@@ -41,8 +46,10 @@
 .close .acts{grid-column:9 / 13;display:grid;gap:12px;justify-items:start}
 @media (max-width:1024px){.where .r{grid-template-columns:140px minmax(0,1fr)}.where .r p:last-child{grid-column:2}}
 @media (max-width:760px){
-  .op .t,.charm .c{margin-top:28px}
+  .portrait{margin-inline:calc(var(--m) * -1)}
+  .op .c,.charm .c{margin-top:28px}
   .op h1{font-size:19vw}
+  .op .cap{flex-direction:column;gap:4px}
   .where .r{grid-template-columns:minmax(0,1fr);gap:10px}
   .where .r p:last-child{grid-column:1}
   .shop{display:grid;grid-template-columns:1fr;gap:16px}
@@ -67,15 +74,20 @@
         <a href="../commission/index.html">Commission</a>
       </nav>
     </header>
+    <figure class="portrait">
+      <picture>
+        <source media="(max-width:760px)" srcset="../assets/jm/joseph-workshop-portrait-584.webp" width="584" height="730">
+        <img src="../assets/jm/joseph-workshop-1124.webp" srcset="../assets/jm/joseph-workshop-720.webp 720w, ../assets/jm/joseph-workshop-1124.webp 1124w" sizes="(max-width:1440px) 100vw, 1344px" width="1124" height="730" fetchpriority="high" alt="Joseph Martin in his workshop, wearing a black western hat and a camouflage overshirt. Behind him, wooden hat blocks line a shelf, tools hang on a pine wall, and finished hats are stacked above.">
+      </picture>
+    </figure>
     <div class="g12 op">
-      <figure class="slot">
-        <span class="sid label"><span>M1 · Frontispiece</span><span>4 : 5 · black and white</span></span>
-        <p><b>Photograph to be made</b>Joseph at the bench, window light from camera left, waist up, a hat in his hands. Not posed; the bench as it is.</p>
-      </figure>
       <div class="t">
         <p class="label">The Hatmaker</p>
         <h1 class="display" id="h1">Joseph<br>Benjamin<br>Martin</h1>
+      </div>
+      <div class="c">
         <p class="lede-s">Western hats and dress fedoras, made by hand, start to finish, in a shop on Villa Place in Nashville.</p>
+        <p class="label cap"><span>Joseph Martin in the workshop</span><span>Photograph · credit to confirm</span></p>
       </div>
     </div>
   </section>

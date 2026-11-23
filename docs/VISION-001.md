@@ -33,6 +33,7 @@ Changes from iteration 002 of MCDC: re-set in Archivo (Instrument Serif, DM Mono
 
 | Material | Source | Used on |
 |---|---|---|
+| Portrait of Joseph in his workshop (`assets/jm/joseph-workshop-*.webp`) | Approved by the client, 23 Nov 2026; uncropped on desktop, 4:5 crop centred on Joseph for phones; no grading; metadata stripped, colour profile kept; credit to confirm | The Hatmaker |
 | Cowboy George, red ink, and white line version | Existing drawing for Joseph Martin (`assets/jm/`, `assets/mcdc/`) | Home, MCDC, George patch |
 | Double Decker Arts Festival poster (Oxford, MS, April 26–27, 2024) | Existing Tangerine work for Joseph Martin | The Hatmaker |
 | “Martin Survives!” / “Don’t Call It Luck!” posters (Collage Studio, Jackson) | Existing Tangerine work; quotation transcribed from the poster | The Hatmaker; “Fourth Time’s the Charm” patch |
@@ -59,7 +60,7 @@ Changes from iteration 002 of MCDC: re-set in Archivo (Instrument Serif, DM Mono
 ## Still required
 
 - **Product photography:** each hat in profile on a matched ground (O1) so the annotations sit on the real hat; three-quarter, crown-down and detail macros (O2–O4).
-- **Portraits of Joseph** (M1, M2) and **shop photography** (H1–H5).
+- **The portrait at full resolution** (the supplied file is 1,124 px wide) and the photographer’s credit; a close portrait (M2); **shop photography** (H1–H5).
 - **Calibrated felt swatches** (T1) to correct on-screen colours.
 - **Joseph’s words:** biography (150–250 words), one line per hat, care notes, commission FAQ.
 - **Current logo and label files**, and who made them.
