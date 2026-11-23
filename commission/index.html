@@ -1,0 +1,310 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Commission — Joseph Martin, Hatmaker</title>
+<meta name="description" content="Commission a custom hat from Joseph Martin: any colour, any shape, made by hand in Nashville from your measurements.">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#111110">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 32 32%22%3E%3Crect width=%2232%22 height=%2232%22 fill=%22%238E5A2C%22/%3E%3Ctext x=%2216%22 y=%2221%22 font-family=%22Arial%22 font-size=%2211%22 letter-spacing=%221%22 fill=%22%23F3EFE7%22 text-anchor=%22middle%22%3EJM%3C/text%3E%3C/svg%3E">
+<link rel="preload" href="../assets/fonts/archivo-latin-standard-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../assets/vision/vision.css">
+<style>
+.cm-hero{padding-bottom:clamp(56px,7vw,112px)}
+.cm-hero h1{margin-top:clamp(48px,7vw,112px)}
+.cm-hero h1 span{display:block}
+.cm-hero .row{margin-top:clamp(48px,6vw,96px);border-top:1px solid var(--rule-d);padding-top:20px}
+.cm-hero .facts{grid-column:1 / 9}
+.cm-hero .act{grid-column:9 / 13;display:grid;gap:14px;align-content:start;justify-items:start}
+.cm-hero .act small{opacity:.75;font-size:13px}
+.steps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-top:1px solid currentColor;margin:32px 0 0;padding:0;list-style:none}
+.steps li{padding:20px var(--g) 28px 0;display:grid;gap:14px;align-content:start;border-right:1px solid color-mix(in srgb,currentColor 22%,transparent);padding-left:0}
+.steps li + li{padding-left:var(--g)}
+.steps li:last-child{border-right:0}
+.steps h3{margin:0;font:700 clamp(36px,3.4vw,56px)/.86 var(--f);font-stretch:62%;text-transform:uppercase}
+.steps p{margin:0;font-size:15px}
+.steps .st{font-size:12px;color:var(--mute)}
+
+/* inquiry */
+.inq{align-items:start;margin-top:32px}
+.inq .intro{grid-column:1 / 5;display:grid;gap:20px;position:sticky;top:24px}
+.inq .intro p{margin:0}
+.inq form{grid-column:6 / 13}
+.prog{display:flex;gap:6px;margin-bottom:28px}
+.prog span{flex:1;height:2px;background:color-mix(in srgb,var(--ink) 18%,transparent)}
+.prog span.on{background:var(--ink)}
+.q{border:0;margin:0;padding:0;min-width:0}
+.q[hidden]{display:none}
+.q legend{padding:0;margin-bottom:8px;font:700 clamp(40px,4.6vw,76px)/.86 var(--f);font-stretch:62%;text-transform:uppercase}
+.q .help{margin:0 0 28px;color:var(--mute);max-width:52ch}
+.opts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.opt{position:relative;display:block}
+.opt input{position:absolute;opacity:0;inset:0;margin:0;cursor:pointer;width:100%;height:100%}
+.opt > span{display:grid;gap:6px;min-height:112px;align-content:space-between;padding:14px 16px;border:1px solid color-mix(in srgb,var(--ink) 35%,transparent);background:var(--c,transparent);color:var(--t,var(--ink));transition:transform .25s}
+.opt b{font:600 19px/1.15 var(--f)}
+.opt small{font-size:13px;opacity:.8}
+.opt input:checked + span{outline:2px solid var(--ink);outline-offset:3px}
+.opt input:focus-visible + span{outline:2px dashed var(--ink);outline-offset:5px}
+.opt input:hover + span{transform:translateY(-2px)}
+.sw .opts{grid-template-columns:repeat(5,minmax(0,1fr))}
+.sw .opt > span{min-height:96px}
+.fld{display:grid;gap:8px;margin-bottom:18px}
+.fld input,.fld textarea,.fld select{font:400 17px/1.4 var(--f);color:var(--ink);background:transparent;border:0;border-bottom:1px solid var(--ink);padding:10px 0;border-radius:0;width:100%}
+.fld textarea{min-height:96px;resize:vertical;border:1px solid color-mix(in srgb,var(--ink) 35%,transparent);padding:10px}
+.fld input:focus,.fld textarea:focus,.fld select:focus{outline:none;border-color:var(--ink);box-shadow:0 1px 0 var(--ink)}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.err{color:#8A1C12;font-size:14px;margin:12px 0 0;min-height:1.4em}
+.nav-q{display:flex;justify-content:space-between;align-items:center;gap:16px;margin-top:32px;padding-top:20px;border-top:1px solid color-mix(in srgb,var(--ink) 22%,transparent)}
+.nav-q .btn{--field:var(--paper);--on:var(--ink)}
+.textbtn{background:none;border:0;padding:12px 0;cursor:pointer;font:500 11px/1 var(--f);font-stretch:112%;letter-spacing:.12em;text-transform:uppercase;border-bottom:1px solid currentColor}
+.textbtn[hidden]{display:none}
+.review .spec dd{display:flex;justify-content:space-between;gap:12px}
+.review .spec dd button{flex:none}
+.done{border-top:1px solid var(--ink);padding-top:24px;display:grid;gap:20px}
+.done[hidden]{display:none}
+.pbox{background:var(--ink);color:var(--paper);padding:14px 16px;font-size:14px}
+.pbox b{font:600 11px/1.3 var(--f);font-stretch:112%;letter-spacing:.12em;text-transform:uppercase;display:block;margin-bottom:4px}
+@media (max-width:1024px){
+  .cm-hero .facts,.cm-hero .act{grid-column:1 / 13}.cm-hero .act{margin-top:32px}
+  .steps{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .steps li:nth-child(3){padding-left:0}
+  .inq .intro{grid-column:1 / 13;position:static;margin-bottom:40px}.inq form{grid-column:1 / 13}
+}
+@media (max-width:760px){
+  .cm-hero h1{font-size:20vw}
+  .steps{grid-template-columns:1fr}
+  .steps li,.steps li + li{padding-left:0;border-right:0;border-bottom:1px solid color-mix(in srgb,currentColor 22%,transparent)}
+  .opts{grid-template-columns:1fr}
+  .sw .opts{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .two{grid-template-columns:1fr;gap:0}
+  .q legend{font-size:15vw}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<main id="main">
+  <section class="field f-black wrap cm-hero" aria-labelledby="h1">
+    <header class="top">
+      <a class="mark" href="../index.html">Joseph Martin</a>
+      <button class="menu-btn label" type="button" aria-expanded="false" aria-controls="nav">Menu</button>
+      <nav class="nav" id="nav" aria-label="Primary">
+        <a href="../hats/index.html">Hats</a>
+        <a href="../hatmaker/index.html">The Hatmaker</a>
+        <a href="../music-city-driving-club/index.html">Driving Club</a>
+        <a href="index.html" aria-current="page">Commission</a>
+      </nav>
+    </header>
+    <h1 class="display d-xl" id="h1"><span>Any colour.</span><span>Any shape.</span><span>$1,395.</span></h1>
+    <div class="row g12">
+      <dl class="facts">
+        <div><dt class="label">Custom fur felt</dt><dd>$1,395, all-inclusive</dd></div>
+        <div><dt class="label">Custom straw</dt><dd>$595 or $1,150</dd></div>
+        <div><dt class="label">Time</dt><dd>About 4–6 weeks</dd></div>
+        <div><dt class="label">Consultation</dt><dd>Nashville or remote</dd></div>
+      </dl>
+      <div class="act">
+        <a class="btn" href="#inquiry">Begin</a>
+        <small>Commissions are currently taken from a waitlist.</small>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec wrap" aria-labelledby="hw">
+    <div class="sh label"><h2 class="label" id="hw" style="margin:0">How a commission works</h2><span>* Steps to confirm with Joseph</span></div>
+    <ol class="steps">
+      <li><span class="label">01</span><h3>Conversation</h3><p>In the shop on Villa Place, or remotely. What the hat is for, how it should sit, what it should carry.</p></li>
+      <li><span class="label">02</span><h3>Measure</h3><p>Your head is measured, at the shop or at home with the sizing guide. The hat is made from those measurements.</p><a class="link" href="https://josephbenmartin.com/pages/sizing" style="justify-self:start">Sizing guide ↗</a></li>
+      <li><span class="label">03</span><h3>Making</h3><p>Made by hand, start to finish, in Nashville. About four to six weeks for custom fur felt.</p></li>
+      <li><span class="label">04</span><h3>Handover*</h3><p>The finished hat, shipped or collected.</p><p class="st">How handover works, and whether there is a final fitting, is to be confirmed.</p></li>
+    </ol>
+  </section>
+
+  <section class="sec wrap" id="inquiry" aria-labelledby="iq" style="padding-top:0">
+    <div class="sh label"><h2 class="label" id="iq" style="margin:0">Begin a commission</h2><span>Prototype inquiry</span></div>
+    <div class="g12 inq">
+      <div class="intro">
+        <p class="lede-s">A few questions, so the first conversation can start in the right place.</p>
+        <p class="muted" style="font-size:14px">Nothing is decided here and nothing is paid. Joseph replies personally; commissions are taken in order from the waitlist.</p>
+        <div class="pbox"><b>Prototype</b>This journey works end to end in the browser, but nothing is sent or stored.</div>
+      </div>
+
+      <form id="form" novalidate>
+        <div class="prog" aria-hidden="true" id="prog"></div>
+        <p class="label" id="count" aria-live="polite" style="margin:0 0 16px">Question 1 of 5</p>
+
+        <fieldset class="q" data-step="about">
+          <legend>What is it about?</legend>
+          <p class="help">Choose the closest. You can explain in your own words at the end.</p>
+          <div class="opts">
+            <label class="opt"><input type="radio" name="about" value="felt" required><span><b>A custom fur felt hat</b><small>$1,395, all-inclusive</small></span></label>
+            <label class="opt"><input type="radio" name="about" value="straw"><span><b>A custom straw hat</b><small>$595 or $1,150</small></span></label>
+            <label class="opt"><input type="radio" name="about" value="collection"><span><b>A hat from the collection</b><small>A size, a variation, a question</small></span></label>
+            <label class="opt"><input type="radio" name="about" value="club"><span><b>Music City Driving Club</b><small>Leave your name for Capsule 001</small></span></label>
+          </div>
+        </fieldset>
+
+        <fieldset class="q" data-step="shape" hidden>
+          <legend>Which shape?</legend>
+          <p class="help">Joseph makes traditional western shapes and dress fedoras. If you are not sure, that is what the conversation is for.</p>
+          <div class="opts">
+            <label class="opt"><input type="radio" name="shape" value="Western"><span><b>Western</b><small>A taller crown, a wider brim</small></span></label>
+            <label class="opt"><input type="radio" name="shape" value="Dress fedora"><span><b>Dress fedora</b><small>A finer, lighter shape</small></span></label>
+            <label class="opt"><input type="radio" name="shape" value="Not sure yet"><span><b>Not sure yet</b><small>Decide together</small></span></label>
+          </div>
+        </fieldset>
+
+        <fieldset class="q sw" data-step="colour" hidden>
+          <legend>Which colour?</legend>
+          <p class="help">The four felts of the current hats, or anything else. Colours on screen are approximations.</p>
+          <div class="opts">
+            <label class="opt"><input type="radio" name="colour" value="Natural"><span style="--c:var(--natural)"><small>&nbsp;</small><b>Natural</b></span></label>
+            <label class="opt"><input type="radio" name="colour" value="Granite"><span style="--c:var(--granite);--t:var(--paper)"><small>&nbsp;</small><b>Granite</b></span></label>
+            <label class="opt"><input type="radio" name="colour" value="Whiskey"><span style="--c:var(--whiskey);--t:var(--paper)"><small>&nbsp;</small><b>Whiskey</b></span></label>
+            <label class="opt"><input type="radio" name="colour" value="Pecan"><span style="--c:var(--pecan);--t:var(--paper)"><small>&nbsp;</small><b>Pecan</b></span></label>
+            <label class="opt"><input type="radio" name="colour" value="Something else"><span><small>&nbsp;</small><b>Something else</b></span></label>
+          </div>
+        </fieldset>
+
+        <fieldset class="q" data-step="fit" hidden>
+          <legend>Your size</legend>
+          <p class="help">The hat is made from your measurements. If you don’t know your size, measure at home with the sizing guide.</p>
+          <div class="opts">
+            <label class="opt"><input type="radio" name="fit" value="I know my size"><span><b>I know my size</b><small>Choose it below</small></span></label>
+            <label class="opt"><input type="radio" name="fit" value="I'll measure at home"><span><b>I’ll measure at home</b><small><a href="https://josephbenmartin.com/pages/sizing" style="position:relative;z-index:1">Sizing guide ↗</a></small></span></label>
+            <label class="opt"><input type="radio" name="fit" value="Measure me in Nashville"><span><b>Measure me in Nashville</b><small>At the shop, by appointment*</small></span></label>
+          </div>
+          <div class="fld" id="sizefld" hidden style="margin-top:24px">
+            <label class="label" for="size">Hat size</label>
+            <select id="size" name="size"><option value="">Choose</option><option>6 ¾</option><option>6 ⅞</option><option>7</option><option>7 ⅛</option><option>7 ¼</option><option>7 ⅜</option><option>7 ½</option><option>7 ⅝</option><option>7 ¾</option><option>7 ⅞</option></select>
+          </div>
+        </fieldset>
+
+        <fieldset class="q" data-step="you" hidden>
+          <legend>About you</legend>
+          <p class="help">So Joseph can reply. Your details would be used only for this commission.</p>
+          <div class="two">
+            <div class="fld"><label class="label" for="nm">Name</label><input id="nm" name="name" autocomplete="name" required></div>
+            <div class="fld"><label class="label" for="em">Email</label><input id="em" name="email" type="email" autocomplete="email" required></div>
+          </div>
+          <div class="fld"><label class="label" for="ct">City</label><input id="ct" name="city" autocomplete="address-level2"></div>
+          <div class="fld"><label class="label" for="nt">Anything else</label><textarea id="nt" name="note" placeholder="What the hat is for, a reference, a date that matters."></textarea></div>
+        </fieldset>
+
+        <div class="q review" data-step="review" hidden>
+          <h3 class="display d-m" style="margin-bottom:24px" tabindex="-1" id="rv">Review</h3>
+          <dl class="spec" id="summary"></dl>
+        </div>
+
+        <p class="err" id="err" role="alert"></p>
+        <div class="nav-q">
+          <button type="button" class="textbtn" id="back" hidden>Back</button>
+          <span></span>
+          <button type="submit" class="btn" id="next">Continue</button>
+        </div>
+      </form>
+
+      <div class="done" id="done" hidden tabindex="-1" style="grid-column:6 / 13">
+        <h3 class="display d-l" style="margin:0">Thank you.</h3>
+        <p class="lede-s" id="done-msg">Joseph will be in touch about your hat.</p>
+        <div class="pbox"><b>Prototype: nothing was sent</b>In production this would send your answers to Joseph and confirm your place on the waitlist by email. How that place is held (an inquiry, or buying the Custom Felt Hat listing as now) is a decision for Joseph.</div>
+        <div><button type="button" class="textbtn" id="again">Start again</button></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="g12">
+    <p class="mk label" style="font-stretch:125%;letter-spacing:.2em">Joseph Martin</p>
+    <address>1200 Villa Place, Suite 200<br>Nashville, Tennessee 37212</address>
+    <ul>
+      <li><a href="../hats/index.html">Hats</a></li><li><a href="../hatmaker/index.html">The Hatmaker</a></li>
+      <li><a href="../music-city-driving-club/index.html">Driving Club</a></li><li><a href="index.html">Commission</a></li>
+      <li><a href="https://josephbenmartin.com/pages/contact">Contact ↗</a></li><li><a href="https://www.instagram.com/josephbenmartin/">Instagram ↗</a></li>
+    </ul>
+    <p class="nt">Prices and times from josephbenmartin.com, November 2026. *To confirm with Joseph. The inquiry form is a prototype and sends nothing.</p>
+  </div>
+  <div class="proto label"><span>Vision 001 · Creative-direction prototype · Not the live site</span><a href="../notes/index.html" style="text-decoration:none;border-bottom:1px solid #55534E">Presentation notes</a></div>
+</footer>
+<script src="../assets/vision/vision.js"></script>
+<script>
+(function(){
+  var form=document.getElementById('form'), steps=[].slice.call(form.querySelectorAll('.q'));
+  var back=document.getElementById('back'), next=document.getElementById('next'), err=document.getElementById('err');
+  var prog=document.getElementById('prog'), count=document.getElementById('count');
+  var i=0, F=form.elements;
+  var LABEL={about:'About',shape:'Shape',colour:'Colour',fit:'Size',you:'You'};
+  var ABOUT={felt:'Custom fur felt hat',straw:'Custom straw hat',collection:'A hat from the collection',club:'Music City Driving Club'};
+  function val(n){var el=form.querySelector('[name='+n+']:checked');return el?el.value:''}
+  function path(){
+    var a=val('about');
+    if(a==='club'||a==='collection') return ['about','you','review'];
+    return ['about','shape','colour','fit','you','review'];
+  }
+  function show(){
+    var p=path(), key=p[i];
+    steps.forEach(function(s){s.hidden=s.dataset.step!==key});
+    var qn=p.length-1;
+    prog.innerHTML=p.slice(0,qn).map(function(_,j){return '<span class="'+(j<=i?'on':'')+'"></span>'}).join('');
+    count.textContent=key==='review'?'Review':'Question '+(i+1)+' of '+qn;
+    back.hidden=i===0;
+    next.textContent=key==='review'?'Send':'Continue';
+    err.textContent='';
+    if(key==='review') summary();
+  }
+  function check(key){
+    if(key==='about'&&!val('about')) return 'Choose one to continue.';
+    if(key==='you'){
+      var n=F.name.value.trim(), e=F.email.value.trim();
+      if(!n) {F.name.focus();return 'Please add your name.'}
+      if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(e)) {F.email.focus();return 'Please add an email address Joseph can reply to.'}
+    }
+    if(key==='fit'&&val('fit')==='I know my size'&&!F.size.value) return 'Choose your size, or pick another option.';
+    return '';
+  }
+  function summary(){
+    var p=path(), rows=[];
+    p.forEach(function(k,j){
+      if(k==='review') return;
+      var v='';
+      if(k==='about') v=ABOUT[val('about')];
+      else if(k==='shape') v=val('shape')||'Not answered';
+      else if(k==='colour') v=val('colour')||'Not answered';
+      else if(k==='fit') v=(val('fit')||'Not answered')+(F.size.value&&val('fit')==='I know my size'?' · '+F.size.value:'');
+      else if(k==='you') v=[F.name.value.trim(),F.email.value.trim(),F.city.value.trim()].filter(Boolean).join(' · ');
+      rows.push('<div><dt class="label">'+LABEL[k]+'</dt><dd><span></span><button type="button" class="textbtn" data-go="'+j+'">Change</button></dd></div>');
+      rows[rows.length-1]=rows[rows.length-1].replace('<span></span>','<span>'+v.replace(/[&<>]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;'}[c]})+'</span>');
+    });
+    var s=document.getElementById('summary'); s.innerHTML=rows.join('');
+    s.querySelectorAll('[data-go]').forEach(function(b){b.addEventListener('click',function(){i=+b.dataset.go;show();focusStep()})});
+    document.getElementById('rv').focus();
+  }
+  function focusStep(){var s=steps.filter(function(s){return !s.hidden})[0];var f=s&&s.querySelector('input,select,textarea');if(f&&path()[i]!=='review')f.focus({preventScroll:true})}
+  form.addEventListener('change',function(e){
+    if(e.target.name==='fit') document.getElementById('sizefld').hidden=val('fit')!=='I know my size';
+    if(e.target.name==='about') show();
+  });
+  form.addEventListener('submit',function(e){
+    e.preventDefault();
+    var p=path(), key=p[i], m=check(key);
+    if(m){err.textContent=m;return}
+    if(key==='review'){
+      form.hidden=true; var d=document.getElementById('done'); d.hidden=false;
+      var first=F.name.value.trim().split(' ')[0];
+      document.getElementById('done-msg').textContent=val('about')==='club'?'Your name is down for Music City Driving Club, '+first+'. Nothing about the club is announced yet.':'Joseph will be in touch about your hat, '+first+'.';
+      d.focus(); return;
+    }
+    i++; show(); focusStep();
+  });
+  back.addEventListener('click',function(){if(i>0){i--;show();focusStep()}});
+  document.getElementById('again').addEventListener('click',function(){form.reset();i=0;form.hidden=false;document.getElementById('done').hidden=true;document.getElementById('sizefld').hidden=true;show()});
+  var pre=new URLSearchParams(location.search).get('about');
+  if(pre&&ABOUT[pre]){var r=form.querySelector('[name=about][value='+pre+']');if(r)r.checked=true}
+  show();
+})();
+</script>
+</body>
+</html>

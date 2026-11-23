@@ -1,0 +1,415 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Music City Driving Club — Joseph Martin</title>
+<meta name="description" content="Music City Driving Club, Capsule 001: a cream driving jacket and its patches, from a sketchbook of drawings made for Joseph Martin.">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#EFDECB">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 32 32%22%3E%3Crect width=%2232%22 height=%2232%22 fill=%22%238E5A2C%22/%3E%3Ctext x=%2216%22 y=%2221%22 font-family=%22Arial%22 font-size=%2211%22 letter-spacing=%221%22 fill=%22%23F3EFE7%22 text-anchor=%22middle%22%3EJM%3C/text%3E%3C/svg%3E">
+<link rel="preload" href="../assets/fonts/archivo-latin-standard-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../assets/vision/vision.css">
+<style>
+body{background:var(--cream)}
+.red{color:var(--red)}
+.mc-hero{padding-bottom:22px}
+.mh{padding-top:clamp(32px,4vw,64px);align-items:end}
+.mh .t{grid-column:1 / 8;display:grid;gap:28px}
+.mh h1{font-size:clamp(80px,11.4vw,208px)}
+.mh figure{grid-column:8 / 13;margin:0}
+.mh figure img{display:block;width:100%;height:auto}
+.mh-base{display:flex;justify-content:space-between;align-items:end;gap:24px;margin-top:24px;padding-top:18px;border-top:1px solid color-mix(in srgb,currentColor 30%,transparent)}
+.statement h2{grid-column:1 / 8}
+.statement .c{grid-column:8 / 12;display:grid;gap:20px;align-content:end}
+.statement .c p{margin:0}
+.statement small{font-size:13px;color:var(--mute);display:block}
+
+/* the jacket bench */
+.bench{align-items:start;margin-top:32px}
+.flat{grid-column:1 / 9;position:relative}
+.flat svg{display:block;width:100%;height:auto;max-height:78svh;overflow:visible}
+.jk{fill:none;stroke:var(--ink);stroke-width:1.25;vector-effect:non-scaling-stroke;stroke-linejoin:round;stroke-linecap:round}
+.jk-thin{fill:none;stroke:var(--ink);stroke-width:.75;vector-effect:non-scaling-stroke;opacity:.6}
+.jk-st{fill:none;stroke:var(--ink);stroke-width:.75;vector-effect:non-scaling-stroke;stroke-dasharray:2 3;opacity:.7}
+.flat .call text{fill:var(--ink);font:500 12px var(--f);font-stretch:112%;letter-spacing:.12em;text-transform:uppercase}
+.flat .call .lead{fill:none;stroke:var(--ink);stroke-width:.75;vector-effect:non-scaling-stroke}
+.flat .call .dot{fill:var(--ink)}
+.flat .side{transition:opacity .45s var(--ease)}
+.flat[data-side=front] .back-side,.flat[data-side=back] .front-side{opacity:0;visibility:hidden;pointer-events:none}
+.spot{cursor:pointer;outline:none}
+.spot .ring{fill:none;stroke:var(--red);stroke-width:1.5;vector-effect:non-scaling-stroke;stroke-dasharray:4 4;opacity:0;transition:opacity .25s}
+.spot:hover .ring,.spot:focus-visible .ring,.spot[aria-pressed=true] .ring{opacity:1}
+.ctrl{display:flex;justify-content:space-between;align-items:center;gap:16px;margin-bottom:16px}
+.seg{display:flex;gap:8px}
+.seg button{min-width:96px;min-height:44px;padding:0 16px;background:transparent;border:1px solid var(--ink);cursor:pointer;font:500 11px/1 var(--f);font-stretch:112%;letter-spacing:.12em;text-transform:uppercase}
+.seg button[aria-pressed=true]{background:var(--ink);color:var(--cream)}
+.ticket{grid-column:9 / 13;position:sticky;top:24px;border-top:1px solid var(--ink);padding-top:16px;display:grid;gap:18px}
+.ticket .art{background:color-mix(in srgb,var(--ink) 5%,var(--cream));display:grid;place-items:center;aspect-ratio:4/3;padding:24px}
+.ticket .art svg{width:100%;height:100%;max-height:220px}
+.ticket h3{margin:0;font:700 clamp(40px,3.6vw,60px)/.86 var(--f);font-stretch:62%;text-transform:uppercase}
+.ticket p{margin:0;font-size:15px}
+.ticket .flag{color:var(--red)}
+.note{font-size:13px;color:var(--mute);margin:12px 0 0;max-width:60ch}
+
+/* patches */
+.pgrid{grid-template-columns:repeat(5,minmax(0,1fr))}
+.pgrid > li{min-height:0;padding:0}
+.pgrid button{all:unset;box-sizing:border-box;display:grid;grid-template-rows:auto 140px auto;gap:14px;padding:16px 18px 20px;width:100%;height:100%;cursor:pointer}
+.pgrid button:focus-visible{outline:2px solid var(--ink);outline-offset:-6px}
+.pgrid button:hover{background:color-mix(in srgb,var(--ink) 4%,transparent)}
+.pgrid button[aria-pressed=true]{background:color-mix(in srgb,var(--red) 8%,transparent)}
+.pgrid svg{width:100%;height:140px}
+.pgrid .nm{font:600 17px/1.15 var(--f)}
+.pgrid .wh{font-size:13px;color:var(--mute)}
+
+/* sketchbook + frames */
+.sk{margin-top:32px;align-items:start}
+.sk .sheet{grid-column:1 / 8;--ar:1/1;--sg:color-mix(in srgb,var(--ink) 6%,var(--cream));--st:var(--ink)}
+.sk .sheet::before{border-style:dashed;border-color:color-mix(in srgb,var(--ink) 40%,transparent)}
+.sk .aside{grid-column:8 / 13;display:grid;gap:28px}
+.sk .aside p{margin:0}
+.frames{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:var(--g);margin-top:32px}
+.frames .slot{--sg:#1D1A17}
+.frames{align-items:end}
+.frames .w{grid-column:span 6;--ar:3/2}
+.frames .h{grid-column:span 3;--ar:4/5}
+.close h2{grid-column:1 / 8}
+.close .c{grid-column:8 / 13;display:grid;gap:20px;align-content:end}
+.close .c p{margin:0}
+.close small{font-size:13px;opacity:.75}
+@media (max-width:1024px){
+  .flat{grid-column:1 / 13}.ticket{grid-column:1 / 13;position:static;grid-template-columns:1fr 1fr;align-items:start;margin-top:24px}
+  .ticket .art{grid-row:span 4}
+  .pgrid{grid-template-columns:repeat(3,minmax(0,1fr))}
+}
+@media (max-width:760px){
+  .mh h1{font-size:22vw}
+  .mh figure{margin-top:24px}
+  .mh-base{flex-direction:column;align-items:start}
+  .statement .c{margin-top:24px}
+  .flat .call{display:none}
+  .ticket{grid-template-columns:1fr}
+  .ticket .art{grid-row:auto}
+  .pgrid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .pgrid button{grid-template-rows:auto 96px auto;padding:12px}
+  .pgrid svg{height:96px}
+  .sk .aside{margin-top:28px}
+  .frames{grid-template-columns:1fr;gap:16px}
+  .frames .w,.frames .h{grid-column:1;--ar:4/3}
+  .close .c{margin-top:24px}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<!-- Patch library. Each mark is drawn once and used on the jacket, the ticket and the table.
+     Cowboy George is the original red-ink drawing. The winged wheel, crossed flags and GO are drawn on the
+     November 20, 2024 sheet; until those files are placed (assets/mcdc/manifest.json) they show a labelled outline. -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <pattern id="twill" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="6" stroke="#000" stroke-opacity=".07" stroke-width="2"/></pattern>
+    <filter id="thread" x="-5%" y="-5%" width="110%" height="110%"><feDropShadow dx="0" dy=".8" stdDeviation=".4" flood-color="#000" flood-opacity=".3"/></filter>
+    <mask id="m-george" maskUnits="userSpaceOnUse" x="0" y="0" width="320" height="320"><image href="../assets/mcdc/cowboy-george-line.png" x="62" y="58" width="196" height="205" preserveAspectRatio="xMidYMid meet"/></mask>
+    <mask id="m-wheel" maskUnits="userSpaceOnUse" x="0" y="0" width="360" height="220"><image data-asset-href="wheel" data-href="../assets/mcdc/winged-wheel-line.png" x="36" y="34" width="288" height="152" preserveAspectRatio="xMidYMid meet"/></mask>
+    <mask id="m-wheel-xl" maskUnits="userSpaceOnUse" x="0" y="0" width="360" height="220"><image data-asset-href="wheel" data-href="../assets/mcdc/winged-wheel-line.png" x="20" y="22" width="320" height="176" preserveAspectRatio="xMidYMid meet"/></mask>
+    <mask id="m-flags" maskUnits="userSpaceOnUse" x="0" y="0" width="260" height="300"><image data-asset-href="flags" data-href="../assets/mcdc/crossed-flags-line.png" x="40" y="44" width="180" height="150" preserveAspectRatio="xMidYMid meet"/></mask>
+    <mask id="m-go" maskUnits="userSpaceOnUse" x="0" y="0" width="240" height="130"><image data-asset-href="go" data-href="../assets/mcdc/go-line.png" x="30" y="22" width="180" height="86" preserveAspectRatio="xMidYMid meet"/></mask>
+    <path id="arc-top" d="M 52 160 A 108 108 0 0 1 268 160"/>
+    <path id="arc-bot" d="M 44 160 A 116 116 0 0 0 276 160"/>
+    <path id="arc-rocker" d="M 30 128 Q 210 18 390 128"/>
+  </defs>
+  <symbol id="p-jm" viewBox="0 0 300 120">
+    <rect x="6" y="6" width="288" height="108" fill="#8E5A2C"/><rect x="6" y="6" width="288" height="108" fill="url(#twill)"/>
+    <rect x="6" y="6" width="288" height="108" fill="none" stroke="#EFDECB" stroke-width="8"/>
+    <g filter="url(#thread)" fill="#F3EFE7"><text x="150" y="66" text-anchor="middle" textLength="232" lengthAdjust="spacingAndGlyphs" style="font:700 44px Archivo,sans-serif;font-stretch:62%">JOSEPH MARTIN</text>
+    <text x="150" y="94" text-anchor="middle" textLength="200" lengthAdjust="spacing" style="font:500 13px Archivo,sans-serif;font-stretch:112%">HATMAKER · NASHVILLE TN</text></g>
+  </symbol>
+  <symbol id="p-george" viewBox="0 0 320 320">
+    <circle cx="160" cy="160" r="150" fill="#1D2840"/><circle cx="160" cy="160" r="150" fill="url(#twill)"/>
+    <circle cx="160" cy="160" r="150" fill="none" stroke="#EFDECB" stroke-width="11"/>
+    <circle cx="160" cy="160" r="128" fill="none" stroke="#EFDECB" stroke-width="1.6"/>
+    <g filter="url(#thread)"><rect width="320" height="320" fill="#EFDECB" mask="url(#m-george)"/>
+    <text fill="#EFDECB" style="font:700 22px Archivo,sans-serif;font-stretch:62%;letter-spacing:.3em"><textPath href="#arc-top" startOffset="50%" text-anchor="middle">COWBOY GEORGE</textPath></text>
+    <text fill="#EFDECB" style="font:700 16px Archivo,sans-serif;font-stretch:62%;letter-spacing:.36em" dy="14"><textPath href="#arc-bot" startOffset="50%" text-anchor="middle">J · M</textPath></text></g>
+  </symbol>
+  <symbol id="p-wheel" viewBox="0 0 360 220">
+    <ellipse cx="180" cy="110" rx="172" ry="102" fill="#EFDECB"/><ellipse cx="180" cy="110" rx="172" ry="102" fill="url(#twill)"/>
+    <ellipse cx="180" cy="110" rx="172" ry="102" fill="none" stroke="#970F0B" stroke-width="10"/>
+    <g filter="url(#thread)"><rect width="360" height="220" fill="#970F0B" mask="url(#m-wheel)"/></g>
+    <g class="fb" data-fb="wheel"><rect x="70" y="56" width="220" height="108" rx="54" fill="none" stroke="#970F0B" stroke-width="1.5" stroke-dasharray="5 4"/><text x="180" y="116" text-anchor="middle" fill="#970F0B" style="font:500 13px Archivo,sans-serif;font-stretch:112%;letter-spacing:.16em">WINGED WHEEL · TO PLACE</text></g>
+  </symbol>
+  <symbol id="p-flags" viewBox="0 0 260 300">
+    <rect x="10" y="10" width="240" height="280" fill="#1A1917"/><rect x="10" y="10" width="240" height="280" fill="url(#twill)"/>
+    <rect x="10" y="10" width="240" height="280" fill="none" stroke="#EFDECB" stroke-width="7"/>
+    <g filter="url(#thread)"><rect width="260" height="300" fill="#EFDECB" mask="url(#m-flags)"/>
+    <text x="130" y="248" text-anchor="middle" fill="#EFDECB" style="font:700 36px Archivo,sans-serif;font-stretch:62%;letter-spacing:.2em">MCDC</text></g>
+    <g class="fb" data-fb="flags"><rect x="56" y="58" width="148" height="122" fill="none" stroke="#EFDECB" stroke-width="1.5" stroke-dasharray="5 4"/><text x="130" y="124" text-anchor="middle" fill="#EFDECB" style="font:500 12px Archivo,sans-serif;font-stretch:112%;letter-spacing:.14em">FLAGS · TO PLACE</text></g>
+  </symbol>
+  <symbol id="p-chase" viewBox="0 0 420 130">
+    <rect x="6" y="14" width="408" height="102" fill="#C99A3B"/><rect x="6" y="14" width="408" height="102" fill="url(#twill)"/>
+    <g filter="url(#thread)" fill="#970F0B"><text x="210" y="60" text-anchor="middle" style="font:700 34px Archivo,sans-serif;font-stretch:62%;letter-spacing:.06em">HIGH SPEED</text>
+    <text x="210" y="96" text-anchor="middle" style="font:700 34px Archivo,sans-serif;font-stretch:62%;letter-spacing:.06em">CHASE FOR GLORY</text></g>
+  </symbol>
+  <symbol id="p-go" viewBox="0 0 240 130">
+    <rect x="8" y="8" width="224" height="114" rx="57" fill="#EFDECB"/><rect x="8" y="8" width="224" height="114" rx="57" fill="url(#twill)"/>
+    <rect x="8" y="8" width="224" height="114" rx="57" fill="none" stroke="#1D2840" stroke-width="9"/>
+    <g filter="url(#thread)"><rect width="240" height="130" fill="#970F0B" mask="url(#m-go)"/></g>
+    <g class="fb" data-fb="go"><rect x="48" y="32" width="144" height="66" rx="33" fill="none" stroke="#970F0B" stroke-width="1.5" stroke-dasharray="5 4"/><text x="120" y="70" text-anchor="middle" fill="#970F0B" style="font:500 12px Archivo,sans-serif;font-stretch:112%;letter-spacing:.14em">GO · TO PLACE</text></g>
+  </symbol>
+  <symbol id="p-fourth" viewBox="0 0 240 260">
+    <rect x="10" y="10" width="220" height="240" fill="#970F0B"/><rect x="10" y="10" width="220" height="240" fill="url(#twill)"/>
+    <rect x="10" y="10" width="220" height="240" fill="none" stroke="#C99A3B" stroke-width="7"/>
+    <g filter="url(#thread)" fill="#EFDECB"><text x="120" y="62" text-anchor="middle" style="font:600 15px Archivo,sans-serif;font-stretch:112%;letter-spacing:.24em">FOURTH TIME’S</text>
+    <text x="120" y="160" text-anchor="middle" style="font:800 104px Archivo,sans-serif;font-stretch:62%">IV</text>
+    <text x="120" y="200" text-anchor="middle" style="font:600 15px Archivo,sans-serif;font-stretch:112%;letter-spacing:.24em">THE CHARM</text></g>
+  </symbol>
+  <symbol id="p-rocker" viewBox="0 0 420 150">
+    <g filter="url(#thread)"><text fill="#970F0B" style="font:700 26px Archivo,sans-serif;font-stretch:62%;letter-spacing:.12em"><textPath href="#arc-rocker" startOffset="50%" text-anchor="middle">MUSIC CITY DRIVING CLUB</textPath></text></g>
+  </symbol>
+  <symbol id="p-wheel-xl" viewBox="0 0 360 220">
+    <g filter="url(#thread)"><rect width="360" height="220" fill="#970F0B" mask="url(#m-wheel-xl)"/></g>
+    <g class="fb" data-fb="wheel"><rect x="40" y="40" width="280" height="140" rx="70" fill="none" stroke="#970F0B" stroke-width="1.5" stroke-dasharray="5 4"/><text x="180" y="116" text-anchor="middle" fill="#970F0B" style="font:500 14px Archivo,sans-serif;font-stretch:112%;letter-spacing:.16em">WINGED WHEEL · TO PLACE</text></g>
+  </symbol>
+  <symbol id="p-nash" viewBox="0 0 240 70">
+    <rect x="5" y="5" width="230" height="60" fill="#1D2840"/><rect x="5" y="5" width="230" height="60" fill="url(#twill)"/>
+    <rect x="5" y="5" width="230" height="60" fill="none" stroke="#C99A3B" stroke-width="6"/>
+    <g filter="url(#thread)"><text x="120" y="47" text-anchor="middle" fill="#EFDECB" style="font:700 30px Archivo,sans-serif;font-stretch:62%;letter-spacing:.3em">NASHVILLE</text></g>
+  </symbol>
+</svg>
+
+<main id="main">
+  <section class="field f-cream wrap mc-hero" aria-labelledby="h1">
+    <header class="top">
+      <a class="mark" href="../index.html">Joseph Martin</a>
+      <button class="menu-btn label" type="button" aria-expanded="false" aria-controls="nav">Menu</button>
+      <nav class="nav" id="nav" aria-label="Primary">
+        <a href="../hats/index.html">Hats</a>
+        <a href="../hatmaker/index.html">The Hatmaker</a>
+        <a href="index.html" aria-current="page">Driving Club</a>
+        <a href="../commission/index.html">Commission</a>
+      </nav>
+    </header>
+    <div class="g12 mh">
+      <div class="t">
+        <p class="label red">Joseph Martin × Music City Driving Club</p>
+        <h1 class="display" id="h1">Music City<br>Driving<br>Club</h1>
+      </div>
+      <figure>
+        <img src="../assets/jm/cowboy-george-1280.webp" srcset="../assets/jm/cowboy-george-640.webp 640w, ../assets/jm/cowboy-george-1280.webp 1280w" sizes="(max-width:760px) 100vw, 40vw" width="1280" height="1280" alt="Cowboy George, the Joseph Martin mascot: a long-eared dog in a wide-brimmed hat with a cigarette, drawn in red ink" fetchpriority="high">
+      </figure>
+    </div>
+    <div class="mh-base">
+      <p class="lede-s" style="margin:0">For the long way around.</p>
+      <p class="label" style="margin:0">Capsule 001 · Nashville, Tennessee · Drawn November 20, 2024</p>
+    </div>
+  </section>
+
+  <section class="sec wrap statement" aria-labelledby="st">
+    <div class="g12">
+      <h2 class="display d-l" id="st">Drive for the sake of driving.</h2>
+      <div class="c">
+        <p class="lede-s">Cars. Friends. A good hat. A reason to get up before sunrise.</p>
+        <small>Music City Driving Club began as an imagined world in a sketchbook: a winged wheel, a pair of crossed flags and Cowboy George. The founding drive, membership and future events are still to be determined.</small>
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap" id="jacket" aria-labelledby="jk" style="padding-bottom:clamp(72px,10vw,160px)">
+    <div class="sh label"><span>01 / The first artifact</span><span class="red">Capsule 001</span></div>
+    <div class="g12" style="margin-top:32px;align-items:end">
+      <h2 class="display d-l" id="jk" style="grid-column:1 / 8">The driving jacket</h2>
+      <p style="grid-column:8 / 12;margin:0">Not merchandise. Something worth keeping long after the drive is over. Warm ivory cotton twill, raglan sleeves, a point collar, and patches drawn for Joseph Martin. <span class="muted">Not sampled, not for sale.</span></p>
+    </div>
+    <div class="g12 bench">
+      <div class="flat" id="flat" data-side="front">
+        <div class="ctrl">
+          <div class="seg" role="group" aria-label="Jacket side">
+            <button type="button" aria-pressed="true" data-side="front">Front</button>
+            <button type="button" aria-pressed="false" data-side="back">Back</button>
+          </div>
+          <span class="label">Choose a patch</span>
+        </div>
+        <svg viewBox="0 60 800 640" role="group" aria-label="Technical drawing of the driving jacket with patch positions">
+          <g class="side front-side">
+            <path class="jk" d="M335 92 Q400 74 465 92 L585 150 Q640 170 660 260 L705 600 L620 616 L560 330 L548 640 L252 640 L240 330 L180 616 L95 600 L140 260 Q160 170 215 150 Z"/>
+            <path class="jk" d="M335 92 L246 318 M465 92 L554 318"/>
+            <path class="jk" d="M335 92 L296 140 L372 158 L400 122 L428 158 L504 140 L465 92 Q400 108 335 92 Z"/>
+            <path class="jk" d="M400 124 V640"/>
+            <path class="jk-thin" d="M252 612 H548 M103 572 L184 586 M697 572 L616 586"/>
+            <path class="jk-st" d="M258 606 H542 M408 130 V636 M392 130 V636"/>
+            <path class="jk" d="M296 452 L318 548 M504 452 L482 548"/>
+            <g class="call">
+              <circle class="dot" cx="372" cy="150" r="3"/><polyline class="lead" points="372,150 220,96 160,96"/><text x="152" y="101" text-anchor="end">Point collar</text>
+              <circle class="dot" cx="560" cy="240" r="3"/><polyline class="lead" points="560,240 640,190 700,190"/><text x="708" y="195">Raglan</text>
+              <circle class="dot" cx="400" cy="600" r="3"/><polyline class="lead" points="400,600 400,676 460,676"/><text x="468" y="681">Zip</text>
+            </g>
+            <g class="call minor">
+              <circle class="dot" cx="308" cy="500" r="3"/><polyline class="lead" points="308,500 230,500 200,470"/><text x="192" y="466" text-anchor="end">Pocket</text>
+              <circle class="dot" cx="140" cy="580" r="3"/><polyline class="lead" points="140,580 110,650 70,650"/><text x="62" y="655" text-anchor="end">Cuff</text>
+              <circle class="dot" cx="530" cy="626" r="3"/><polyline class="lead" points="530,626 600,676 660,676"/><text x="668" y="681">Hem band</text>
+            </g>
+            <g class="spot" data-p="jm" tabindex="0" role="button" aria-label="Joseph Martin name tab, left chest"><rect class="ring" x="270" y="186" width="114" height="52"/><use href="#p-jm" x="275" y="190" width="104" height="42"/></g>
+            <g class="spot" data-p="george" tabindex="0" role="button" aria-label="Cowboy George, left chest"><rect class="ring" x="288" y="256" width="80" height="80" rx="40"/><use href="#p-george" x="292" y="260" width="72" height="72"/></g>
+            <g class="spot" data-p="flags" tabindex="0" role="button" aria-label="Crossed flags, left chest"><rect class="ring" x="298" y="352" width="62" height="70"/><use href="#p-flags" x="302" y="356" width="54" height="62"/></g>
+            <g class="spot" data-p="wheel" tabindex="0" role="button" aria-label="Winged wheel, right chest"><rect class="ring" x="418" y="178" width="118" height="74" rx="36"/><use href="#p-wheel" x="422" y="182" width="110" height="66"/></g>
+            <g class="spot" data-p="chase" tabindex="0" role="button" aria-label="High speed chase for glory, right chest"><rect class="ring" x="416" y="268" width="122" height="42"/><use href="#p-chase" x="419" y="270" width="116" height="36"/></g>
+            <g class="spot" data-p="go" tabindex="0" role="button" aria-label="Go, right pocket"><rect class="ring" x="438" y="560" width="78" height="46" rx="22"/><use href="#p-go" x="442" y="564" width="70" height="38"/></g>
+            <g class="spot" data-p="fourth" tabindex="0" role="button" aria-label="Fourth time's the charm, left sleeve"><rect class="ring" x="160" y="250" width="60" height="66"/><g transform="rotate(-8 190 283)"><use href="#p-fourth" x="164" y="254" width="52" height="58"/></g></g>
+            <g class="spot" data-p="nash" tabindex="0" role="button" aria-label="Nashville tab, right sleeve"><rect class="ring" x="586" y="262" width="78" height="30"/><g transform="rotate(10 625 277)"><use href="#p-nash" x="590" y="265" width="70" height="22"/></g></g>
+          </g>
+          <g class="side back-side">
+            <path class="jk" d="M335 92 Q400 104 465 92 L585 150 Q640 170 660 260 L705 600 L620 616 L560 330 L548 640 L252 640 L240 330 L180 616 L95 600 L140 260 Q160 170 215 150 Z"/>
+            <path class="jk" d="M335 92 Q400 70 465 92 L470 112 Q400 96 330 112 Z"/>
+            <path class="jk" d="M335 92 L246 318 M465 92 L554 318"/>
+            <path class="jk-thin" d="M252 612 H548 M103 572 L184 586 M697 572 L616 586"/>
+            <path class="jk-st" d="M258 606 H542"/>
+            <g class="call">
+              <circle class="dot" cx="400" cy="100" r="3"/><polyline class="lead" points="400,100 400,74 460,74"/><text x="468" y="79">Collar</text>
+              <circle class="dot" cx="600" cy="200" r="3"/><polyline class="lead" points="600,200 660,170 720,170"/><text x="728" y="175">Raglan</text>
+            </g>
+            <g class="spot" data-p="rocker" tabindex="0" role="button" aria-label="Music City Driving Club rocker, back"><rect class="ring" x="270" y="168" width="260" height="96"/><use href="#p-rocker" x="276" y="172" width="248" height="88"/></g>
+            <g class="spot" data-p="wheelxl" tabindex="0" role="button" aria-label="Winged wheel back piece"><rect class="ring" x="262" y="270" width="276" height="170" rx="20"/><use href="#p-wheel-xl" x="266" y="274" width="268" height="162"/></g>
+            <g class="spot" data-p="george" tabindex="0" role="button" aria-label="Cowboy George, back hem"><rect class="ring" x="364" y="480" width="72" height="72" rx="36"/><use href="#p-george" x="368" y="484" width="64" height="64"/></g>
+          </g>
+        </svg>
+        <p class="note">Technical drawing · Uniform No. 001. Patch sizes are proposed specifications. To photograph next: the jacket flat from above on a concrete floor, then worn.</p>
+      </div>
+      <aside class="ticket" aria-live="polite" aria-label="Selected patch">
+        <div class="label" style="display:flex;justify-content:space-between"><span id="t-no">No. 03</span><span id="t-where">Right chest</span></div>
+        <div class="art"><svg viewBox="0 0 360 220" id="t-svg" aria-hidden="true"><use id="t-use" href="#p-wheel"/></svg></div>
+        <h3 id="t-name">Winged Wheel</h3>
+        <p id="t-note">The club insignia, from the original drawing of November 20, 2024.</p>
+        <dl class="spec">
+          <div><dt class="label">Ground</dt><dd id="t-ground">Cream twill</dd></div>
+          <div><dt class="label">Thread</dt><dd id="t-thread">Red</dd></div>
+          <div><dt class="label">Size</dt><dd id="t-size">4½ × 2¾ in (proposed)</dd></div>
+        </dl>
+      </aside>
+    </div>
+  </section>
+
+  <section class="wrap" id="patches" aria-labelledby="pt" style="padding-bottom:clamp(72px,10vw,160px)">
+    <div class="sh label"><span>02 / The patches</span><span>Ten marks</span></div>
+    <div class="g12" style="margin:32px 0 clamp(32px,4vw,56px);align-items:end">
+      <h2 class="display d-l" id="pt" style="grid-column:1 / 8">Worn like the old ones</h2>
+      <p style="grid-column:8 / 12;margin:0">Every mark comes from an original drawing or from words Joseph Martin already uses. Choose one to see where it sits.</p>
+    </div>
+    <ul class="parts pgrid" id="pgrid"></ul>
+  </section>
+
+  <section class="field f-black sec wrap" aria-labelledby="sk">
+    <div class="sh label" style="border-color:var(--rule-d)"><span>03 / The sketchbook</span><span>November 20, 2024</span></div>
+    <div class="g12 sk">
+      <figure class="slot sheet" data-asset="sheet" style="--sg:#1D1A17;--st:#CFC6B6">
+        <span class="sid label"><span>Original drawing sheet</span><span>File to place</span></span>
+        <p><b>Scan to be supplied</b>The full sheet: the winged wheel lettered MCDC, crossed flags, the club’s name with speed lines, two air-cooled coupés, and Cowboy George.</p>
+      </figure>
+      <div class="aside">
+        <h2 class="display d-m" id="sk">From the sketchbook</h2>
+        <p>Everything on this page comes from one sheet of drawings. Cowboy George, the Joseph Martin mascot, is shown from the original red-ink drawing; the rest of the sheet is still to be scanned.</p>
+        <figure class="plate">
+          <img src="../assets/jm/cowboy-george-640.webp" width="640" height="640" alt="Cowboy George, original red-ink drawing" loading="lazy">
+          <figcaption class="label"><span>Cowboy George</span><span>Red ink</span></figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec wrap" aria-labelledby="ph">
+    <div class="sh label"><span>04 / The photographs</span><span>To be made</span></div>
+    <div class="g12" style="margin-top:32px;align-items:end">
+      <h2 class="display d-l" id="ph" style="grid-column:1 / 8">Shot on film</h2>
+      <p style="grid-column:8 / 12;margin:0">Documentary, natural light, film where possible. These frames are briefs for the shoot; none is a photograph yet.</p>
+    </div>
+    <div class="frames">
+      <figure class="slot w"><span class="sid label"><span>Frame 01</span><span>2.39 : 1 crop</span></span><p><b>To shoot</b>A classic car at first light on a two-lane road outside Nashville. The cream jacket over the driver’s seat. Long lens, low sun.</p></figure>
+      <figure class="slot h"><span class="sid label"><span>Frame 02</span><span>4 : 5</span></span><p><b>To shoot</b>Joseph in the jacket, leaning on a fender. Not posed. Black and white.</p></figure>
+      <figure class="slot h"><span class="sid label"><span>Frame 03</span><span>4 : 5</span></span><p><b>To shoot</b>Hands sewing a patch on: needle, thread, the merrowed edge.</p></figure>
+    </div>
+  </section>
+
+  <section class="field f-whiskey sec wrap" aria-labelledby="cl">
+    <div class="g12 close">
+      <h2 class="display d-l" id="cl">See you out there.</h2>
+      <div class="c">
+        <p>The first drive hasn’t happened. That’s the exciting part.</p>
+        <small>No membership, dates, sponsors or availability are announced. The jacket is a design, not a product for sale.</small>
+        <a class="btn" href="../commission/index.html?about=club#inquiry" style="justify-self:start">Leave your name</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="g12">
+    <p class="mk label" style="font-stretch:125%;letter-spacing:.2em">Joseph Martin</p>
+    <address>1200 Villa Place, Suite 200<br>Nashville, Tennessee 37212</address>
+    <ul>
+      <li><a href="../hats/index.html">Hats</a></li><li><a href="../hatmaker/index.html">The Hatmaker</a></li>
+      <li><a href="index.html">Driving Club</a></li><li><a href="../commission/index.html">Commission</a></li>
+      <li><a href="https://josephbenmartin.com/collections/all">Current shop ↗</a></li><li><a href="https://www.instagram.com/josephbenmartin/">Instagram ↗</a></li>
+    </ul>
+    <p class="nt">Music City Driving Club is being developed as part of the Joseph Martin world. Patch colours and sizes are proposals. Photographs to come.</p>
+  </div>
+  <div class="proto label"><span>Vision 001 · Creative-direction prototype · Not the live site</span><a href="../notes/index.html" style="text-decoration:none;border-bottom:1px solid #55534E">Presentation notes</a></div>
+</footer>
+<script src="../assets/vision/vision.js"></script>
+<script>
+(function(){
+  var P={
+    jm:{no:'01',name:'Joseph Martin',where:'Left chest',note:'The house name, set as a name tab in whiskey twill.',ground:'Whiskey twill',thread:'Ivory',size:'4 × 1⅝ in (proposed)',vb:'0 0 300 120'},
+    george:{no:'02',name:'Cowboy George',where:'Left chest · back hem',note:'Joseph Martin’s mascot, stitched from the original red-ink drawing.',ground:'Navy twill',thread:'Cream',size:'3½ in round (proposed)',vb:'0 0 320 320'},
+    wheel:{no:'03',name:'Winged Wheel',where:'Right chest',note:'The club insignia, from the original drawing of November 20, 2024.',ground:'Cream twill',thread:'Red',size:'4½ × 2¾ in (proposed)',vb:'0 0 360 220'},
+    flags:{no:'04',name:'Crossed Flags',where:'Left chest',note:'From the same sheet: two chequered flags, crossed.',ground:'Black twill',thread:'Cream',size:'2¾ × 3¼ in (proposed)',vb:'0 0 260 300'},
+    chase:{no:'05',name:'High Speed Chase for Glory',where:'Right chest',note:'A line lettered on the second sheet of drawings.',ground:'Mustard twill',thread:'Red',size:'5 × 1½ in (proposed)',vb:'0 0 420 130'},
+    go:{no:'06',name:'Go',where:'Right pocket',note:'The speed-lined GO from the drawings.',ground:'Cream twill',thread:'Red, navy edge',size:'2½ × 1⅜ in (proposed)',vb:'0 0 240 130'},
+    fourth:{no:'07',name:'Fourth Time’s the Charm',where:'Left sleeve',note:'Joseph Martin’s own line, from the poster for his first year as a full-time craftsman.',ground:'Red twill',thread:'Cream, mustard edge',size:'2½ × 2¾ in (proposed)',vb:'0 0 240 260'},
+    rocker:{no:'08',name:'Club Rocker',where:'Back, across the shoulders',note:'The club’s name, arched.',ground:'Jacket cotton',thread:'Red',size:'11 in wide (proposed)',vb:'0 0 420 150'},
+    wheelxl:{no:'09',name:'Winged Wheel, back piece',where:'Back, centre',note:'The insignia at full size, embroidered directly or as a large patch.',ground:'Jacket cotton',thread:'Red',size:'10 in wide (proposed)',vb:'0 0 360 220',sym:'p-wheel-xl'},
+    nash:{no:'10',name:'Nashville',where:'Right sleeve',note:'Where the club is from.',ground:'Navy twill',thread:'Cream, mustard edge',size:'3 × 1 in (proposed)',vb:'0 0 240 70'}
+  };
+  var BACK={rocker:1,wheelxl:1};
+  var grid=document.getElementById('pgrid');
+  grid.innerHTML=Object.keys(P).map(function(k){var p=P[k];
+    return '<li><button type="button" data-p="'+k+'" aria-pressed="false"><span class="label" style="display:flex;justify-content:space-between"><span>'+p.no+'</span><span>'+p.where.split(/ · |, /)[0]+'</span></span><svg viewBox="'+p.vb+'" aria-hidden="true"><use href="#'+(p.sym||'p-'+k)+'"/></svg><span><span class="nm" style="display:block">'+p.name+'</span><span class="wh">'+p.ground+' · '+p.thread+'</span></span></button></li>';
+  }).join('');
+  var flat=document.getElementById('flat');
+  function side(s){
+    flat.dataset.side=s;
+    document.querySelectorAll('.seg button').forEach(function(b){b.setAttribute('aria-pressed',b.dataset.side===s)});
+  }
+  function pick(k,scroll){
+    var p=P[k]; if(!p) return;
+    document.getElementById('t-no').textContent='No. '+p.no;
+    document.getElementById('t-where').textContent=p.where;
+    document.getElementById('t-name').textContent=p.name;
+    document.getElementById('t-note').textContent=p.note;
+    document.getElementById('t-ground').textContent=p.ground;
+    document.getElementById('t-thread').textContent=p.thread;
+    document.getElementById('t-size').textContent=p.size;
+    document.getElementById('t-svg').setAttribute('viewBox',p.vb);
+    document.getElementById('t-use').setAttribute('href','#'+(p.sym||'p-'+k));
+    if(BACK[k]) side('back'); else if(k!=='george') side('front');
+    document.querySelectorAll('[data-p]').forEach(function(el){el.setAttribute('aria-pressed',el.dataset.p===k)});
+    if(scroll) document.getElementById('jacket').scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'});
+  }
+  document.querySelectorAll('.seg button').forEach(function(b){b.addEventListener('click',function(){side(b.dataset.side)})});
+  document.querySelectorAll('.spot').forEach(function(s){
+    s.addEventListener('click',function(){pick(s.dataset.p)});
+    s.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();pick(s.dataset.p)}});
+  });
+  grid.querySelectorAll('button').forEach(function(b){b.addEventListener('click',function(){pick(b.dataset.p,true)})});
+  pick('wheel');
+
+  // Original drawings are switched on in assets/mcdc/manifest.json once each file is placed.
+  function apply(m){
+    document.querySelectorAll('[data-asset-href]').forEach(function(el){if(m[el.dataset.assetHref])el.setAttribute('href',el.dataset.href)});
+    document.querySelectorAll('.fb').forEach(function(g){if(m[g.dataset.fb])g.style.display='none'});
+  }
+  fetch('../assets/mcdc/manifest.json').then(function(r){return r.ok?r.json():{}}).catch(function(){return {}}).then(apply);
+})();
+</script>
+</body>
+</html>

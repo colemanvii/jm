@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Vision 001 — Presentation notes</title>
+<meta name="description" content="Joseph Martin, Vision 001: design decisions, sources, missing assets, and what is prototype versus production.">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#F3EFE7">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 32 32%22%3E%3Crect width=%2232%22 height=%2232%22 fill=%22%238E5A2C%22/%3E%3Ctext x=%2216%22 y=%2221%22 font-family=%22Arial%22 font-size=%2211%22 letter-spacing=%221%22 fill=%22%23F3EFE7%22 text-anchor=%22middle%22%3EJM%3C/text%3E%3C/svg%3E">
+<link rel="preload" href="../assets/fonts/archivo-latin-standard-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../assets/vision/vision.css">
+<style>
+.nh{padding-top:clamp(48px,7vw,112px);align-items:end}
+.nh h1{grid-column:1 / 9;font-size:clamp(72px,10vw,168px)}
+.nh p{grid-column:9 / 13;margin:0}
+.blk{padding-top:clamp(56px,7vw,104px)}
+.blk h2{margin:0 0 24px}
+.cols{columns:2;column-gap:var(--g)}
+.cols li{break-inside:avoid;margin-bottom:14px}
+ol.dec{margin:0;padding:0;list-style:none;counter-reset:d}
+ol.dec li{display:grid;grid-template-columns:64px minmax(0,1fr) minmax(0,1.4fr);gap:var(--g);padding:16px 0;border-bottom:1px solid color-mix(in srgb,currentColor 22%,transparent)}
+ol.dec li:first-child{border-top:1px solid currentColor}
+ol.dec b{font-weight:600}
+.tbl td:first-child{font:600 15px/1.35 var(--f);font-stretch:100%;text-transform:none}
+.tag{display:inline-block;font:500 10px/1 var(--f);font-stretch:112%;letter-spacing:.12em;text-transform:uppercase;padding:4px 6px;border:1px solid currentColor;white-space:nowrap}
+.tag.p{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.warn{border:1px solid var(--ink);padding:18px 20px;max-width:80ch}
+.warn p{margin:0}
+@media (max-width:760px){
+  .nh p{margin-top:20px}
+  .cols{columns:1}
+  ol.dec li{grid-template-columns:32px minmax(0,1fr)}
+  ol.dec li span:last-child{grid-column:2}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="field f-paper wrap">
+  <header class="top">
+    <a class="mark" href="../index.html">Joseph Martin</a>
+    <button class="menu-btn label" type="button" aria-expanded="false" aria-controls="nav">Menu</button>
+    <nav class="nav" id="nav" aria-label="Primary">
+      <a href="../hats/index.html">Hats</a>
+      <a href="../hatmaker/index.html">The Hatmaker</a>
+      <a href="../music-city-driving-club/index.html">Driving Club</a>
+      <a href="../commission/index.html">Commission</a>
+    </nav>
+  </header>
+</div>
+
+<main id="main" class="wrap" style="padding-bottom:clamp(72px,10vw,160px)">
+  <div class="g12 nh">
+    <h1 class="display" id="h1">Vision 001</h1>
+    <p>A navigable creative-direction prototype of the future Joseph Martin website, built from Study B: The Object. Not a production migration and not the live site. 23 November 2026.</p>
+  </div>
+
+  <section class="blk" aria-labelledby="s1">
+    <div class="sh label"><h2 class="label" id="s1" style="margin:0">The five experiences</h2><span>Start anywhere</span></div>
+    <ol class="rows" style="border-top:0">
+      <li><a href="../index.html"><span class="label">01</span><span class="t">Homepage</span><span class="label x">The drawing, the four felts, the house ↗</span></a></li>
+      <li><a href="../hats/index.html"><span class="label">02</span><span class="t">Hats</span><span class="label x">Collection and anatomy ↗</span></a></li>
+      <li><a href="../hats/hat.html?h=oris"><span class="label">02b</span><span class="t">Oris</span><span class="label x">Product page, extending Study B ↗</span></a></li>
+      <li><a href="../hatmaker/index.html"><span class="label">03</span><span class="t">The Hatmaker</span><span class="label x">Joseph’s record and the shop ↗</span></a></li>
+      <li><a href="../music-city-driving-club/index.html"><span class="label">04</span><span class="t">Music City Driving Club</span><span class="label x">Capsule 001 ↗</span></a></li>
+      <li><a href="../commission/index.html"><span class="label">05</span><span class="t">Commission</span><span class="label x">Process and inquiry prototype ↗</span></a></li>
+    </ol>
+  </section>
+
+  <section class="blk" aria-labelledby="s2">
+    <div class="sh label"><h2 class="label" id="s2" style="margin:0">Design decisions</h2><span>Continuity with Study B</span></div>
+    <ol class="dec">
+      <li><span class="label">01</span><b>One typeface, three voices</b><span>Archivo alone, as in Study B: the wide, tracked wordmark; the condensed display face for names and statements; a quiet regular for text. No second family was added, including on the Driving Club page.</span></li>
+      <li><span class="label">02</span><b>The felt is the palette</b><span>Whiskey, natural, granite and pecan come from the hats themselves, with ivory and near-black. Each page opens on one field: whiskey for the house and the product, paper for the collection, black for the maker and the commission.</span></li>
+      <li><span class="label">03</span><b>Study B’s hero, kept intact</b><span>The product page keeps Study B’s drawing, annotations, swatches and oversized name unchanged, and adds what a real product page needs below it: specification, details to photograph, how to order, the other felts.</span></li>
+      <li><span class="label">04</span><b>Technical drawing as the signature</b><span>The annotated drawing describes the hat on the home and product pages, and the jacket on the Driving Club page. It is used where it explains something, not as decoration.</span></li>
+      <li><span class="label">05</span><b>The Driving Club’s personality comes from its drawing</b><span>Its paper and red ink are sampled from the original Cowboy George drawing; colour is otherwise confined to the patches, which are embroidered objects. Same header, grid, type and footer as the rest of the house, so it reads as part of Joseph’s world, not a microsite.</span></li>
+      <li><span class="label">06</span><b>Honest gaps</b><span>Where a photograph or Joseph’s own words belong, the page shows a quiet, labelled frame with the brief. Nothing synthetic or stock stands in.</span></li>
+      <li><span class="label">07</span><b>Four menu items</b><span>Hats, The Hatmaker, Driving Club, Commission. Study B’s “Anatomy” lives inside Hats. On phones the menu opens as a full-width list in the page’s own field.</span></li>
+      <li><span class="label">08</span><b>Motion only where it explains</b><span>The line drawing draws itself once; felts cross-fade; the collection columns open on hover. All motion is off under reduced-motion settings. No scroll effects.</span></li>
+    </ol>
+  </section>
+
+  <section class="blk" aria-labelledby="s3">
+    <div class="sh label"><h2 class="label" id="s3" style="margin:0">Authentic material used</h2><span>Nothing generated or stock</span></div>
+    <table class="tbl">
+      <thead><tr><th>Material</th><th>Source</th><th>Used on</th></tr></thead>
+      <tbody>
+        <tr><td>Cowboy George, red-ink drawing (and white line version)</td><td>Existing drawing for Joseph Martin, in this repository</td><td>Home, Driving Club, the George patch</td></tr>
+        <tr><td>Double Decker Arts Festival poster, April 26–27, 2024</td><td>Existing Tangerine work for Joseph Martin</td><td>The Hatmaker</td></tr>
+        <tr><td>“Martin Survives!” and “Don’t Call It Luck!” posters</td><td>Existing Tangerine work for Joseph Martin</td><td>The Hatmaker; the “Fourth Time’s the Charm” patch</td></tr>
+        <tr><td>Study B drawing, anatomy plates and swatch control</td><td>Approved Study B, 23 Nov 2026</td><td>Home, Hats, product page</td></tr>
+        <tr><td>Jacket technical flat and patch set</td><td>Music City Driving Club iteration 002 (redrawn in house type; the proposed Freeman patch removed)</td><td>Driving Club</td></tr>
+        <tr><td>Product names, prices, materials, sizes, turnarounds</td><td>Public josephbenmartin.com listings, via search-index snapshots, Nov 2026</td><td>Hats, product page, Commission</td></tr>
+        <tr><td>Address, waitlist, “made by hand, start to finish”, 6–8 weeks</td><td>josephbenmartin.com home and contact pages (indexed)</td><td>Throughout</td></tr>
+        <tr><td>Archivo typeface</td><td>SIL Open Font License, self-hosted</td><td>Throughout</td></tr>
+      </tbody>
+    </table>
+    <div class="warn" style="margin-top:24px"><p><b>Audit limit.</b> josephbenmartin.com, its Shopify image CDN and Instagram are blocked from the environment this was built in. The site’s own photographs could not be seen or used, and every product fact comes from search-engine snapshots of the live pages. Anything marked * conflicts between listings or is not stated.</p></div>
+  </section>
+
+  <section class="blk" aria-labelledby="s4">
+    <div class="sh label"><h2 class="label" id="s4" style="margin:0">Still required</h2><span>Before this can be real</span></div>
+    <ul class="cols" style="padding-left:18px;margin:0">
+      <li><b>Product photographs</b>: each hat in profile on a matched ground (O1), so the annotations can sit on the real hat; three-quarter, crown-down and detail macros (O2–O4).</li>
+      <li><b>Portrait of Joseph</b> at the bench (M1), plus a close portrait (M2).</li>
+      <li><b>Shop photographs</b>: steam, crown, brim, stitching, the last decision (H1–H5).</li>
+      <li><b>Calibrated felt swatches</b> with a grey card (T1), to correct the on-screen colours.</li>
+      <li><b>Joseph’s biography in his words</b> (150–250 words), one line per hat, care notes, a commission FAQ.</li>
+      <li><b>The current logo and label files</b>, and who made them.</li>
+      <li><b>Music City Driving Club drawings</b>: scans of the November 20, 2024 sheet; the winged wheel, crossed flags and GO as separate line art. The page switches them on from <code>assets/mcdc/manifest.json</code>.</li>
+      <li><b>Jacket photographs</b>: the flat from above, then worn; and any sample, if one is made.</li>
+      <li><b>Confirmations</b>: AHAB’s price and category, ORIS’s availability, WOODROW, CECH and RALPH details, one turnaround per kind of hat, how commissions join the waitlist, the handover step.</li>
+      <li><b>Permission</b> to publish the Jackson and Oxford history, and the address on a new site.</li>
+    </ul>
+  </section>
+
+  <section class="blk" aria-labelledby="s5">
+    <div class="sh label"><h2 class="label" id="s5" style="margin:0">Prototype or production</h2><span>What works today, and what it would take</span></div>
+    <table class="tbl">
+      <thead><tr><th>Feature</th><th>In this prototype</th><th>For production</th></tr></thead>
+      <tbody>
+        <tr><td>Navigation, pages, phone menu</td><td><span class="tag">Working</span> Static HTML, no build step</td><td>Rebuilt as a Shopify theme or a Storefront-API front end</td></tr>
+        <tr><td>Felt switcher on the product page</td><td><span class="tag">Working</span> Changes hat, colour and URL</td><td>Driven by Shopify products and variants</td></tr>
+        <tr><td>Order</td><td><span class="tag p">Prototype</span> Opens the hat’s listing on the current Shopify shop</td><td>Native cart and Shopify checkout; inventory and sizes from Shopify</td></tr>
+        <tr><td>Prices, sizes, availability</td><td><span class="tag p">Prototype</span> Hard-coded snapshot, some to confirm</td><td>Live from Shopify; confirmed copy from Joseph</td></tr>
+        <tr><td>Commission inquiry</td><td><span class="tag p">Prototype</span> Full journey with validation and review; sends and stores nothing</td><td>Form service or Shopify customer/draft order, email to Joseph, waitlist confirmation, spam protection, privacy notice</td></tr>
+        <tr><td>Driving Club “Leave your name”</td><td><span class="tag p">Prototype</span> Uses the same inquiry; nothing stored</td><td>A real list only once Joseph decides to announce anything</td></tr>
+        <tr><td>Jacket and patch explorer</td><td><span class="tag">Working</span> Front/back, patch selection</td><td>Unchanged, with photographs and final patch specifications</td></tr>
+        <tr><td>Search engines</td><td><span class="tag p">Prototype</span> Every page is <code>noindex</code></td><td>Remove noindex; structured data; redirects for renamed product handles</td></tr>
+      </tbody>
+    </table>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="g12">
+    <p class="mk label" style="font-stretch:125%;letter-spacing:.2em">Joseph Martin</p>
+    <address>1200 Villa Place, Suite 200<br>Nashville, Tennessee 37212</address>
+    <ul>
+      <li><a href="../hats/index.html">Hats</a></li><li><a href="../hatmaker/index.html">The Hatmaker</a></li>
+      <li><a href="../music-city-driving-club/index.html">Driving Club</a></li><li><a href="../commission/index.html">Commission</a></li>
+    </ul>
+    <p class="nt">Creative direction: Tangerine. Built on the approved Study B. Earlier studies are preserved on their own branch.</p>
+  </div>
+  <div class="proto label"><span>Vision 001 · Creative-direction prototype · Not the live site</span><a href="../index.html" style="text-decoration:none;border-bottom:1px solid #55534E">Back to the site</a></div>
+</footer>
+<script src="../assets/vision/vision.js"></script>
+</body>
+</html>

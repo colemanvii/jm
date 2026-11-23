@@ -1,0 +1,232 @@
+/* Joseph Martin — Vision 001
+   One design system, extended from Study B: The Object.
+   Archivo only (one variable file, widths 62–125%). Felt colours are the palette. */
+
+@font-face{font-family:"Archivo";src:url(../fonts/archivo-latin-standard-normal.woff2) format("woff2");font-weight:100 900;font-stretch:62% 125%;font-display:swap}
+
+:root{
+  /* felt colours: approximations, to be matched from calibrated photographs (shot T1) */
+  --natural:#D9CDB6; --granite:#66665F; --whiskey:#8E5A2C; --pecan:#5A3D2B;
+  --paper:#F3EFE7; --ink:#1A1917; --black:#111110; --rule-d:#3B3A37; --mute:#5C5850; --line:#CFC8BA;
+  /* Music City Driving Club: taken from the original drawing (paper and red ink) */
+  --cream:#EFDECB; --red:#970F0B;
+  --field:var(--whiskey); --on:var(--paper);
+  --m:clamp(16px,3vw,48px);
+  --g:24px;
+  --f:"Archivo",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --ease:cubic-bezier(.3,.7,.2,1);
+}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 16px/1.55 var(--f);font-variant-numeric:tabular-nums;-webkit-font-smoothing:antialiased}
+img,svg{max-width:100%}
+a{color:inherit}
+button{font:inherit;color:inherit}
+:focus-visible{outline:2px solid currentColor;outline-offset:3px}
+.skip{position:absolute;left:-9999px;top:0;background:var(--ink);color:var(--paper);padding:10px 14px;z-index:100}
+.skip:focus{left:var(--m)}
+.vh{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+/* ——— type ——— */
+.label{font:500 11px/1.35 var(--f);font-stretch:112%;letter-spacing:.12em;text-transform:uppercase}
+.display{font-weight:700;font-stretch:62%;text-transform:uppercase;letter-spacing:-.005em;line-height:.8;margin:0}
+.d-xl{font-size:clamp(72px,12.5vw,230px)}
+.d-l{font-size:clamp(64px,10vw,168px)}
+.d-m{font-size:clamp(48px,6.4vw,112px)}
+.lede{font:400 clamp(28px,3.6vw,60px)/1.06 var(--f);letter-spacing:-.02em;margin:0}
+.lede-s{font:400 clamp(22px,2.2vw,32px)/1.2 var(--f);letter-spacing:-.01em;margin:0}
+.muted{color:var(--mute)}
+.ast{font-size:.8em;vertical-align:.25em;opacity:.8}
+
+/* ——— grid ——— */
+.wrap{padding-inline:var(--m)}
+.g12{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:var(--g)}
+.sec{padding-block:clamp(72px,10vw,160px)}
+.rule{border-top:1px solid currentColor}
+.rule-s{border-top:1px solid color-mix(in srgb,currentColor 28%,transparent)}
+.sh{display:flex;justify-content:space-between;gap:16px;padding-block:16px;border-top:1px solid currentColor}
+
+/* ——— fields ——— */
+.field{background:var(--field);color:var(--on);transition:background-color .7s var(--ease),color .7s var(--ease)}
+.f-paper{--field:var(--paper);--on:var(--ink)}
+.f-black{--field:var(--black);--on:var(--paper)}
+.f-cream{--field:var(--cream);--on:var(--ink)}
+.f-whiskey{--field:var(--whiskey);--on:var(--paper)}
+.f-pecan{--field:var(--pecan);--on:var(--paper)}
+
+/* ——— header ——— */
+.top{display:flex;justify-content:space-between;align-items:center;gap:24px;padding:18px 0;border-bottom:1px solid color-mix(in srgb,currentColor 30%,transparent);position:relative}
+.mark{font:500 15px/1 var(--f);font-stretch:125%;letter-spacing:.2em;text-transform:uppercase;text-decoration:none;padding:10px 0;white-space:nowrap}
+.nav{display:flex;gap:clamp(16px,2.6vw,40px)}
+.nav a{font:500 11px/1 var(--f);font-stretch:112%;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;padding:12px 0;white-space:nowrap}
+.nav a:hover,.nav a[aria-current=page]{text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:6px}
+.menu-btn{display:none;background:none;border:0;padding:12px 0;cursor:pointer}
+
+/* ——— buttons ——— */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:48px;padding:0 22px;background:var(--on);color:var(--field);border:1px solid var(--on);text-decoration:none;font:600 11px/1 var(--f);font-stretch:112%;letter-spacing:.12em;text-transform:uppercase;cursor:pointer;transition:background-color .7s var(--ease),color .7s var(--ease)}
+.btn:hover{outline:1px solid var(--on);outline-offset:3px}
+.btn.ghost{background:transparent;color:var(--on)}
+.link{font:500 11px/1 var(--f);font-stretch:112%;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;padding:12px 0;display:inline-block;border-bottom:1px solid currentColor;padding-bottom:6px}
+.link:hover{border-bottom-width:2px}
+
+/* ——— the drawing (from Study B) ——— */
+.hero{min-height:100svh;display:grid;grid-template-columns:minmax(0,1fr);grid-template-rows:auto 1fr auto;padding:0 var(--m)}
+.stage{position:relative;display:grid;place-items:center;padding:3svh 0;margin:0;overflow-x:clip}
+.drawing{width:min(100%,1040px,calc((100svh - 230px) * 1.9));height:auto;overflow:visible}
+.drawing .ln{fill:none;stroke:currentColor;stroke-width:1.25;vector-effect:non-scaling-stroke;stroke-linecap:round;stroke-linejoin:round}
+.drawing .thin{stroke-width:.75;opacity:.55;stroke-dasharray:3 4}
+.drawing .lead{fill:none;stroke:currentColor;stroke-width:.75;vector-effect:non-scaling-stroke;opacity:.8}
+.drawing text{fill:currentColor;font:500 11px var(--f);font-stretch:112%;letter-spacing:.12em;text-transform:uppercase}
+.drawing .dot{fill:currentColor}
+.stage figcaption{position:absolute;left:0;bottom:2svh;max-width:30ch}
+.base{display:grid;grid-template-columns:1fr auto;align-items:end;gap:24px;padding:18px 0 22px;border-top:1px solid color-mix(in srgb,currentColor 30%,transparent)}
+.ident{display:flex;align-items:baseline;gap:clamp(16px,2vw,32px);flex-wrap:wrap}
+.ident h1{font-size:clamp(64px,10vw,168px);line-height:.78}
+.ident .meta{display:grid;gap:4px;padding-bottom:6px}
+.ident .meta p{margin:0}
+.price{font:500 clamp(18px,1.6vw,24px)/1 var(--f)}
+.acts{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+
+/* ——— felt swatches (from Study B) ——— */
+.felts{display:flex;gap:10px;align-items:center}
+.felts fieldset{border:0;margin:0;padding:0;display:flex;gap:10px;min-width:0}
+.felts legend{position:absolute;left:-9999px}
+.felt{position:relative}
+.felt input{position:absolute;opacity:0;inset:0;margin:0;cursor:pointer;width:100%;height:100%}
+.felt span{display:grid;place-items:end start;width:68px;height:68px;padding:6px;background:var(--c);color:var(--t,var(--paper));border:1px solid color-mix(in srgb,var(--on) 45%,transparent);font:500 9px/1 var(--f);font-stretch:112%;letter-spacing:.12em;text-transform:uppercase;transition:transform .3s}
+.felt input:checked + span{outline:2px solid var(--on);outline-offset:3px}
+.felt input:focus-visible + span{outline:2px dashed var(--on);outline-offset:5px}
+.felt input:hover + span{transform:translateY(-3px)}
+.swap{transition:opacity .35s}
+.swapping .swap{opacity:0}
+
+/* ——— four felts, four hats (from Study B) ——— */
+.four{display:flex;height:min(86svh,820px);border-top:1px solid var(--ink)}
+.col{flex:1;display:flex;flex-direction:column;justify-content:space-between;padding:20px clamp(14px,1.6vw,24px) 24px;background:var(--c);color:var(--t,var(--paper));text-decoration:none;transition:flex-grow .8s var(--ease);min-width:0;overflow:hidden}
+.col:hover,.col:focus-visible{flex-grow:2.2}
+.col:focus-visible{outline-offset:-6px}
+.col .num{display:flex;justify-content:space-between}
+.col h3{margin:0;font:700 clamp(56px,7.4vw,128px)/.8 var(--f);font-stretch:62%;text-transform:uppercase;writing-mode:vertical-rl;transform:rotate(180deg);align-self:flex-start}
+.col .det{display:grid;gap:10px;max-width:34ch;min-width:22ch}
+.col .det p{margin:0;font-size:14px;line-height:1.45}
+.col .pr{font:500 18px/1 var(--f);padding-top:10px;border-top:1px solid color-mix(in srgb,currentColor 40%,transparent);display:flex;justify-content:space-between;gap:12px}
+.col .ph{font-size:11px;opacity:.85}
+
+/* ——— ruled parts grid (Study B anatomy) ——— */
+.parts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-top:1px solid currentColor;border-left:1px solid currentColor;margin:0;padding:0;list-style:none}
+.parts > li{border-right:1px solid currentColor;border-bottom:1px solid currentColor;padding:20px 22px 26px;display:grid;grid-template-rows:auto 1fr auto;gap:18px;min-height:300px}
+.parts .h{display:flex;justify-content:space-between;align-items:baseline;gap:12px}
+.parts h3{margin:0;font:600 22px/1.1 var(--f)}
+.parts svg.part{width:100%;height:96px}
+.parts svg.part *{fill:none;stroke:currentColor;stroke-width:1.25;vector-effect:non-scaling-stroke;stroke-linecap:round;stroke-linejoin:round}
+.parts p{margin:0;font-size:14px}
+.parts .in{font-size:13px;border-top:1px solid var(--line);padding-top:10px;color:var(--mute)}
+.parts .in b{font-weight:600;color:var(--ink)}
+
+/* ——— definition rows ——— */
+.spec{margin:0;display:grid;grid-template-columns:minmax(0,1fr)}
+.spec > div{display:grid;grid-template-columns:minmax(120px,1fr) 2fr;gap:16px;padding:14px 0;border-bottom:1px solid color-mix(in srgb,currentColor 22%,transparent)}
+.spec > div:first-child{border-top:1px solid currentColor}
+.spec dt{padding-top:3px}
+.spec dd{margin:0}
+.facts{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:var(--g);margin:0}
+.facts dt{opacity:.7;margin-bottom:8px}
+.facts dd{margin:0;font:500 clamp(18px,1.6vw,24px)/1.25 var(--f)}
+
+/* ——— image slots: honest placeholders for photography still to be made ——— */
+.slot{position:relative;margin:0;background:var(--sg,#2A2622);color:var(--st,#CFC6B6);aspect-ratio:var(--ar,4/5);display:flex;flex-direction:column;justify-content:space-between;padding:16px;overflow:hidden}
+.slot::before{content:"";position:absolute;inset:10px;border:1px solid color-mix(in srgb,currentColor 22%,transparent);pointer-events:none}
+.slot .sid{display:flex;justify-content:space-between;gap:12px;position:relative}
+.slot p{position:relative;margin:0;font-size:13px;line-height:1.45;max-width:36ch}
+.slot p b{display:block;font:500 11px/1.35 var(--f);font-stretch:112%;letter-spacing:.12em;text-transform:uppercase;margin-bottom:8px}
+figure.plate{margin:0}
+figure.plate img{display:block;width:100%;height:auto}
+figure.plate figcaption{display:flex;justify-content:space-between;gap:16px;padding-top:10px;border-top:1px solid currentColor;margin-top:12px}
+
+/* ——— index rows ——— */
+.rows{list-style:none;margin:0;padding:0;border-top:1px solid currentColor}
+.rows a,.rows .r{display:grid;grid-template-columns:64px minmax(0,1fr) auto;gap:var(--g);align-items:baseline;padding:22px 0;border-bottom:1px solid color-mix(in srgb,currentColor 28%,transparent);text-decoration:none}
+.rows a:hover .t{text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:8px}
+.rows .t{font:700 clamp(36px,4.4vw,72px)/.9 var(--f);font-stretch:62%;text-transform:uppercase}
+
+/* ——— table ——— */
+.tbl{width:100%;border-collapse:collapse;font-size:15px}
+.tbl th{text-align:left;font:500 11px/1.35 var(--f);font-stretch:112%;letter-spacing:.12em;text-transform:uppercase;padding:0 12px 12px 0;border-bottom:1px solid currentColor;opacity:.8}
+.tbl td{padding:16px 12px 16px 0;border-bottom:1px solid color-mix(in srgb,currentColor 22%,transparent);vertical-align:baseline}
+.tbl td:first-child{font:700 30px/1 var(--f);font-stretch:62%;text-transform:uppercase}
+.tbl a{text-decoration:none;border-bottom:1px solid currentColor}
+
+/* ——— footer ——— */
+.foot{background:var(--black);color:#BDB8AE;padding:clamp(56px,7vw,96px) var(--m) 36px;font-size:13px}
+.foot .g12 > *{border-top:1px solid var(--rule-d);padding-top:18px;margin:0}
+.foot .mk{grid-column:1 / 4;color:var(--paper)}
+.foot address{grid-column:4 / 7;font-style:normal}
+.foot ul{grid-column:7 / 10;list-style:none;padding-left:0;display:grid;grid-template-columns:1fr 1fr;align-content:start;column-gap:16px}
+.foot ul a{text-decoration:none;border-bottom:1px solid #55534E;display:inline-block;padding:7px 0}
+.foot .nt{grid-column:10 / 13;font-size:12px;line-height:1.5}
+.foot .nt a{border-bottom:1px solid #55534E;text-decoration:none}
+.foot .proto{margin-top:40px;display:flex;justify-content:space-between;gap:16px;color:#8A857C}
+
+/* ——— motion ——— */
+.motion .drawing .ln{stroke-dasharray:var(--len,2400);stroke-dashoffset:var(--len,2400);animation:draw 2.2s cubic-bezier(.45,.1,.2,1) .2s forwards}
+.motion .drawing .call{opacity:0;animation:fade .8s ease 1.9s forwards}
+@keyframes draw{to{stroke-dashoffset:0}}
+@keyframes fade{to{opacity:1}}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
+
+/* ——— tablet ——— */
+@media (max-width:1024px){
+  .four{height:auto;flex-wrap:wrap}
+  .col{flex:1 1 50%;min-height:440px}
+  .col:hover,.col:focus-visible{flex-grow:1}
+  .parts{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .facts{grid-template-columns:repeat(2,minmax(0,1fr));row-gap:28px}
+  .foot .mk{grid-column:1 / 7}.foot address{grid-column:7 / 13}
+  .foot ul{grid-column:1 / 7}.foot .nt{grid-column:7 / 13}
+}
+/* ——— phone ——— */
+@media (max-width:760px){
+  .menu-btn{display:block}
+  .nav{display:none;position:absolute;top:100%;left:calc(var(--m) * -1);right:calc(var(--m) * -1);z-index:20;background:var(--field);color:var(--on);flex-direction:column;gap:0;padding:8px var(--m) 24px;border-bottom:1px solid color-mix(in srgb,currentColor 30%,transparent)}
+  .nav.open{display:flex}
+  .nav a{font:700 44px/1 var(--f);font-stretch:62%;letter-spacing:0;padding:12px 0;border-bottom:1px solid color-mix(in srgb,currentColor 22%,transparent)}
+  .no-js .nav{display:flex;position:static;flex-direction:row;flex-wrap:wrap;gap:4px 16px;padding:0;border:0;background:none}
+  .no-js .nav a{font:500 11px/1 var(--f);border:0}
+  .no-js .menu-btn{display:none}
+  .hero{min-height:auto}
+  .stage{padding:20px 0 8px;place-items:stretch}
+  .drawing{width:100%}
+  .drawing text{font-size:27px;letter-spacing:.08em}
+  .drawing .call.minor{display:none}
+  .stage figcaption{position:static;margin-top:10px;font-size:10px;letter-spacing:.08em;max-width:none}
+  .base{grid-template-columns:minmax(0,1fr);gap:18px}
+  .ident h1{font-size:23vw}
+  .ident{gap:12px 18px}
+  .felts{flex-direction:column;align-items:stretch}
+  .felts fieldset{gap:8px;width:100%}
+  .felt{flex:1}
+  .felt span{width:100%;height:56px}
+  .base .btn,.acts .btn{width:100%}
+  .g12{display:block}
+  .g12 > h2 + p{margin-top:20px!important}
+  .four{flex-direction:column}
+  .col{min-height:0;flex:none;display:grid;grid-template-columns:auto 1fr;gap:16px;padding:18px var(--m) 22px}
+  .col .num{grid-column:1 / 3}
+  .col h3{writing-mode:horizontal-tb;transform:none;font-size:72px;grid-column:1 / 3}
+  .col .det{grid-column:1 / 3;min-width:0}
+  .parts{grid-template-columns:minmax(0,1fr)}
+  .parts > li{min-height:0}
+  .facts{grid-template-columns:1fr 1fr}
+  .spec > div{grid-template-columns:minmax(0,1fr);gap:4px}
+  .rows a,.rows .r{grid-template-columns:40px minmax(0,1fr);}
+  .rows .x{grid-column:2}
+  .tbl thead{display:none}
+  .tbl tr{display:grid;grid-template-columns:1fr 1fr;padding:14px 0;border-bottom:1px solid color-mix(in srgb,currentColor 22%,transparent)}
+  .tbl td{border:0;padding:4px 8px 4px 0}
+  .tbl td:first-child{grid-column:1 / 3;padding-bottom:8px}
+  .foot .g12 > *{margin-top:20px}
+  .foot ul{display:grid}
+  .foot .proto{flex-direction:column}
+}
+/* a black section followed by the black footer: keep a rule between them */
+.f-black + .foot, main:has(> .f-black:last-child) + .foot{border-top:1px solid var(--rule-d)}
