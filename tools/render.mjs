@@ -22,7 +22,7 @@ const server = createServer(async (req, res) => {
 const base = `http://localhost:${server.address().port}`;
 
 // Study 001 is excluded by default: it loads remote Unsplash images (pass '001' to include it).
-const all = ['index', 'a-portrait', 'b-object', 'c-archive', 'd-world', 'wordmark'];
+const all = ['index', 'a-portrait', 'b-object', 'c-archive', 'd-world', 'e-house', 'mcdc', 'wordmark'];
 const studies = process.argv.slice(2).length ? process.argv.slice(2) : all;
 const sizes = [
   { name: 'desktop', opts: { viewport: { width: 1440, height: 900 }, deviceScaleFactor: 1 } },
@@ -33,7 +33,7 @@ await mkdir(join(root, 'screenshots'), { recursive: true });
 const browser = await chromium.launch();
 let problems = 0;
 for (const s of studies) {
-  const url = s === 'index' ? `${base}/` : `${base}/studies/${s}/`;
+  const url = s === 'index' ? `${base}/` : s === 'mcdc' ? `${base}/music-city-driving-club/` : `${base}/studies/${s}/`;
   for (const size of sizes) {
     const ctx = await browser.newContext({ ...size.opts, reducedMotion: 'reduce' });
     const page = await ctx.newPage();

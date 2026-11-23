@@ -49,6 +49,20 @@ for (const [label, opts] of [['desktop', { viewport: { width: 1440, height: 900 
     await p.click('#next'); await p.waitForTimeout(400);
     ok((await p.$eval('#reel', r => r.scrollLeft)) > before, `D ${label}: reel advances`);
   }
+  // MCDC: patch on the jacket updates the ticket; table patch on the back flips the jacket
+  await p.goto('file://' + join(root, 'music-city-driving-club', 'index.html'));
+  await p.click('.flat .front-side .spot[data-p="george"]');
+  ok((await p.textContent('#t-name')) === 'Cowboy George', `MCDC ${label}: jacket patch selects`);
+  await p.click('.table button[data-p="rocker"]'); await p.waitForTimeout(100);
+  ok((await p.getAttribute('#flat', 'data-side')) === 'back', `MCDC ${label}: back patch flips jacket`);
+  await p.screenshot({ path: shot(`mcdc-${label}-back`) });
+  await p.click('.toggle button[data-side="front"]');
+  ok((await p.getAttribute('#flat', 'data-side')) === 'front', `MCDC ${label}: front toggle`);
+  await p.click('.table button[data-p="freeman"]');
+  ok(!(await p.isHidden('#t-flag')), `MCDC ${label}: Freeman marked proposed`);
+  // E: the house links into the club
+  await p.goto(url('e-house'));
+  ok((await p.getAttribute('#club .btn', 'href')).includes('music-city-driving-club'), `E ${label}: club entry links to MCDC`);
   await ctx.close();
 }
 await b.close();
