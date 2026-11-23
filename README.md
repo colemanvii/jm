@@ -7,6 +7,8 @@ Creative direction: Tangerine. **This is not the live site.** Nothing here chang
 
 Phases 1–3 (discovery, three concept studies, comparative critique) are done, plus Studies D and E. **Study F is the current synthesis**: a side-by-side review of A–E, five pages in one language, a direct comparison with E, and a critique. See [docs/STUDY-F.md](docs/STUDY-F.md). It is a recommendation, not an approved direction.
 
+**Identity sprint (current):** three wordmark directions (Thread, Charm, George), each shown on the website, inside a hat, on a woven label and on a printed card, at `/studies/identity/`. Study F.1 (`/studies/f1-charm/`) recomposes F's opening around the recommended Charm mark, corrects the product data, replaces the generic hat drawing with documented-detail plates, and edits the archive to seven pieces. Study F is unchanged. See [docs/IDENTITY.md](docs/IDENTITY.md) and [docs/AUDIT.md](docs/AUDIT.md).
+
 | Study | Path | Idea |
 |---|---|---|
 | A — The Portrait | `studies/a-portrait/` | The maker first: frontispiece portrait facing a title page; chapters |
@@ -15,6 +17,8 @@ Phases 1–3 (discovery, three concept studies, comparative critique) are done, 
 | D — The World | `studies/d-world/` | Joseph first, then his world: hats, drawings, people, Music City Driving Club. Seen through the lens of DropOut Companies (see [docs/STUDY-D.md](docs/STUDY-D.md)) |
 | E — The House | `studies/e-house/` | Joseph as the central personality; real posters and drawings; the Music City Driving Club as an extension |
 | **F — The Working House** | `studies/f-working-house/` | The synthesis: Joseph first, the hats in their felts (B), the maker (A), the world around the work kept smaller (E), an edited archive (C). Five pages: home, hats, one hat, maker, archive |
+| **Identity** | `studies/identity/` | Three wordmarks side by side with applications; `site.html?d=thread\|charm\|george` for each on the website |
+| **F.1 — Charm** | `studies/f1-charm/` | F recomposed around the Charm mark: opening, hats (corrected), one hat (drawings v2), edited archive |
 | Wordmark | `studies/wordmark/` | Six typographic directions on screen, label, lining and card |
 | Study 001 | `studies/001/` | The original first study, unchanged |
 
@@ -38,6 +42,9 @@ node tools/interact.mjs        # exercises the contents menu (A), felt switcher 
 node tools/render.mjs f        # Study F's five pages only
 node tools/interact-f.mjs      # Study F: felt switcher, every hat page, archive filters and dialog, phone menu
 node tools/compare.mjs         # Study E and Study F homepages under identical conditions → screenshots/compare/
+python3 -I tools/identity/marks.py   # regenerate the wordmark SVGs from the repo's OFL fonts (pip install fonttools brotli)
+node tools/identity/render.mjs       # identity board, the three site openings, Study F.1 → screenshots/identity/
+node tools/identity/interact.mjs     # 21 checks across the identity studies and F.1
 ```
 
 Screenshots are written to `screenshots/`. Lighthouse results are recorded in `docs/CRITIQUE.md`.
@@ -54,6 +61,8 @@ docs/
   CRITIQUE.md           comparative critique, recommendation, measured results
   STUDY-D.md            Study D research (DropOut Companies), principles, rationale, critique
   STUDY-F.md            review of A–E from the renders, the Study F synthesis, E vs F, critique, next steps
+  IDENTITY.md           three wordmark directions, recommendation, F.1 opening, drawings v2, archive edit
+  AUDIT.md              pricing, categories, navigation, customer paths and photography vs the public site
   DECISIONS.md          design decision log and typography notes
   PHOTOGRAPHY.md        photography standards and full shot list
   CONTENT.md            facts to confirm, interview questions, copy needed

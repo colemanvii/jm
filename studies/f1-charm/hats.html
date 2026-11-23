@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Joseph Martin — Hats (Study F.1)</title>
+<meta name="description" content="The hats of Joseph Martin, grouped the way the current shop sells them, with every uncertain fact marked.">
+<meta name="robots" content="noindex">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 32 32%22%3E%3Crect width=%2232%22 height=%2232%22 fill=%22%23161513%22/%3E%3Cpath d=%22M16 7 C 22 11, 22 19, 16 25 C 10 19, 10 11, 16 7 Z%22 fill=%22%23C9A465%22/%3E%3C/svg%3E">
+<link rel="stylesheet" href="../f-working-house/f.css">
+<link rel="stylesheet" href="f1.css">
+<style>
+.intro{padding-block:clamp(40px,5vw,80px) clamp(28px,3vw,48px);align-items:end}
+.intro h1{grid-column:1 / 7;margin:0;font:400 clamp(96px,12vw,210px)/.8 "Libre Caslon Display",serif;letter-spacing:.06em;text-transform:uppercase}
+.intro .side{grid-column:8 / 13;display:grid;gap:16px}
+.intro .side p{margin:0;font:400 clamp(21px,1.7vw,26px)/1.22 var(--serif)}
+.jump{list-style:none;margin:0;padding:0;border-top:1px solid var(--ink)}
+.jump a{display:grid;grid-template-columns:1fr auto;gap:12px;padding:11px 0;border-bottom:1px solid var(--rule);text-decoration:none;font:400 12px/1.3 var(--mono);letter-spacing:.06em;text-transform:uppercase}
+.jump a span:last-child{color:var(--pencil)}
+.sec{padding-block:clamp(36px,4vw,64px)}
+.rack{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:var(--g)}
+.rack.two{grid-template-columns:repeat(2,minmax(0,1fr))}
+.rack a{display:grid;gap:12px;text-decoration:none}
+.tile{aspect-ratio:4/5;display:grid;grid-template-rows:auto 1fr auto auto;padding:14px;gap:8px}
+.tile .tr{display:flex;justify-content:space-between;align-items:center}
+.tile .cm{width:22px;line-height:0;--gold:currentColor}
+.tile .cm svg{width:100%;height:auto}
+.tile [data-band]{align-self:center}
+.rack .two .tile{aspect-ratio:16/10}
+.rack h2,.rack h3{margin:0;font:400 clamp(28px,2.4vw,40px)/1 "Libre Caslon Display",serif;letter-spacing:.07em;text-transform:uppercase;display:flex;justify-content:space-between;align-items:baseline;gap:10px}
+.rack .price{font:400 13px/1 var(--mono);letter-spacing:.04em;text-transform:none}
+.rack p.d{margin:0;font-size:14.5px;color:var(--pencil)}
+.rack .tag{font:400 11px/1.4 var(--mono);letter-spacing:.06em;text-transform:uppercase}
+.rack .tag.gap{color:var(--red)}
+.text-rows{list-style:none;margin:20px 0 0;padding:0;border-top:1px solid var(--ink)}
+.text-rows a{display:grid;grid-template-columns:12rem 1fr auto;gap:16px;align-items:baseline;padding:14px 0;border-bottom:1px solid var(--rule);text-decoration:none}
+.text-rows b{font:400 24px/1 "Libre Caslon Display",serif;letter-spacing:.07em;text-transform:uppercase}
+.text-rows span{font-size:15px;color:var(--pencil)}
+.text-rows em{font:400 12px/1 var(--mono);font-style:normal;letter-spacing:.04em}
+.custom{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:var(--g);background:var(--ink);color:var(--paper);text-decoration:none;padding:clamp(22px,2.6vw,40px) 0}
+.custom .k{grid-column:1 / 3;padding-left:clamp(22px,2.6vw,40px)}
+.custom .t{grid-column:3 / 9;margin:0;font:400 clamp(44px,5vw,88px)/.92 var(--serif);letter-spacing:-.02em}
+.custom dl{grid-column:9 / 13;margin:0;padding-right:clamp(22px,2.6vw,40px);align-self:end;font:400 12px/1.4 var(--mono);letter-spacing:.06em;text-transform:uppercase}
+.custom dl div{display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid rgba(242,241,236,.25)}
+.custom dd{margin:0}
+.caps{background:#F1EBDF;padding-block:clamp(48px,6vw,96px);border-top:1px solid #D9CFBE}
+.caps .grid{align-items:start}
+.caps .geo{grid-column:1 / 4;aspect-ratio:958/1000;background:var(--red);-webkit-mask:url(../../assets/mcdc/cowboy-george-line.png) center/contain no-repeat;mask:url(../../assets/mcdc/cowboy-george-line.png) center/contain no-repeat}
+.caps .text-rows{grid-column:5 / 13;margin:0}
+.caps .text-rows a{border-color:#D9CFBE;grid-template-columns:1fr auto}
+.caps .text-rows b{font:400 22px/1.2 var(--serif);letter-spacing:0;text-transform:none}
+@media (max-width:1024px){
+  .intro h1,.intro .side{grid-column:1 / 13}.intro .side{margin-top:24px}
+  .rack{grid-template-columns:repeat(2,minmax(0,1fr));row-gap:36px}
+  .custom .k,.custom .t,.custom dl{grid-column:1 / 13;padding-left:clamp(22px,2.6vw,40px)}.custom dl{margin-top:20px}
+  .caps .geo{grid-column:1 / 6}.caps .text-rows{grid-column:1 / 13;margin-top:24px}
+}
+@media (max-width:640px){
+  .intro h1{font-size:22vw}
+  .rack,.rack.two{grid-template-columns:1fr}
+  .text-rows a{grid-template-columns:1fr auto}
+  .text-rows a span{grid-column:1 / 3;order:3}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="top wrap">
+  <a class="mk" href="./" aria-label="Joseph Martin, home" data-m="charm_leaf"></a>
+  <nav aria-label="Primary"><ul><li><a href="hats.html" aria-current="page">Hats</a></li><li><a href="./#caps">Caps &amp; tees</a></li><li><a href="../f-working-house/maker.html">About Joseph</a></li><li><a href="archive.html">Archive</a></li><li><a href="./#commission">Commission</a></li></ul></nav>
+  <div class="right"><a class="opt" href="https://josephbenmartin.com/collections/all">Shop ↗</a><button class="menu-btn" type="button" id="menu-open" aria-haspopup="dialog" aria-controls="menu">Menu</button></div>
+</header>
+<dialog class="menu" id="menu" aria-label="Menu"><div class="sheet">
+  <div class="bar"><span style="height:18px;display:block;line-height:0;--gold:#C9A465;--ground:#161513" data-m="charm_leaf"></span><button class="menu-btn" style="display:inline-block" type="button" data-close>Close</button></div>
+  <ol><li><a href="hats.html">Hats</a></li><li><a href="./#caps">Caps &amp; tees</a></li><li><a href="../f-working-house/maker.html">About Joseph</a></li><li><a href="archive.html">Archive</a></li><li><a href="./#commission"><em>Commission</em></a></li></ol>
+  <div class="foot"><a href="https://josephbenmartin.com/collections/all">Shop ↗</a><span>1200 Villa Place, Nashville</span></div>
+</div></dialog>
+<main id="main">
+  <section class="intro grid wrap" aria-labelledby="h1">
+    <h1 id="h1" class="rise">Hats</h1>
+    <div class="side rise d2">
+      <p>Western shapes and dress fedoras in fur felt and straw, grouped the way the current shop sells them.</p>
+      <ul class="jump">
+        <li><a href="#named"><span>Named designs</span><span>7 listed</span></a></li>
+        <li><a href="#custom"><span>Custom</span><span>From $595</span></a></li>
+        <li><a href="#caps"><span>Caps &amp; tees</span><span>From $45</span></a></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="sec wrap" id="named" aria-labelledby="h-named">
+    <div class="chap"><span class="num">Named designs</span><h2 id="h-named">By <em>charm</em></h2><p>Four designs with enough documented detail to draw. Whether each is ready-to-wear or made to order is shown as the listing states it, and marked where it does not.</p></div>
+    <ol class="rack" id="rack"></ol>
+    <ul class="text-rows" id="more" aria-label="Other named designs"></ul>
+  </section>
+
+  <section class="sec wrap" id="custom" aria-label="Custom">
+    <a class="custom" href="./#commission">
+      <span class="k mono">Custom · by waitlist</span>
+      <p class="t">Any colour. Any shape. <em>Your charm.</em></p>
+      <dl><div><dt>Fur felt</dt><dd>$1,395, all-inclusive</dd></div><div><dt>Straw</dt><dd>$595–$1,150</dd></div><div><dt>Time</dt><dd>4–6 weeks*</dd></div></dl>
+    </a>
+  </section>
+
+  <section class="caps wrap" id="caps" aria-labelledby="h-caps">
+    <div class="chap"><span class="num">Caps &amp; tees</span><h2 id="h-caps">Cowboy <em>George</em></h2><p>Not in Study F at all; on the current shop, a whole category. George is the mascot here.</p></div>
+    <div class="grid"><span class="geo" role="img" aria-label="Cowboy George, red ink line drawing"></span><ul class="text-rows" id="caps-list"></ul></div>
+  </section>
+</main>
+<footer class="foot"><div class="wrap">
+  <p class="bigmk" data-m="charm_leaf"></p>
+  <div class="cols grid"><address>Joseph Martin, Hatmaker<br>1200 Villa Place, Suite 200<br>Nashville, Tennessee 37212</address>
+  <ul><li><a href="https://josephbenmartin.com/collections/all">Shop</a></li><li><a href="https://josephbenmartin.com/pages/meet-joseph">About Joseph</a></li><li><a href="https://josephbenmartin.com/pages/sizing">Sizing</a></li></ul>
+  <p class="ways mono">Ready-to-wear · Made to order · Custom · Caps &amp; tees</p>
+  <p class="note">Study F.1. Not approved. Data: search-index snapshot, 23 Nov 2026 (the site is blocked from this environment). *To confirm.</p></div>
+</div></footer>
+<script src="../../assets/identity/marks.js"></script>
+<script src="f1.js"></script>
+<script>
+(function(){
+  var H=JM1.HATS;
+  document.getElementById('rack').innerHTML=JM1.ORDER.map(function(k){var h=H[k];
+    var listed=h.listedConf==='low'?'<span class="tag gap">Listed as: not stated</span>':'<span class="tag'+(h.listedConf==='medium'?' gap':'')+'">'+h.listed+(h.listedConf==='medium'?'*':'')+'</span>';
+    return '<li><a href="hat.html?h='+k+'"><div class="tile felt" style="--felt:'+h.hex+'" data-tone="'+h.tone+'"><div class="tr num"><span>'+h.no+'</span><span class="cm">'+JMMARKS['charm_only_'+h.charm]+'</span></div><div data-band="'+k+'" data-nomarks></div><span class="num" style="opacity:.75">Band plate · documented details</span></div>'+
+      '<h2>'+h.name+'<span class="price">'+h.price+'</span></h2>'+listed+'<p class="d">'+JM1.esc(h.line)+'</p></a></li>'}).join('');
+  document.getElementById('more').innerHTML=JM1.MORE.map(function(m){return '<li><a href="'+m.url+'"><b>'+m.name+'</b><span>'+JM1.esc(m.note)+'. Not drawn: no detail to draw from.</span><em>'+m.price+' ↗</em></a></li>'}).join('');
+  document.getElementById('caps-list').innerHTML=JM1.CAPS.map(function(c){return '<li><a href="'+c[2]+'"><b>'+JM1.esc(c[0])+'</b><em>'+c[1]+' ↗</em></a></li>'}).join('');
+  JM1.mount();
+})();
+</script>
+</body>
+</html>

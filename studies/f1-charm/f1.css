@@ -1,0 +1,65 @@
+/* Study F.1 — layered on Study F's f.css (unchanged). Adds the Charm identity and drawings, version 2. */
+@font-face{font-family:"Libre Caslon Display";src:url(../../assets/fonts/libre-caslon-display-latin-400-normal.woff2) format("woff2");font-display:swap}
+:root{--gold:#A8834A;--gold-lt:#C9A465;--ground:var(--paper)}
+
+/* header: the charm mark replaces the italic setting */
+.top .mk{justify-self:start;display:block;height:24px;line-height:0}
+.top .mk svg{height:100%;width:auto}
+.foot .bigmk{margin:0 0 clamp(28px,4vw,56px);color:var(--paper);--gold:var(--gold-lt);--ground:var(--ink);line-height:0}
+.foot .bigmk svg{width:min(100%,980px);height:auto}
+
+/* ——— I. the opening: name, charm, portrait ——— */
+.open{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:var(--g);min-height:calc(100svh - 64px);max-height:1000px;padding-top:clamp(18px,2vw,28px);padding-bottom:clamp(24px,2.6vw,40px);position:relative;overflow:hidden}
+.open .rail{grid-column:1 / 10;grid-row:1;align-self:start;color:var(--ink)}
+.open .name{grid-column:1 / 10;grid-row:2;align-self:center;margin:0;font:400 clamp(80px,10vw,182px)/.9 "Libre Caslon Display",serif;letter-spacing:.07em;text-transform:uppercase}
+.open .name > span{display:block}
+.open .name .l1{position:relative;width:max-content}
+.open .name .l2{padding-left:1.12em}
+.open .drop{position:absolute;left:100%;margin-left:.02em;bottom:0;height:100vh;width:.56em;display:flex;flex-direction:column;align-items:center;pointer-events:none}
+.open .drop::before{content:"";flex:1;width:1px;background:var(--gold)}
+.open .drop .c{width:100%;line-height:0}
+.open .drop .c svg{width:100%;height:auto;display:block}
+.motion .open .drop{animation:swing 2.4s cubic-bezier(.3,.1,.2,1) .3s both;transform-origin:50% 0}
+@keyframes swing{0%{transform:rotate(1.6deg)}35%{transform:rotate(-1deg)}65%{transform:rotate(.4deg)}100%{transform:rotate(0)}}
+.open .portrait{grid-column:10 / 13;grid-row:1 / 4;align-self:stretch;display:grid;grid-template-rows:1fr auto;gap:10px;min-height:0}
+.open .portrait .plate{min-height:0}
+.open .base{grid-column:1 / 10;grid-row:3;align-self:end;display:grid;grid-template-columns:repeat(9,minmax(0,1fr));column-gap:var(--g);border-top:1px solid var(--ink);padding-top:16px}
+.open .base .lede{grid-column:1 / 5;margin:0;font:400 clamp(20px,1.6vw,25px)/1.24 var(--serif);max-width:30ch}
+.open .base .ways{grid-column:6 / 10;list-style:none;margin:0;padding:0;font:400 11.5px/1.5 var(--mono);letter-spacing:.06em;text-transform:uppercase}
+.open .base .ways li{display:flex;justify-content:space-between;gap:10px;padding:5px 0;border-bottom:1px solid var(--rule)}
+.open .base .ways li span:last-child{color:var(--pencil)}
+.open .base .acts{grid-column:1 / 5;display:flex;gap:26px;margin-top:18px}
+
+/* ——— drawings, version 2 ——— */
+.hat2,.plate2{display:block;width:100%;height:auto;overflow:visible}
+.hat2 .unv,.plate2 .unv{fill:none;stroke:currentColor;stroke-width:1.2;stroke-dasharray:5 6;opacity:.55;vector-effect:non-scaling-stroke}
+.hat2 .doc,.plate2 .doc{fill:currentColor;stroke:currentColor;stroke-width:1.4;vector-effect:non-scaling-stroke}
+.plate2 path.doc[style*="stroke-width:1"]{fill:none}
+.hat2 path.doc[style*="stroke-dasharray"],.hat2 path.doc[style*="stroke-width:3.4"]{fill:none}
+.hat2 .t,.plate2 .t{font:400 15px/1 var(--mono);letter-spacing:.06em;text-transform:uppercase;fill:currentColor}
+.plate2 .t .n{font-weight:500}
+.key2{display:flex;gap:22px;flex-wrap:wrap;font:400 11px/1.4 var(--mono);letter-spacing:.06em;text-transform:uppercase}
+.key2 span{display:inline-flex;gap:8px;align-items:center}
+.key2 i{display:inline-block;width:26px;border-top:2px solid currentColor}
+.key2 i.d{border-top:1.5px dashed currentColor;opacity:.7}
+
+@media (max-width:1024px){
+  .open{min-height:0;max-height:none}
+  .open .rail,.open .name,.open .base{grid-column:1 / 13}
+  .open .name{padding-block:clamp(90px,16vw,160px) 40px}
+  .open .portrait{grid-column:1 / 13;grid-row:4;margin-top:28px}
+  .open .portrait .plate{aspect-ratio:4/5}
+}
+@media (max-width:640px){
+  .top .mk{height:18px}
+  .open .name{font-size:14.2vw;letter-spacing:.05em;padding-block:30vw 26px}
+  .open .base{display:block}
+  .open .base .ways{margin-top:14px}
+  .hat2 .t,.plate2 .t{font-size:24px}
+}
+.plate2 .nbc2{fill:var(--felt,var(--paper));stroke:currentColor;stroke-width:1.2}
+.plate2 .nb2{font-size:17px;font-weight:500;letter-spacing:0}
+.legend2{list-style:none;margin:12px 0 0;padding:0;counter-reset:l;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:var(--g);font:400 11.5px/1.4 var(--mono);letter-spacing:.05em;text-transform:uppercase}
+.legend2 li{display:flex;gap:10px;padding:7px 0;border-top:1px solid color-mix(in srgb,currentColor 35%,transparent)}
+.legend2 li::before{counter-increment:l;content:counter(l);min-width:1.2em;font-weight:500}
+@media (max-width:640px){.legend2{grid-template-columns:1fr}.plate2 .nb2{font-size:30px}.plate2 .nbc2{r:28px}}

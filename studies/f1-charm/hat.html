@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Joseph Martin — Oris (Study F.1)</title>
+<meta name="description" content="One hat by Joseph Martin: its documented details drawn at large scale, and what is still not known about it.">
+<meta name="robots" content="noindex">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 32 32%22%3E%3Crect width=%2232%22 height=%2232%22 fill=%22%23161513%22/%3E%3Cpath d=%22M16 7 C 22 11, 22 19, 16 25 C 10 19, 10 11, 16 7 Z%22 fill=%22%23C9A465%22/%3E%3C/svg%3E">
+<link rel="stylesheet" href="../f-working-house/f.css">
+<link rel="stylesheet" href="f1.css">
+<style>
+.pdp{align-items:start}
+.field{grid-column:1 / 8;position:sticky;top:64px;min-height:calc(100svh - 64px);display:grid;grid-template-rows:auto 1fr auto auto;gap:18px;padding:clamp(18px,2vw,28px);margin-left:calc(-1 * max(var(--m),env(safe-area-inset-left,0px)))}
+.field .tr{display:flex;justify-content:space-between;align-items:center}
+.field .cm{width:28px;line-height:0;--gold:currentColor}
+.field .cm svg{width:100%;height:auto}
+.field #f-band{align-self:center}
+.field #f-ol{width:62%;justify-self:end}
+.body{grid-column:8 / 13;padding-block:clamp(28px,3vw,48px) clamp(56px,6vw,96px);display:grid;gap:clamp(26px,3vw,40px)}
+.crumb a{text-decoration:none;border-bottom:1px solid var(--rule)}
+.crumb{display:flex;gap:.8em;flex-wrap:wrap}
+.body h1{margin:0;font:400 clamp(72px,7.4vw,132px)/.82 "Libre Caslon Display",serif;letter-spacing:.06em;text-transform:uppercase;display:flex;align-items:flex-start;gap:.12em}
+.body h1 .cm{width:.42em;line-height:0;margin-top:.04em}
+.body h1 .cm svg{width:100%;height:auto}
+.line{margin:0;font:400 clamp(21px,1.6vw,25px)/1.25 var(--serif);max-width:32ch}
+.price-row{display:flex;justify-content:space-between;align-items:baseline;gap:16px;border-top:1px solid var(--ink);padding-top:14px}
+.price-row .p{font:400 clamp(30px,2.4vw,40px)/1 var(--serif)}
+.price-row small{font:400 11px/1.4 var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--red);max-width:30ch;text-align:right}
+.specs{margin:0;font:400 12px/1.4 var(--mono);letter-spacing:.06em;text-transform:uppercase;border-top:1px solid var(--ink)}
+.specs div{display:flex;justify-content:space-between;gap:12px;padding:10px 0;border-bottom:1px solid var(--rule)}
+.specs dt{color:var(--pencil)}.specs dd{margin:0;text-align:right}
+.sub{margin:0 0 12px;font:400 11.5px/1.4 var(--mono);letter-spacing:.06em;text-transform:uppercase;display:flex;justify-content:space-between;border-top:1px solid var(--ink);padding-top:10px}
+.known,.unknown{list-style:none;margin:0;padding:0}
+.known li,.unknown li{display:grid;grid-template-columns:2em 1fr auto;gap:10px;padding:11px 0;border-bottom:1px solid var(--rule);align-items:baseline}
+.known b{font:400 20px/1.2 var(--serif)}
+.known span:last-child,.unknown span:last-child{font:400 11px/1.3 var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--pencil)}
+.unknown li{color:var(--pencil)}
+.unknown li::before{content:"";width:1.2em;border-top:1.5px dashed var(--pencil);align-self:center}
+.unknown span:first-child{font-size:15px;color:var(--ink)}
+.unknown li{grid-template-columns:2em 1fr auto}
+.btns .btn{flex:1 1 220px}
+@media (max-width:1024px){
+  .field{grid-column:1 / 13;position:relative;top:auto;min-height:0;margin-right:calc(-1 * max(var(--m),env(safe-area-inset-right,0px)))}
+  .body{grid-column:1 / 13}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="top wrap">
+  <a class="mk" href="./" aria-label="Joseph Martin, home" data-m="charm_leaf"></a>
+  <nav aria-label="Primary"><ul><li><a href="hats.html" aria-current="page">Hats</a></li><li><a href="./#caps">Caps &amp; tees</a></li><li><a href="../f-working-house/maker.html">About Joseph</a></li><li><a href="archive.html">Archive</a></li><li><a href="./#commission">Commission</a></li></ul></nav>
+  <div class="right"><a class="opt" href="https://josephbenmartin.com/collections/all">Shop ↗</a><button class="menu-btn" type="button" id="menu-open" aria-haspopup="dialog" aria-controls="menu">Menu</button></div>
+</header>
+<dialog class="menu" id="menu" aria-label="Menu"><div class="sheet">
+  <div class="bar"><span style="height:18px;display:block;line-height:0;--gold:#C9A465;--ground:#161513" data-m="charm_leaf"></span><button class="menu-btn" style="display:inline-block" type="button" data-close>Close</button></div>
+  <ol><li><a href="hats.html">Hats</a></li><li><a href="./#caps">Caps &amp; tees</a></li><li><a href="../f-working-house/maker.html">About Joseph</a></li><li><a href="archive.html">Archive</a></li><li><a href="./#commission"><em>Commission</em></a></li></ol>
+  <div class="foot"><a href="https://josephbenmartin.com/collections/all">Shop ↗</a><span>1200 Villa Place, Nashville</span></div>
+</div></dialog>
+<main id="main">
+  <article class="pdp grid wrap" aria-labelledby="h1">
+    <div class="field felt" id="field" data-tone="dark">
+      <div class="tr num"><span id="f-no"></span><span class="cm" id="f-cm"></span></div>
+      <div id="f-band"></div>
+      <div id="f-ol"></div>
+      <div class="key2"><span><i></i>Documented in the listing</span><span><i class="d"></i>Outline not verified: to be traced from a photograph</span></div>
+    </div>
+    <div class="body">
+      <p class="crumb mono"><a href="hats.html">Hats</a><span>/</span><span id="b-listed"></span><span>/</span><span id="b-no"></span></p>
+      <h1 id="h1"></h1>
+      <p class="line" id="b-line"></p>
+      <div class="price-row"><span class="p" id="b-price"></span><small id="b-pnote"></small></div>
+      <dl class="specs" id="b-specs"></dl>
+      <div class="btns"><a class="btn btn--solid" id="b-order" href="#">See it on the shop <span>↗</span></a><a class="btn btn--line" href="./#commission">A custom version <span>→</span></a></div>
+      <section aria-labelledby="h-known"><h2 class="sub" id="h-known"><span>What the listing documents</span><span>Drawn solid</span></h2><ol class="known" id="b-known"></ol></section>
+      <section aria-labelledby="h-unk"><h2 class="sub" id="h-unk"><span>Not yet known</span><span style="color:var(--red)">Drawn dashed or not at all</span></h2>
+        <ul class="unknown">
+          <li><span>Crown height, crease and pinch</span><span>Photograph, profile</span></li>
+          <li><span>Brim width, roll and edge</span><span>Photograph, profile</span></li>
+          <li><span>Exact colours of ribbons, beads and thread</span><span>Photograph, daylight</span></li>
+          <li><span>The charm itself: its true shape and size</span><span>Macro, or the charm in hand</span></li>
+        </ul></section>
+    </div>
+  </article>
+</main>
+<footer class="foot"><div class="wrap">
+  <p class="bigmk" data-m="charm_leaf"></p>
+  <div class="cols grid"><address>Joseph Martin, Hatmaker<br>1200 Villa Place, Suite 200<br>Nashville, Tennessee 37212</address>
+  <ul><li><a href="https://josephbenmartin.com/collections/all">Shop</a></li><li><a href="https://josephbenmartin.com/pages/sizing">Sizing</a></li></ul>
+  <p class="ways mono">Ready-to-wear · Made to order · Custom · Caps &amp; tees</p>
+  <p class="note">Study F.1. Not approved. Drawings are studies of documented details, not the hat. *To confirm.</p></div>
+</div></footer>
+<script src="../../assets/identity/marks.js"></script>
+<script src="f1.js"></script>
+<script>
+(function(){
+  var k=(new URLSearchParams(location.search).get('h')||'oris').toLowerCase(); if(!JM1.HATS[k]) k='oris';
+  var h=JM1.HATS[k], $=function(i){return document.getElementById(i)};
+  document.title='Joseph Martin — '+h.name+' (Study F.1)';
+  var f=$('field'); f.style.setProperty('--felt',h.hex); f.dataset.tone=h.tone;
+  $('f-no').textContent=$('b-no').textContent=h.no; $('f-cm').innerHTML=JMMARKS['charm_only_'+h.charm];
+  $('f-band').innerHTML=JM1.bandPlate(k)+JM1.bandLegend(k); $('f-ol').innerHTML=JM1.outlineSVG(k,{labels:true});
+  $('h1').innerHTML=JM1.esc(h.name)+'<span class="cm" style="--gold:var(--gold)">'+JMMARKS['charm_only_'+h.charm]+'</span>';
+  $('b-line').textContent=h.line; $('b-listed').textContent=h.listedConf==='low'?'Category not stated':h.listed;
+  $('b-price').textContent=h.price; $('b-pnote').textContent=h.priceNote||'';
+  $('b-specs').innerHTML=h.specs.map(function(s){return '<div><dt>'+s[0]+'</dt><dd>'+JM1.fr(s[1])+'</dd></div>'}).join('');
+  $('b-order').href=h.url;
+  $('b-known').innerHTML=h.details.map(function(d,i){return '<li><span class="num">0'+(i+1)+'</span><b>'+JM1.esc(d[0])+'</b><span>'+JM1.esc(d[1])+'</span></li>'}).join('');
+  JM1.mount();
+})();
+</script>
+</body>
+</html>

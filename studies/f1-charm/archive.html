@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Joseph Martin — Archive (Study F.1)</title>
+<meta name="description" content="The Joseph Martin archive, edited to seven pieces: the real posters and drawings, the hats by their charms, the club, and one open question.">
+<meta name="robots" content="noindex">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 32 32%22%3E%3Crect width=%2232%22 height=%2232%22 fill=%22%23161513%22/%3E%3Cpath d=%22M16 7 C 22 11, 22 19, 16 25 C 10 19, 10 11, 16 7 Z%22 fill=%22%23C9A465%22/%3E%3C/svg%3E">
+<link rel="stylesheet" href="../f-working-house/f.css">
+<link rel="stylesheet" href="f1.css">
+<style>
+.mast{padding-block:clamp(40px,5vw,80px) clamp(24px,3vw,40px);align-items:end}
+.mast h1{grid-column:1 / 7;margin:0;font:400 clamp(84px,10vw,180px)/.8 "Libre Caslon Display",serif;letter-spacing:.06em;text-transform:uppercase}
+.mast .side{grid-column:8 / 13;display:grid;gap:14px}
+.mast .side p:not(.ledger){margin:0;font:400 clamp(21px,1.7vw,26px)/1.22 var(--serif)}
+.mast .side .ledger{margin:0;color:var(--ink)}
+.piece{padding-block:clamp(36px,4.4vw,72px);border-top:1px solid var(--ink);align-items:start;row-gap:24px}
+.piece figure{display:grid;gap:10px;margin:0}
+.piece img{width:100%;height:auto}
+.piece .txt{display:grid;gap:12px;align-content:start}
+.piece h2{margin:0;font:italic 400 clamp(34px,3.2vw,54px)/1 var(--serif);letter-spacing:-.015em}
+.piece .why{margin:0;font-size:15px;color:var(--pencil);max-width:40ch}
+.piece .why b{color:var(--ink);font-weight:500}
+/* layouts */
+.p1 figure{grid-column:1 / 8}.p1 .txt{grid-column:9 / 13;align-self:end}
+.p2 .txt{grid-column:1 / 5;align-self:end}.p2 figure{grid-column:6 / 11}
+.p3 figure.a{grid-column:1 / 5}.p3 figure.b{grid-column:5 / 9;margin-top:10%}.p3 .txt{grid-column:10 / 13;align-self:end}
+.p4 .plates{grid-column:1 / 13;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:var(--g)}
+.p4 .plates a{text-decoration:none;display:grid;gap:8px}
+.p4 .plates .tile{aspect-ratio:1;padding:12px;display:grid;grid-template-rows:auto 1fr;gap:6px}
+.p4 .plates .tile .cm{width:22px;line-height:0;--gold:currentColor;justify-self:end}
+.p4 .plates .tile .cm svg{width:100%;height:auto}
+.p4 .plates [data-band]{align-self:center}
+.p4 .plates b{font:400 22px/1 "Libre Caslon Display",serif;letter-spacing:.08em;text-transform:uppercase}
+.p4 .txt{grid-column:1 / 6}
+.p5 .club{grid-column:1 / 6;display:grid;grid-template-rows:auto 1fr auto;aspect-ratio:4/5;background:var(--stock);color:var(--club-ink);border:1px solid var(--club-ink);padding:18px;text-decoration:none;position:relative}
+.p5 .club .lock{margin:0;align-self:end;font:400 clamp(56px,5.6vw,96px)/.8 var(--serif);letter-spacing:-.05em;position:relative;z-index:1}
+.p5 .club .lock em{color:var(--signal);font-style:italic}
+.p5 .club .mono{display:flex;justify-content:space-between}
+.p5 .club .geo{position:absolute;right:18px;top:18%;width:52%;aspect-ratio:958/1000;background:var(--signal);-webkit-mask:url(../../assets/mcdc/cowboy-george-line.png) center/contain no-repeat;mask:url(../../assets/mcdc/cowboy-george-line.png) center/contain no-repeat}
+.p5 .txt{grid-column:7 / 12;align-self:end}
+.p6 blockquote{grid-column:1 / 9;margin:0;font:400 clamp(40px,4.6vw,80px)/1.02 var(--serif);letter-spacing:-.02em}
+.p6 .txt{grid-column:10 / 13;align-self:end}
+.p7 .q{grid-column:1 / 9;border:1px dashed var(--red);padding:clamp(22px,2.6vw,40px)}
+.p7 .q span{font:400 11px/1.4 var(--mono);letter-spacing:.07em;text-transform:uppercase;color:var(--red)}
+.p7 .q p{margin:12px 0 0;font:italic 400 clamp(32px,3.4vw,58px)/1.06 var(--serif);color:var(--pencil)}
+.p7 .txt{grid-column:10 / 13;align-self:end}
+.cut{padding-block:clamp(48px,6vw,96px);border-top:1px solid var(--ink)}
+.cut ul{grid-column:3 / 13;list-style:none;margin:0;padding:0;columns:2;column-gap:var(--g)}
+.cut li{break-inside:avoid;display:grid;grid-template-columns:1fr auto;gap:12px;padding:10px 0;border-top:1px solid var(--rule);font-size:15px}
+.cut li span:last-child{font:400 11px/1.4 var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--pencil);text-align:right}
+@media (max-width:1024px){
+  .mast h1,.mast .side{grid-column:1 / 13}.mast .side{margin-top:20px}
+  .piece figure,.piece .txt,.p3 figure.a,.p3 figure.b,.p5 .club,.p5 .txt,.p6 blockquote,.p6 .txt,.p7 .q,.p7 .txt{grid-column:1 / 13;margin-top:0}
+  .p3 figure.a{grid-column:1 / 7}.p3 figure.b{grid-column:7 / 13}
+  .p4 .plates{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .p5 .club{grid-column:1 / 10}
+  .cut ul{grid-column:1 / 13;columns:1}
+}
+@media (max-width:640px){
+  .mast h1{font-size:19vw}
+  .p5 .club{grid-column:1 / 13;aspect-ratio:auto;min-height:440px}
+  .p5 .club .lock{font-size:62px}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="top wrap">
+  <a class="mk" href="./" aria-label="Joseph Martin, home" data-m="charm_leaf"></a>
+  <nav aria-label="Primary"><ul><li><a href="hats.html">Hats</a></li><li><a href="./#caps">Caps &amp; tees</a></li><li><a href="../f-working-house/maker.html">About Joseph</a></li><li><a href="archive.html" aria-current="page">Archive</a></li><li><a href="./#commission">Commission</a></li></ul></nav>
+  <div class="right"><a class="opt" href="https://josephbenmartin.com/collections/all">Shop ↗</a><button class="menu-btn" type="button" id="menu-open" aria-haspopup="dialog" aria-controls="menu">Menu</button></div>
+</header>
+<dialog class="menu" id="menu" aria-label="Menu"><div class="sheet">
+  <div class="bar"><span style="height:18px;display:block;line-height:0;--gold:#C9A465;--ground:#161513" data-m="charm_leaf"></span><button class="menu-btn" style="display:inline-block" type="button" data-close>Close</button></div>
+  <ol><li><a href="hats.html">Hats</a></li><li><a href="./#caps">Caps &amp; tees</a></li><li><a href="../f-working-house/maker.html">About Joseph</a></li><li><a href="archive.html">Archive</a></li><li><a href="./#commission"><em>Commission</em></a></li></ol>
+  <div class="foot"><a href="https://josephbenmartin.com/collections/all">Shop ↗</a><span>1200 Villa Place, Nashville</span></div>
+</div></dialog>
+<main id="main">
+  <section class="mast grid wrap" aria-labelledby="h1">
+    <h1 id="h1" class="rise">Archive</h1>
+    <div class="side rise d2">
+      <p>Seven pieces, not twenty-one. The real work first; nothing here only to fill a grid.</p>
+      <p class="ledger"><b>7 pieces</b><span>4 real artworks</span><span>1 open question</span><span>Edited 23 Nov 2026</span></p>
+    </div>
+  </section>
+
+  <section class="piece p1 grid wrap" aria-labelledby="a1">
+    <figure><img src="../../assets/jm/hatmaker-double-decker-1339.webp" srcset="../../assets/jm/hatmaker-double-decker-640.webp 640w, ../../assets/jm/hatmaker-double-decker-1339.webp 1339w" sizes="(max-width:1024px) 92vw, 56vw" width="1339" height="1841" decoding="async" alt="Poster: JOSEPH MARTIN HATMAKER in heavy white slab letters over a violet sky, a red double-decker bus on the horizon and a cowboy on horseback in the grass"></figure>
+    <div class="txt"><p class="ledger"><b>JM·D·001</b><span>Poster</span><span>April 2024</span></p><h2 id="a1">Double Decker Arts Festival</h2><p class="why"><b>Kept:</b> the strongest single image in the whole project. It has colour, humour and a horizon, and his name is the headline.</p></div>
+  </section>
+
+  <section class="piece p2 grid wrap" aria-labelledby="a2">
+    <div class="txt"><p class="ledger"><b>JM·D·002</b><span>Drawing</span><span>Red ink</span></p><h2 id="a2">Cowboy George</h2><p class="why"><b>Kept:</b> the mascot. Already on the trucker and the tee, and the most ownable mark Joseph has.</p></div>
+    <figure><img src="../../assets/jm/cowboy-george-1280.webp" srcset="../../assets/jm/cowboy-george-640.webp 640w, ../../assets/jm/cowboy-george-1280.webp 1280w" sizes="(max-width:1024px) 92vw, 40vw" width="1280" height="1280" loading="lazy" decoding="async" alt="Cowboy George: a long-eared dog in a wide-brimmed hat with a cigarette, red ink drawing"></figure>
+  </section>
+
+  <section class="piece p3 grid wrap" aria-labelledby="a3">
+    <figure class="a"><img src="../../assets/jm/martin-survives-1100.webp" width="1100" height="1375" loading="lazy" decoding="async" alt="Framed red-ink poster: Martin Survives!, with a rider on a galloping horse"><figcaption class="ledger"><b>JM·D·003</b><span>Martin Survives!</span></figcaption></figure>
+    <figure class="b"><img src="../../assets/jm/dont-call-it-luck-1100.webp" width="1100" height="1375" loading="lazy" decoding="async" alt="Framed red-ink poster: Don't Call It Luck!, a cowboy riding a bucking horse"><figcaption class="ledger"><b>JM·D·004</b><span>Don’t Call It Luck!</span></figcaption></figure>
+    <div class="txt"><h2 id="a3">The pair</h2><p class="why"><b>Kept together:</b> one year as a full-time craftsman, and its companion. Shown as a pair, since one alone loses the joke.</p></div>
+  </section>
+
+  <section class="piece p4 grid wrap" aria-labelledby="a4">
+    <div class="txt"><p class="ledger"><b>JM·H·001–004</b><span>Hats</span><span>Drawings of documented details</span></p><h2 id="a4">Four hats, four charms</h2><p class="why"><b>Kept as one entry, not four:</b> until the hats are photographed, the band plates are the evidence. They make the case for the Charm identity.</p></div>
+    <div class="plates" id="plates"></div>
+  </section>
+
+  <section class="piece p5 grid wrap" aria-labelledby="a5">
+    <a class="club" href="../../music-city-driving-club/"><span class="mono"><span>Capsule No. 001</span><span>For the long way around</span></span><span class="geo" aria-hidden="true"></span><p class="lock">Music City <em>Driving</em> Club.</p><span class="mono"><span>A cream jacket and its patches</span><span>Enter →</span></span></a>
+    <div class="txt"><p class="ledger"><b>JM·C·001</b><span>The club</span><span>Study</span></p><h2 id="a5">Music City Driving Club</h2><p class="why"><b>Kept:</b> the first extension of the house, printed on its own stock. No members, dates or partners are announced.</p></div>
+  </section>
+
+  <section class="piece p6 grid wrap" aria-labelledby="a6">
+    <blockquote id="a6">“All items are handmade start to finish in our Nashville shop.”</blockquote>
+    <div class="txt"><p class="ledger"><b>JM·N·001</b><span>Shop policy</span><span>Verified</span></p><p class="why"><b>Kept:</b> the one sentence in Joseph’s own published words, so it carries more weight than any line we could write.</p></div>
+  </section>
+
+  <section class="piece p7 grid wrap" aria-labelledby="a7">
+    <div class="q"><span>Open question · for the interview</span><p id="a7">What does the stitching mean, and when did you start doing it?</p></div>
+    <div class="txt"><p class="ledger"><b>JM·Q·001</b><span>Open</span></p><p class="why"><b>Kept:</b> the press feature is about this, and nobody has the answer yet. If it turns out to matter, it could decide the identity (see Direction I, Thread).</p></div>
+  </section>
+
+  <section class="cut grid wrap" aria-labelledby="h-cut">
+    <div class="chap" style="grid-column:1 / 13"><span class="num">Cut</span><h2 id="h-cut">Left <em>out</em></h2><p>Fourteen entries from Study F’s archive, and why each went.</p></div>
+    <ul>
+      <li><span>Four felt swatches</span><span>Repeat the hats</span></li>
+      <li><span>Moon, sailboat and leaf charm drawings</span><span>Now the identity</span></li>
+      <li><span>“6–8 weeks” tile</span><span>Contradicted by the site</span></li>
+      <li><span>“Fourth Time’s a Charm” link</span><span>Belongs on About Joseph</span></li>
+      <li><span>“The shop, end of day” placeholder</span><span>Nothing to show</span></li>
+      <li><span>Four separate hat tiles</span><span>Merged into one entry</span></li>
+      <li><span>Granite, whiskey, pecan, natural as entries</span><span>Repeat the hats</span></li>
+      <li><span>Gold leaf charm as its own entry</span><span>Now the identity</span></li>
+    </ul>
+  </section>
+</main>
+<footer class="foot"><div class="wrap">
+  <p class="bigmk" data-m="charm_leaf"></p>
+  <div class="cols grid"><address>Joseph Martin, Hatmaker<br>1200 Villa Place, Suite 200<br>Nashville, Tennessee 37212</address>
+  <ul><li><a href="https://josephbenmartin.com/collections/all">Shop</a></li><li><a href="https://josephbenmartin.com/pages/meet-joseph">About Joseph</a></li></ul>
+  <p class="ways mono">Ready-to-wear · Made to order · Custom · Caps &amp; tees</p>
+  <p class="note">Study F.1. Not approved. Posters and drawings are real work made for Joseph Martin.</p></div>
+</div></footer>
+<script src="../../assets/identity/marks.js"></script>
+<script src="f1.js"></script>
+<script>
+document.getElementById('plates').innerHTML=JM1.ORDER.map(function(k){var h=JM1.HATS[k];
+  return '<a href="hat.html?h='+k+'"><div class="tile felt" style="--felt:'+h.hex+'" data-tone="'+h.tone+'"><span class="cm">'+JMMARKS['charm_only_'+h.charm]+'</span><div data-band="'+k+'" data-nomarks></div></div><b>'+h.name+'</b></a>'}).join('');
+JM1.mount();
+</script>
+</body>
+</html>

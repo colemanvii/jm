@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Joseph Martin — Study F.1: Charm</title>
+<meta name="description" content="Study F.1 for Joseph Martin, hatmaker in Nashville: Study F recomposed around the Charm identity, with corrected product data and drawings that separate what is documented from what is not.">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#F2F1EC">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 32 32%22%3E%3Crect width=%2232%22 height=%2232%22 fill=%22%23161513%22/%3E%3Cpath d=%22M16 7 C 22 11, 22 19, 16 25 C 10 19, 10 11, 16 7 Z%22 fill=%22%23C9A465%22/%3E%3C/svg%3E">
+<link rel="preload" href="../../assets/fonts/libre-caslon-display-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../f-working-house/f.css">
+<link rel="stylesheet" href="f1.css">
+<style>
+/* II. hats: band plate leads, the unverified outline sits beside it */
+.hats{padding-block:clamp(40px,5vw,72px) 0}
+.hats .chap p{color:inherit;opacity:.85}
+.stage{row-gap:28px;align-items:start}
+.stage .band{grid-column:1 / 9}
+.stage .band .cap{display:flex;justify-content:space-between;gap:16px;margin-top:10px}
+.stage .info{grid-column:9 / 13;display:grid;gap:16px}
+.stage .info h3{margin:0;font:400 clamp(64px,6.4vw,112px)/.86 "Libre Caslon Display",serif;letter-spacing:.06em;text-transform:uppercase}
+.stage .info p{margin:0;font-size:16px;max-width:36ch}
+.stage .ol{grid-column:9 / 13;opacity:.95}
+.stage dl{margin:0;border-top:1px solid currentColor;font:400 12px/1.4 var(--mono);letter-spacing:.06em;text-transform:uppercase}
+.stage dl div{display:flex;justify-content:space-between;gap:12px;padding:8px 0;border-bottom:1px solid color-mix(in srgb,currentColor 30%,transparent)}
+.stage dd{margin:0;text-align:right}
+.stage .btn{color:inherit}
+.charms{display:grid;grid-template-columns:repeat(4,1fr) auto;margin-top:clamp(28px,4vw,56px);border-top:1px solid currentColor}
+.charms button{all:unset;cursor:pointer;display:grid;grid-template-columns:auto 1fr;gap:12px;align-items:center;padding:14px 14px 14px 0;margin-right:14px;border-right:1px solid color-mix(in srgb,currentColor 30%,transparent)}
+.charms button:focus-visible{outline:2px solid currentColor;outline-offset:-2px}
+.charms button[aria-checked="true"]{box-shadow:inset 0 -3px 0 currentColor}
+.charms .cm{width:26px;line-height:0;--gold:currentColor}
+.charms .cm svg{width:100%;height:auto}
+.charms .n{font:400 18px/1 "Libre Caslon Display",serif;letter-spacing:.08em;text-transform:uppercase}
+.charms .all{display:flex;align-items:center;font:500 14px/1 var(--sans);text-decoration:none;padding:14px 0;white-space:nowrap}
+/* III. caps and tees: George, in the role he already has */
+.caps{padding-block:clamp(64px,8vw,128px);background:#F1EBDF;border-top:1px solid #D9CFBE}
+.caps .grid{align-items:start}
+.caps .geo{grid-column:1 / 5;aspect-ratio:958/1000;background:var(--red);-webkit-mask:url(../../assets/mcdc/cowboy-george-line.png) center/contain no-repeat;mask:url(../../assets/mcdc/cowboy-george-line.png) center/contain no-repeat}
+.caps .list{grid-column:6 / 13}
+.caps ul{list-style:none;margin:0;padding:0;border-top:1px solid var(--ink)}
+.caps li a{display:grid;grid-template-columns:1fr auto auto;gap:16px;align-items:baseline;padding:12px 0;border-bottom:1px solid #D9CFBE;text-decoration:none}
+.caps li b{font:400 clamp(20px,1.6vw,24px)/1.2 var(--serif)}
+.caps li span{font:400 12px/1 var(--mono);letter-spacing:.05em}
+.caps .note{margin:16px 0 0;font:400 11px/1.5 var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--pencil)}
+/* IV. around the work */
+.world{padding-block:clamp(56px,7vw,112px)}
+.world .row{align-items:start;row-gap:36px}
+.world figure{display:grid;gap:10px}
+.world img{width:100%;height:auto}
+.world figcaption b{display:block;font:italic 400 24px/1.1 var(--serif)}
+.world figcaption span{font-size:14px;color:var(--pencil)}
+.world .w1{grid-column:1 / 6}.world .w2{grid-column:7 / 10;margin-top:14%}.world .w3{grid-column:10 / 13;margin-top:4%}
+.world .more{grid-column:1 / 13;display:flex;justify-content:space-between;align-items:baseline;border-top:1px solid var(--ink);padding-top:14px;gap:20px;flex-wrap:wrap}
+.world .more p{margin:0;font:400 clamp(22px,1.8vw,28px)/1.2 var(--serif)}
+.club{display:grid;grid-template-rows:auto 1fr auto;gap:14px;background:var(--stock);color:var(--club-ink);padding:16px;text-decoration:none;aspect-ratio:4/5;border:1px solid var(--club-ink)}
+.club .lock{font:400 clamp(40px,3.6vw,64px)/.82 var(--serif);letter-spacing:-.05em;margin:0;align-self:end}
+.club .lock em{color:var(--signal);font-style:italic}
+.club .mono{display:flex;justify-content:space-between}
+/* V. commission */
+.commission{background:var(--ink);color:var(--paper);padding-block:clamp(64px,8vw,128px)}
+.commission .chap{border-color:rgba(242,241,236,.4)}
+.commission .big{grid-column:3 / 10;margin:0 0 clamp(36px,5vw,72px);font:400 clamp(44px,5vw,86px)/.98 var(--serif);letter-spacing:-.02em}
+.terms{grid-column:3 / 13;display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid rgba(242,241,236,.4);margin:0}
+.terms div{padding:14px 18px 18px 0}
+.terms dt{font:400 11px/1.4 var(--mono);letter-spacing:.07em;text-transform:uppercase;color:rgba(242,241,236,.6);margin-bottom:8px}
+.terms dd{margin:0;font:400 clamp(22px,1.9vw,30px)/1.15 var(--serif)}
+.commission .act{grid-column:3 / 13;display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;margin-top:clamp(28px,3vw,44px);border-top:1px solid rgba(242,241,236,.2);padding-top:22px}
+.commission .act small{font:400 11px/1.5 var(--mono);letter-spacing:.06em;text-transform:uppercase;color:rgba(242,241,236,.6);max-width:62ch}
+@media (max-width:1024px){
+  .stage .band,.stage .info,.stage .ol{grid-column:1 / 13}
+  .charms{grid-template-columns:repeat(2,1fr)}.charms .all{grid-column:1 / 3}
+  .caps .geo{grid-column:1 / 7}.caps .list{grid-column:1 / 13;margin-top:28px}
+  .world .w1{grid-column:1 / 13}.world .w2{grid-column:1 / 7;margin-top:0}.world .w3{grid-column:7 / 13;margin-top:0}
+  .commission .big,.terms,.commission .act{grid-column:1 / 13}
+  .terms{grid-template-columns:repeat(2,1fr)}
+}
+@media (max-width:640px){
+  .stage .info h3{font-size:56px}
+  .charms button{padding:12px 8px 12px 0;margin-right:8px}
+  .charms .n{font-size:15px}
+  .caps .geo{grid-column:1 / 10}
+  .caps li a{grid-template-columns:1fr auto}
+  .caps li span:last-child{display:none}
+  .world .w2,.world .w3{grid-column:1 / 13}
+  .club{aspect-ratio:auto;min-height:380px}
+  .terms{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="top wrap">
+  <a class="mk" href="./" aria-label="Joseph Martin, home" data-m="charm_leaf"></a>
+  <nav aria-label="Primary"><ul>
+    <li><a href="hats.html">Hats</a></li>
+    <li><a href="#caps">Caps &amp; tees</a></li>
+    <li><a href="../f-working-house/maker.html">About Joseph</a></li>
+    <li><a href="archive.html">Archive</a></li>
+    <li><a href="#commission">Commission</a></li>
+  </ul></nav>
+  <div class="right"><a class="opt" href="https://josephbenmartin.com/collections/all">Shop ↗</a><button class="menu-btn" type="button" id="menu-open" aria-haspopup="dialog" aria-controls="menu">Menu</button></div>
+</header>
+<dialog class="menu" id="menu" aria-label="Menu"><div class="sheet">
+  <div class="bar"><span style="height:18px;display:block;line-height:0;--gold:#C9A465;--ground:#161513" data-m="charm_leaf"></span><button class="menu-btn" style="display:inline-block" type="button" data-close>Close</button></div>
+  <ol><li><a href="hats.html">Hats</a></li><li><a href="#caps">Caps &amp; tees</a></li><li><a href="../f-working-house/maker.html">About Joseph</a></li><li><a href="archive.html">Archive</a></li><li><a href="#commission"><em>Commission</em></a></li></ol>
+  <div class="foot"><a href="https://josephbenmartin.com/collections/all">Shop ↗</a><span>1200 Villa Place, Nashville</span></div>
+</div></dialog>
+
+<main id="main">
+  <!-- I. Joseph -->
+  <section class="open wrap" aria-labelledby="h1">
+    <p class="ledger rail rise"><b>Hatmaker</b><span>1200 Villa Place, Nashville, Tennessee</span><span>Commissions by waitlist</span></p>
+    <h1 class="name" id="h1"><span class="l1 rise d2">Joseph<span class="drop" aria-hidden="true"><span class="c" id="big-charm"></span></span></span><span class="l2 rise d3">Martin</span></h1>
+    <figure class="portrait rise d3">
+      <div class="plate" role="img" aria-label="Placeholder for the opening portrait of Joseph Martin"><p class="brief"><b>Photograph to come · frontispiece</b>Joseph at the bench on Villa Place, eye level. A hat in his hands, the charm on its band catching the window light.</p></div>
+      <p class="ledger"><b>JM·P·001</b><span>Joseph Martin</span><span class="gap">To photograph</span></p>
+    </figure>
+    <div class="base rise d4">
+      <p class="lede">Western hats and dress fedoras, made by hand from start to finish in a shop on Villa Place, Nashville.</p>
+      <ul class="ways" aria-label="Ways to buy">
+        <li><span>Ready-to-wear</span><span>Ships now</span></li>
+        <li><span>Made to order</span><span>Named designs</span></li>
+        <li><span>Custom</span><span>From $595</span></li>
+        <li><span>Caps &amp; tees</span><span>From $45</span></li>
+      </ul>
+      <div class="acts"><a class="go" href="hats.html">See the hats</a><a class="go" href="#commission">Have one made</a></div>
+    </div>
+  </section>
+
+  <!-- II. The hats -->
+  <section class="hats felt wrap" id="hats" aria-labelledby="h-hats" style="--felt:var(--whiskey)" data-tone="dark">
+    <div class="chap"><span class="num">II</span><h2 id="h-hats">The <em>hats</em></h2><p>Each hat has its own felt and its own charm. What the listing documents is drawn solid. What we have not seen is dashed.</p></div>
+    <div class="stage grid">
+      <div class="band">
+        <div id="st-band"></div>
+        <div class="cap"><span class="key2"><span><i></i>Documented in the listing</span><span><i class="d"></i>Not verified</span></span><span class="ledger" style="border:0;padding:0"><b id="st-no">JM·H·003</b></span></div>
+      </div>
+      <div class="info" aria-live="polite">
+        <h3 id="st-name">Oris</h3>
+        <p id="st-line"></p>
+        <dl id="st-specs"></dl>
+        <div class="btns"><a class="btn btn--line" id="st-view" href="hat.html?h=oris">The hat <span>→</span></a></div>
+      </div>
+      <div class="ol" id="st-ol"></div>
+    </div>
+    <div class="charms" role="radiogroup" aria-label="Choose a hat by its charm"></div>
+  </section>
+
+  <!-- III. Caps and tees -->
+  <section class="caps wrap" id="caps" aria-labelledby="h-caps">
+    <div class="chap"><span class="num">III</span><h2 id="h-caps">Caps <em>&amp; tees</em></h2><p>Cowboy George already lives here, on the trucker and the tee. He keeps that job: the mascot, not the maker’s mark.</p></div>
+    <div class="grid">
+      <span class="geo" role="img" aria-label="Cowboy George, red ink line drawing"></span>
+      <div class="list"><ul id="caps-list"></ul>
+        <p class="note">Names and prices from the search-index snapshot, 23 Nov 2026 · photographs are on the current shop · confirm stock</p></div>
+    </div>
+  </section>
+
+  <!-- IV. Around the work -->
+  <section class="world wrap" aria-labelledby="h-world">
+    <div class="chap"><span class="num">IV</span><h2 id="h-world">Around the <em>work</em></h2><p>Real posters and the club. Supporting, never in front of the hats.</p></div>
+    <div class="grid row">
+      <figure class="w1"><img src="../../assets/jm/hatmaker-double-decker-1339.webp" srcset="../../assets/jm/hatmaker-double-decker-640.webp 640w, ../../assets/jm/hatmaker-double-decker-1339.webp 1339w" sizes="(max-width:1024px) 92vw, 38vw" width="1339" height="1841" loading="lazy" decoding="async" alt="Poster: JOSEPH MARTIN HATMAKER in heavy white slab letters over a violet sky, a red double-decker bus and a cowboy on horseback"><figcaption><b>Double Decker Arts Festival</b><span>Poster · Oxford, Mississippi · April 2024</span></figcaption></figure>
+      <figure class="w2"><img src="../../assets/jm/martin-survives-1100.webp" srcset="../../assets/jm/martin-survives-640.webp 640w, ../../assets/jm/martin-survives-1100.webp 1100w" sizes="(max-width:1024px) 46vw, 22vw" width="1100" height="1375" loading="lazy" decoding="async" alt="Framed red-ink poster: Martin Survives!"><figcaption><b>Martin Survives!</b><span>One year as a full-time craftsman</span></figcaption></figure>
+      <div class="w3"><a class="club" href="../../music-city-driving-club/"><span class="mono"><span>Capsule No. 001</span><span>→</span></span><p class="lock">Music City <em>Driving</em> Club.</p><span class="mono">A cream jacket and its patches</span></a></div>
+      <div class="more"><p>The strongest pieces, kept as the work happens.</p><a class="go" href="archive.html">The archive</a></div>
+    </div>
+  </section>
+
+  <!-- V. Commission -->
+  <section class="commission on-dark wrap" id="commission" aria-labelledby="h-com">
+    <div class="chap"><span class="num">V</span><h2 id="h-com">Have one <em>made</em></h2><p>Commissions are currently taken from a waitlist.</p></div>
+    <div class="grid">
+      <p class="big">Any colour, any shape, any detail, and the charm chosen with Joseph.</p>
+      <dl class="terms">
+        <div><dt>Custom fur felt</dt><dd>$1,395, all-inclusive</dd></div>
+        <div><dt>Custom straw</dt><dd>$595–$1,150</dd></div>
+        <div><dt>Time</dt><dd>4–6 weeks*</dd></div>
+        <div><dt>Where</dt><dd>Villa Place, or remotely</dd></div>
+      </dl>
+      <div class="act">
+        <div class="btns"><a class="btn btn--solid" href="https://josephbenmartin.com/pages/contact">Join the waitlist <span>↗</span></a><a class="btn btn--line" href="https://josephbenmartin.com/pages/sizing">Sizing <span>↗</span></a></div>
+        <small>*The current site quotes 4–6 weeks (custom, sizing page), 6–8 weeks (homepage) and 8–10 weeks (Cech). One figure per kind of hat, to confirm with Joseph. “The charm chosen with Joseph” is a proposal, not a current service.</small>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <p class="bigmk" data-m="charm_leaf"></p>
+    <div class="cols grid">
+      <address>Joseph Martin, Hatmaker<br>1200 Villa Place, Suite 200<br>Nashville, Tennessee 37212</address>
+      <ul><li><a href="https://josephbenmartin.com/collections/all">Shop</a></li><li><a href="https://josephbenmartin.com/pages/meet-joseph">About Joseph</a></li><li><a href="https://josephbenmartin.com/pages/contact">Contact and waitlist</a></li><li><a href="https://josephbenmartin.com/pages/sizing">Sizing</a></li><li><a href="https://www.instagram.com/josephbenmartin/">Instagram</a></li></ul>
+      <p class="ways mono">Ready-to-wear · Made to order · Custom · Caps &amp; tees</p>
+      <p class="note">Study F.1, Charm. Not for publication and not approved. Study F is unchanged. Charms are stand-ins drawn from listing text. Product data: search-index snapshot, 23 Nov 2026. *To confirm.</p>
+    </div>
+  </div>
+</footer>
+<script src="../../assets/identity/marks.js"></script>
+<script src="f1.js"></script>
+<script>
+JM1.mount();
+(function(){
+  var H=JM1.HATS, sec=document.getElementById('hats'), row=sec.querySelector('.charms'), $=function(i){return document.getElementById(i)};
+  row.innerHTML=JM1.ORDER.map(function(k){var h=H[k];return '<button type="button" role="radio" aria-checked="'+(k==='oris')+'" data-k="'+k+'"'+(k==='oris'?'':' tabindex="-1"')+'><span class="cm">'+JMMARKS['charm_only_'+h.charm]+'</span><span class="n">'+h.name+'</span></button>'}).join('')+'<a class="all" href="hats.html">All hats →</a>';
+  function show(k,focus){
+    var h=H[k]; sec.style.setProperty('--felt',h.hex); sec.dataset.tone=h.tone;
+    $('st-band').innerHTML=JM1.bandPlate(k)+JM1.bandLegend(k); $('st-ol').innerHTML=JM1.outlineSVG(k,{labels:true});
+    $('st-name').textContent=h.name; $('st-no').textContent=h.no; $('st-line').textContent=h.line;
+    $('st-specs').innerHTML=h.specs.map(function(s){return '<div><dt>'+s[0]+'</dt><dd>'+JM1.fr(s[1])+'</dd></div>'}).join('');
+    $('st-view').href='hat.html?h='+k;
+    $('big-charm').innerHTML=JMMARKS['charm_only_'+h.charm];
+    row.querySelectorAll('button').forEach(function(b){var on=b.dataset.k===k;b.setAttribute('aria-checked',on);b.tabIndex=on?0:-1;if(on&&focus)b.focus()});
+  }
+  row.addEventListener('click',function(e){var b=e.target.closest('button');if(b)show(b.dataset.k)});
+  row.addEventListener('keydown',function(e){var o=JM1.ORDER,c=o.indexOf(row.querySelector('[aria-checked="true"]').dataset.k);
+    if(e.key==='ArrowRight'||e.key==='ArrowDown'){e.preventDefault();show(o[(c+1)%4],true)}
+    if(e.key==='ArrowLeft'||e.key==='ArrowUp'){e.preventDefault();show(o[(c+3)%4],true)}});
+  show('oris');
+  $('caps-list').innerHTML=JM1.CAPS.map(function(c){return '<li><a href="'+c[2]+'"><b>'+JM1.esc(c[0])+'</b><span>'+c[1]+'</span><span>↗</span></a></li>'}).join('');
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Joseph Martin — Identity on the website (study)</title>
+<meta name="description" content="The three Joseph Martin wordmark directions applied to the opening screen of the website.">
+<meta name="robots" content="noindex">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 32 32%22%3E%3Crect width=%2232%22 height=%2232%22 fill=%22%23161513%22/%3E%3C/svg%3E">
+<link rel="preload" href="../../assets/fonts/libre-caslon-display-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../f-working-house/f.css">
+<style>
+@font-face{font-family:"Libre Caslon Display";src:url(../../assets/fonts/libre-caslon-display-latin-400-normal.woff2) format("woff2");font-display:swap}
+@font-face{font-family:"Archivo";src:url(../../assets/fonts/archivo-latin-standard-normal.woff2) format("woff2");font-weight:100 900;font-stretch:62% 125%;font-display:swap}
+@font-face{font-family:"Barlow Condensed";src:url(../../assets/fonts/barlow-condensed-latin-700-normal.woff2) format("woff2");font-weight:700;font-display:swap}
+@font-face{font-family:"Barlow Condensed";src:url(../../assets/fonts/barlow-condensed-latin-500-normal.woff2) format("woff2");font-weight:500;font-display:swap}
+:root{--gold:#A8834A;--thread:#A3221A;--ground:var(--paper)}
+body:not([data-d="thread"]) .v-thread,body:not([data-d="charm"]) .v-charm,body:not([data-d="george"]) .v-george{display:none!important}
+.mk svg{display:block;height:100%;width:auto}
+.top .mk{height:22px;justify-self:start}
+.top .mk.charm-mk{height:26px}
+.study-tag{position:fixed;right:12px;bottom:12px;z-index:30;font:400 10.5px/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;background:var(--ink);color:var(--paper);padding:8px 10px}
+
+/* —— shared opening frame —— */
+.open{min-height:calc(100svh - 64px);max-height:980px;position:relative;overflow:hidden}
+.plate.p4{aspect-ratio:4/5}
+.ways{list-style:none;margin:0;padding:0;font:400 11.5px/1.5 var(--mono);letter-spacing:.06em;text-transform:uppercase}
+.ways li{display:flex;justify-content:space-between;gap:10px;padding:5px 0;border-bottom:1px solid var(--rule)}
+.ways li span:last-child{color:var(--pencil)}
+.lede{margin:0;font:400 clamp(20px,1.6vw,25px)/1.24 var(--serif);max-width:30ch}
+
+/* —— I. THREAD —— */
+.o-thread{display:grid;grid-template-rows:auto auto 1fr;padding-top:clamp(28px,4vw,56px)}
+.o-thread .name{margin:0;line-height:0}
+.o-thread .name svg{width:calc(100% + 2vw);height:auto;margin-left:-.4vw;--thread:var(--thread)}
+.o-thread .row{margin-top:clamp(28px,3.6vw,56px);align-items:end}
+.o-thread .row .txt{grid-column:1 / 6;display:grid;gap:20px}
+.o-thread .row .plate{grid-column:8 / 13;aspect-ratio:5/4}
+.o-thread .row .mid{grid-column:6 / 8;align-self:start;font:400 11px/1.5 var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--pencil);writing-mode:vertical-rl;transform:rotate(180deg);justify-self:center}
+
+/* —— II. CHARM —— */
+.o-charm{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:var(--g);padding-top:clamp(24px,3vw,44px);padding-bottom:clamp(28px,3vw,44px)}
+.o-charm .name{grid-column:1 / 10;grid-row:1;margin:0;font:400 clamp(80px,10vw,180px)/.9 "Libre Caslon Display",serif;letter-spacing:.07em;text-transform:uppercase;padding-top:clamp(90px,11vw,190px)}
+.o-charm .name span.l1,.o-charm .name span.l2{display:block}
+.o-charm .name .l1{position:relative;width:max-content}
+.o-charm .name .l2{padding-left:1.12em}
+.o-charm .drop{position:absolute;left:100%;margin-left:.02em;bottom:.0em;height:40vw;max-height:calc(.9em + clamp(90px,11vw,190px) + 40px);width:.56em;display:flex;flex-direction:column;align-items:center;pointer-events:none}
+.o-charm .drop::before{content:"";flex:1;width:1px;background:var(--gold);margin-bottom:-.02em}
+.o-charm .drop .c{width:100%;line-height:0}
+.o-charm .drop .c svg{width:100%;height:auto;display:block}
+.o-charm .plate{grid-column:10 / 13;grid-row:1 / 3;align-self:start;aspect-ratio:4/5;margin-top:clamp(10px,2vw,28px)}
+.o-charm .base{grid-column:1 / 10;grid-row:2;align-self:end;display:grid;grid-template-columns:repeat(9,minmax(0,1fr));column-gap:var(--g);border-top:1px solid var(--ink);padding-top:16px;margin-top:clamp(28px,3vw,48px)}
+.o-charm .base .lede{grid-column:1 / 5}
+.o-charm .base .ways{grid-column:6 / 10}
+.o-charm .pick{grid-column:10 / 13;grid-row:3;display:flex;justify-content:space-between;align-items:center;margin-top:10px}
+.o-charm .pick button{all:unset;cursor:pointer;width:44px;height:52px;display:grid;place-items:center;border-bottom:2px solid transparent}
+.o-charm .pick button[aria-pressed="true"]{border-bottom-color:var(--ink)}
+.o-charm .pick button svg{height:40px;width:auto}
+.o-charm .pick button:focus-visible{outline:2px solid var(--ink)}
+
+/* —— III. GEORGE —— */
+body[data-d="george"]{--paper:#F1EBDF;background:#F1EBDF}
+body[data-d="george"] .top{background:#F1EBDF}
+.o-george{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:var(--g);align-items:end;padding-top:clamp(24px,3vw,40px)}
+.o-george .geo{grid-column:1 / 7;grid-row:1 / 3;align-self:stretch;min-height:min(70svh,700px);background:var(--thread);-webkit-mask:url(../../assets/mcdc/cowboy-george-line.png) left bottom/contain no-repeat;mask:url(../../assets/mcdc/cowboy-george-line.png) left bottom/contain no-repeat}
+.o-george .nm{grid-column:7 / 13;grid-row:1;color:var(--thread);align-self:end}
+.o-george .nm svg{width:100%;height:auto}
+.o-george .sub{grid-column:7 / 10;grid-row:2;display:grid;gap:18px;padding:22px 0 clamp(24px,3vw,44px)}
+.o-george .plate{grid-column:10 / 13;grid-row:2;aspect-ratio:4/5;margin-bottom:clamp(24px,3vw,44px);margin-top:22px}
+.o-george .ways li{border-color:#D9CFBE}
+
+@media (max-width:1024px){
+  .o-thread .row .txt{grid-column:1 / 8}.o-thread .row .plate{grid-column:8 / 13}.o-thread .row .mid{display:none}
+  .o-charm .name{grid-column:1 / 13}
+  .o-charm .plate{grid-column:7 / 13;grid-row:2}
+  .o-charm .base{grid-column:1 / 7;grid-row:2;grid-template-columns:1fr}
+  .o-charm .base .lede,.o-charm .base .ways{grid-column:1 / 2}
+  .o-charm .base .ways{margin-top:14px}
+  .o-charm .pick{grid-column:7 / 13}
+}
+@media (max-width:640px){
+  .open{min-height:0;max-height:none}
+  .top .mk{height:16px}.top .mk.charm-mk{height:19px}
+  .o-thread .row{display:block}
+  .o-thread .row .plate{margin-top:24px}
+  .o-charm .name{font-size:14.4vw;letter-spacing:.05em;padding-top:26vw}
+  .o-charm .plate,.o-charm .base,.o-charm .pick{grid-column:1 / 13}
+  .o-charm .base{grid-row:3}.o-charm .plate{grid-row:2;margin-top:26px}.o-charm .pick{grid-row:4}
+  .o-george{display:block}
+  .o-george .geo{min-height:0;aspect-ratio:958/1000;width:78%;margin-left:-4%}
+  .o-george .nm{margin-top:-8%}
+  .o-george .plate{margin-top:0}
+}
+</style>
+</head>
+<body data-d="charm">
+<a class="skip" href="#main">Skip to content</a>
+<header class="top wrap">
+  <a class="mk v v-thread" href="#" aria-label="Joseph Martin" data-mark="thread"></a>
+  <a class="mk charm-mk v v-charm" href="#" aria-label="Joseph Martin" data-mark="charm_leaf"></a>
+  <a class="mk v v-george" href="#" aria-label="Joseph Martin" data-mark="george_name" style="color:var(--thread);height:30px"></a>
+  <nav aria-label="Primary"><ul><li><a href="../f-working-house/hats.html">Hats</a></li><li><a href="../f-working-house/maker.html">About Joseph</a></li><li><a href="#">Caps &amp; tees</a></li><li><a href="#">Commission</a></li></ul></nav>
+  <div class="right"><a class="opt" href="https://josephbenmartin.com/collections/all">Shop ↗</a><button class="menu-btn" type="button">Menu</button></div>
+</header>
+<main id="main">
+  <!-- I. THREAD -->
+  <section class="open o-thread wrap v v-thread" aria-label="Opening, Thread direction">
+    <p class="ledger" style="color:var(--ink)"><b>Hatmaker</b><span>1200 Villa Place, Nashville</span><span>Commissions by waitlist</span></p>
+    <h1 class="name" data-mark="thread" style="margin-top:clamp(28px,4vw,64px)"></h1>
+    <div class="row grid">
+      <div class="txt"><p class="lede">Western hats and dress fedoras, made by hand from start to finish in a shop on Villa Place.</p>
+        <ul class="ways"><li><span>Ready-to-wear</span><span>From the shelf</span></li><li><span>Made to order</span><span>Named designs</span></li><li><span>Custom</span><span>From $595</span></li></ul></div>
+      <span class="mid">Every stitch by hand</span>
+      <div class="plate" role="img" aria-label="Placeholder for the opening portrait"><p class="brief"><b>Photograph to come · frontispiece</b>Joseph at the bench, needle in hand, working a sweatband. The thread in frame.</p></div>
+    </div>
+  </section>
+
+  <!-- II. CHARM -->
+  <section class="open o-charm wrap v v-charm" aria-label="Opening, Charm direction">
+    <h1 class="name"><span class="l1">Joseph<span class="drop" aria-hidden="true"><span class="c" id="big-charm" data-mark="charm_only_leaf"></span></span></span><span class="l2">Martin</span></h1>
+    <div class="plate" role="img" aria-label="Placeholder for the opening portrait"><p class="brief"><b>Photograph to come · frontispiece</b>Joseph at the bench, eye level. A hat in his hands, the charm catching the window light.</p></div>
+    <div class="base"><p class="lede">Western hats and dress fedoras, made by hand from start to finish in a shop on Villa Place, Nashville.</p>
+      <ul class="ways"><li><span>Ready-to-wear</span><span>From the shelf</span></li><li><span>Made to order</span><span>Named designs</span></li><li><span>Custom</span><span>From $595</span></li></ul></div>
+    <div class="pick" role="group" aria-label="The charm on each hat">
+      <span class="mono" style="color:var(--pencil)">One charm per hat</span>
+      <button type="button" aria-pressed="false" data-c="sail" aria-label="Sailboat, Ahab"></button><button type="button" aria-pressed="false" data-c="moon" aria-label="Moon, Artemis"></button><button type="button" aria-pressed="true" data-c="leaf" aria-label="Leaf, Oris"></button><button type="button" aria-pressed="false" data-c="flower" aria-label="Flower, Cerelia"></button>
+    </div>
+  </section>
+
+  <!-- III. GEORGE -->
+  <section class="open o-george wrap v v-george" aria-label="Opening, George direction">
+    <span class="geo" role="img" aria-label="Cowboy George, the Joseph Martin mascot, red ink line drawing"></span>
+    <h1 class="nm" data-mark="george_name"><span class="vh">Joseph Martin, Hatmaker, Nashville, Tenn.</span></h1>
+    <div class="sub"><p class="lede">Western hats and dress fedoras, made by hand from start to finish on Villa Place.</p>
+      <ul class="ways"><li><span>Ready-to-wear</span><span>From the shelf</span></li><li><span>Made to order</span><span>Named designs</span></li><li><span>Custom</span><span>From $595</span></li></ul></div>
+    <div class="plate" role="img" aria-label="Placeholder for the opening portrait"><p class="brief"><b>Photograph to come</b>Joseph, waist up, at the bench.</p></div>
+  </section>
+</main>
+<p class="study-tag" id="tag">Identity study · not approved</p>
+<script src="../../assets/identity/marks.js"></script>
+<script>
+(function(){
+  var d=(new URLSearchParams(location.search).get('d')||'charm'); if(!/^(thread|charm|george)$/.test(d)) d='charm';
+  document.body.dataset.d=d;
+  document.getElementById('tag').textContent='Identity study '+({thread:'I · Thread',charm:'II · Charm',george:'III · George'})[d]+' · not approved';
+  document.querySelectorAll('[data-mark]').forEach(function(el){var m=JMMARKS[el.dataset.mark];if(m)el.insertAdjacentHTML('afterbegin',m)});
+  var big=document.getElementById('big-charm');
+  document.querySelectorAll('.pick button').forEach(function(b){b.innerHTML=JMMARKS['charm_only_'+b.dataset.c];
+    b.addEventListener('click',function(){big.innerHTML=JMMARKS['charm_only_'+b.dataset.c];document.querySelectorAll('.pick button').forEach(function(x){x.setAttribute('aria-pressed',x===b)})})});
+})();
+</script>
+</body>
+</html>

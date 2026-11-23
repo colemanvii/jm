@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Joseph Martin — Three identities (study)</title>
+<meta name="description" content="Three wordmark directions for Joseph Martin, hatmaker, each shown on the website, inside a hat, on a woven label and on a printed card.">
+<meta name="robots" content="noindex">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 32 32%22%3E%3Crect width=%2232%22 height=%2232%22 fill=%22%23161513%22/%3E%3C/svg%3E">
+<link rel="stylesheet" href="../f-working-house/f.css">
+<style>
+@font-face{font-family:"Libre Caslon Display";src:url(../../assets/fonts/libre-caslon-display-latin-400-normal.woff2) format("woff2");font-display:swap}
+@font-face{font-family:"Barlow Condensed";src:url(../../assets/fonts/barlow-condensed-latin-700-normal.woff2) format("woff2");font-weight:700;font-display:swap}
+@font-face{font-family:"Barlow Condensed";src:url(../../assets/fonts/barlow-condensed-latin-500-normal.woff2) format("woff2");font-weight:500;font-display:swap}
+:root{--gold:#A8834A;--thread:#A3221A;--ground:var(--paper);--leather:#946A43;--satin:#ECE5D5;--stock:#F1EBDF}
+.mast{padding-block:clamp(32px,4vw,64px) clamp(24px,3vw,40px);align-items:end}
+.mast h1{grid-column:1 / 8;margin:0;font:400 clamp(64px,8vw,140px)/.86 var(--serif);letter-spacing:-.03em}
+.mast h1 em{font-style:italic}
+.mast .side{grid-column:8 / 13;display:grid;gap:14px}
+.mast .side p{margin:0;font-size:16px;color:var(--pencil)}
+.mast .side p.q{font:400 clamp(21px,1.7vw,26px)/1.22 var(--serif);color:var(--ink)}
+.board{display:grid;grid-template-columns:9.5rem repeat(3,minmax(0,1fr));column-gap:var(--g);padding-bottom:clamp(64px,8vw,128px)}
+.board > *{border-top:1px solid var(--rule);padding:18px 0 26px;min-width:0}
+.rl{font:400 11px/1.4 var(--mono);letter-spacing:.07em;text-transform:uppercase;color:var(--pencil);padding-right:10px}
+.rl b{display:block;color:var(--ink);font-weight:500;margin-bottom:4px}
+.hd{border-top:2px solid var(--ink)}
+.hd .num{color:var(--pencil)}
+.hd h2{margin:8px 0 6px;font:italic 400 clamp(36px,3.2vw,54px)/1 var(--serif);letter-spacing:-.02em}
+.hd p{margin:0;font-size:15px;max-width:40ch}
+.hd.rec h2::after{content:"Recommended";font:500 10.5px/1 var(--mono);font-style:normal;letter-spacing:.08em;text-transform:uppercase;vertical-align:middle;margin-left:12px;padding:6px 8px;background:var(--ink);color:var(--paper)}
+.src{font-size:14px;color:var(--pencil)}
+.src b{color:var(--ink);font-weight:500}
+.mark{display:grid;place-items:center;min-height:150px;padding:28px 18px;background:var(--paper-2)}
+.mark svg{width:100%;height:auto;max-height:110px}
+.mark.small{min-height:96px;padding:18px;gap:14px;display:flex;justify-content:center;align-items:center;flex-wrap:wrap}
+.mark.small svg{width:auto;height:44px}
+.mark.dark{background:var(--ink);color:var(--paper);--ground:var(--ink)}
+.mark.stock{background:var(--stock);color:var(--thread)}
+.geo{display:inline-block;aspect-ratio:958/1000;background:var(--thread);-webkit-mask:url(../../assets/mcdc/cowboy-george-line.png) center/contain no-repeat;mask:url(../../assets/mcdc/cowboy-george-line.png) center/contain no-repeat}
+.lockup-g{display:flex;align-items:center;gap:6%;width:100%;color:var(--thread)}
+.lockup-g .geo{width:30%}
+.lockup-g .n{flex:1}
+.lockup-g .n svg{max-height:none}
+.web{display:grid;grid-template-columns:3fr 1fr;gap:10px;align-items:start}
+.web a{display:block;text-decoration:none}
+.web img{width:100%;height:auto;border:1px solid var(--rule)}
+.web .cap{grid-column:1 / 3;font-size:13px;color:var(--pencil)}
+.obj svg{width:100%;height:auto;display:block}
+.obj figcaption{font-size:13px;color:var(--pencil);margin-top:8px}
+.verdict{display:grid;gap:10px;font-size:14.5px}
+.verdict .score{display:flex;gap:4px;align-items:center;font:400 11px/1 var(--mono);letter-spacing:.06em;text-transform:uppercase}
+.verdict .score i{width:14px;height:6px;background:var(--rule)}
+.verdict .score i.on{background:var(--ink)}
+.verdict p{margin:0}
+.verdict .risk{color:var(--red)}
+.note{grid-column:1 / -1;font:400 11px/1.6 var(--mono);letter-spacing:.05em;text-transform:uppercase;color:var(--pencil);border-top:1px solid var(--ink)}
+@media (max-width:1024px){
+  .mast h1,.mast .side{grid-column:1 / 13}.mast .side{margin-top:20px}
+  .board{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .rl{grid-column:1 / -1;padding-bottom:0;border-top:1px solid var(--ink)}
+  .rl + *{border-top:0}
+  .rl ~ *:not(.rl){border-top:0}
+}
+@media (max-width:640px){
+  .board{display:block}
+  .board > *{padding:14px 0 18px}
+  .rl{padding-top:22px}
+  .hd{padding-top:14px}
+  .web{grid-template-columns:2fr 1fr}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="top wrap">
+  <a class="mark-text" href="../../" style="font:400 22px/1 var(--serif);text-decoration:none">Joseph <em>Martin</em> · studies</a>
+  <nav aria-label="Studies"><ul><li><a href="../f-working-house/">Study F</a></li><li><a href="../f1-charm/">Study F.1</a></li><li><a href="./" aria-current="page">Identity</a></li></ul></nav>
+  <div class="right"><span class="mono opt" style="color:var(--pencil)">Not approved · not the live site</span></div>
+</header>
+<main id="main">
+  <section class="mast grid wrap" aria-labelledby="h1">
+    <h1 id="h1">Three <em>identities</em></h1>
+    <div class="side">
+      <p class="q">The test is not whether it looks like a beautiful independent fashion brand. It is whether it could belong to Joseph Martin and no one else.</p>
+      <p>Each direction starts from something that is already Joseph’s: the stitching he is known for, the charms on his hats, and the mascot he already sells on caps and tees. Every mark is outlined from SIL OFL fonts in this repository; Cowboy George is the original line drawing, not a redraw.</p>
+    </div>
+  </section>
+
+  <div class="board wrap" id="board">
+    <!-- headers -->
+    <div class="rl"><b>Direction</b></div>
+    <div class="hd"><span class="num">I</span><h2>Thread</h2><p>The name, set wide, with one running stitch beneath it that starts in a knot and leaves a loose tail.</p></div>
+    <div class="hd rec"><span class="num">II</span><h2>Charm</h2><p>The name in Caslon capitals. Between the names hangs a gold charm, and the charm changes with the hat.</p></div>
+    <div class="hd"><span class="num">III</span><h2>George</h2><p>Cowboy George, the existing mascot, in red ink beside the name set like a maker’s stamp.</p></div>
+
+    <div class="rl"><b>Source</b>What is real</div>
+    <div class="src"><b>His stitching.</b> NewsChannel 5’s feature is about “the meaning behind his custom stitching”. The meaning itself is not yet known. That is an interview question, and the mark must not pretend to answer it.</div>
+    <div class="src"><b>His charms.</b> Every hat in the snapshot carries one: a gold sailboat (Ahab), moon charms (Artemis), a gold leaf (Oris), a gold flower (Cerelia). His story is titled “Fourth Time’s a Charm”.</div>
+    <div class="src"><b>His mascot.</b> Cowboy George is listed on the shop as the Cowboy George Foam Trucker and the Cowboy George Tee, and is drawn in red ink on the posters.</div>
+
+    <div class="rl"><b>The mark</b>Primary</div>
+    <div class="mark" data-m="thread"></div>
+    <div class="mark" data-m="charm_leaf"></div>
+    <div class="mark stock"><div class="lockup-g"><span class="geo"></span><span class="n" data-m="george_name"></span></div></div>
+
+    <div class="rl"><b>Small</b>Monogram, reversed</div>
+    <div class="mark small dark"><span data-m="thread_jm" style="--thread:#E0675A"></span></div>
+    <div class="mark small dark" id="jm-charms"></div>
+    <div class="mark small stock"><span class="geo" style="width:64px"></span><span data-m="george_name_stack" style="color:var(--thread)"></span></div>
+
+    <div class="rl"><b>Website</b>Opening screen, desktop and phone</div>
+    <div class="web"><a href="site.html?d=thread"><img src="../../screenshots/identity/site-thread-desktop-first.png" alt="Thread direction on the website, desktop" loading="lazy" width="1440" height="900"></a><a href="site.html?d=thread"><img src="../../screenshots/identity/site-thread-phone-first.png" alt="Thread direction on the website, phone" loading="lazy" width="1170" height="2532"></a><span class="cap">The stitch runs the full width under the name. <a class="go" href="site.html?d=thread">Open</a></span></div>
+    <div class="web"><a href="site.html?d=charm"><img src="../../screenshots/identity/site-charm-desktop-first.png" alt="Charm direction on the website, desktop" loading="lazy" width="1440" height="900"></a><a href="site.html?d=charm"><img src="../../screenshots/identity/site-charm-phone-first.png" alt="Charm direction on the website, phone" loading="lazy" width="1170" height="2532"></a><span class="cap">A gold thread drops from the header and the charm hangs after JOSEPH. Choose a hat and the charm changes. <a class="go" href="site.html?d=charm">Open</a></span></div>
+    <div class="web"><a href="site.html?d=george"><img src="../../screenshots/identity/site-george-desktop-first.png" alt="George direction on the website, desktop" loading="lazy" width="1440" height="900"></a><a href="site.html?d=george"><img src="../../screenshots/identity/site-george-phone-first.png" alt="George direction on the website, phone" loading="lazy" width="1170" height="2532"></a><span class="cap">George takes half the screen; the name is the stamp beside him. <a class="go" href="site.html?d=george">Open</a></span></div>
+
+    <div class="rl"><b>Inside the hat</b>Liner tip and sweatband, seen from below</div>
+    <figure class="obj" data-obj="hat" data-d="thread"><figcaption>Stitched into the satin tip in red thread. The sweatband is hand-stitched with the same stitch length.</figcaption></figure>
+    <figure class="obj" data-obj="hat" data-d="charm"><figcaption>Gold foil on the tip. The charm on the liner matches the one on the band, so each hat is signed with its own charm.</figcaption></figure>
+    <figure class="obj" data-obj="hat" data-d="george"><figcaption>George printed in red on the tip. Lively when the hat comes off; a cartoon at the most intimate point of a $1,600 hat.</figcaption></figure>
+
+    <div class="rl"><b>Garment label</b>Woven, end-fold</div>
+    <figure class="obj" data-obj="label" data-d="thread"><figcaption>Ink ground, cream letters, the stitch woven in red.</figcaption></figure>
+    <figure class="obj" data-obj="label" data-d="charm"><figcaption>Cream ground, ink capitals, the charm woven in gold thread.</figcaption></figure>
+    <figure class="obj" data-obj="label" data-d="george"><figcaption>Cream ground, all red. Reads as merchandise first.</figcaption></figure>
+
+    <div class="rl"><b>Printed card</b>Front and back</div>
+    <figure class="obj" data-obj="card" data-d="thread"><figcaption>The stitch runs off the edge of the card, as if sewn through it.</figcaption></figure>
+    <figure class="obj" data-obj="card" data-d="charm"><figcaption>Front: foil on black stock. Back: the four charms, one for each current hat.</figcaption></figure>
+    <figure class="obj" data-obj="card" data-d="george"><figcaption>George bleeds off the front. The back is the maker’s stamp.</figcaption></figure>
+
+    <div class="rl"><b>Verdict</b>Could it belong to anyone else?</div>
+    <div class="verdict"><div class="score">Ownable <i class="on"></i><i class="on"></i><i></i><i></i><i></i></div><div class="score">Range <i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i></div>
+      <p>The idea is his, but the form is not. Swap in another hatmaker’s name and the stitched rule still works for any atelier or denim brand. Wide Archivo capitals are common in contemporary fashion.</p><p class="risk">Risk: generic. It becomes his only if he supplies his own signature to stitch.</p></div>
+    <div class="verdict"><div class="score">Ownable <i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i></div><div class="score">Range <i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></div>
+      <p>The charm is the one detail that recurs on every hat, and the mark changes with the product: Oris is signed with a leaf, Ahab with a sailboat. No other hatmaker’s mark is built from his own hardware.</p><p class="risk">Risk: Caslon spaced capitals alone read as generic luxury. The charm carries the whole distinction, so it must be drawn from Joseph’s actual charms, not these stand-ins.</p></div>
+    <div class="verdict"><div class="score">Ownable <i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></div><div class="score">Range <i class="on"></i><i class="on"></i><i></i><i></i><i></i></div>
+      <p>Unmistakably his: nobody else has George. It is already on his caps and tees, so it has already proved itself as merchandise.</p><p class="risk">Risk: George outranks Joseph. A dog with a cigarette sets the tone for a $1,795 commission, and the red ink pulls towards Western poster nostalgia.</p></div>
+
+    <p class="note">Recommendation: II, Charm, as the house mark for hats, liners, labels and the website. Keep George in the role he already has: caps, tees, posters and the Music City Driving Club. Keep the stitch as a detail, not a logo. The charm drawings here are stand-ins drawn from text descriptions; the final charms must be traced from Joseph’s own.</p>
+  </div>
+</main>
+<script src="../../assets/identity/marks.js"></script>
+<script>
+(function(){
+  var M=JMMARKS;
+  document.querySelectorAll('[data-m]').forEach(function(el){el.insertAdjacentHTML('afterbegin',M[el.dataset.m])});
+  document.getElementById('jm-charms').innerHTML=['sail','moon','leaf','flower'].map(function(k){return M['charm_jm_'+k]}).join('');
+  // strip the outer <svg> wrapper so a mark can be nested inside an application drawing
+  function inner(key,x,y,w,color,extra){
+    var s=M[key], vb=s.match(/viewBox="([^"]+)"/)[1].split(' ').map(Number), body=s.replace(/^<svg[^>]*>/,'').replace(/<\/svg>$/,'');
+    var k=w/vb[2], h=vb[3]*k;
+    return '<g transform="translate('+(x-w/2)+' '+(y-h/2)+') scale('+k+') translate('+(-vb[0])+' '+(-vb[1])+')" style="color:'+color+';'+(extra||'')+'">'+body+'</g>';
+  }
+  var GEO='../../assets/mcdc/cowboy-george-line.png';
+  function george(x,y,w,color,id){ // the original drawing, recoloured through a mask
+    var h=w*1000/958;
+    return '<mask id="'+id+'" maskUnits="userSpaceOnUse" x="'+(x-w/2)+'" y="'+(y-h/2)+'" width="'+w+'" height="'+h+'"><image href="'+GEO+'" x="'+(x-w/2)+'" y="'+(y-h/2)+'" width="'+w+'" height="'+h+'"/></mask><rect x="'+(x-w/2)+'" y="'+(y-h/2)+'" width="'+w+'" height="'+h+'" fill="'+color+'" mask="url(#'+id+')"/>';
+  }
+  var WEAVE='<pattern id="PID" width="3" height="3" patternUnits="userSpaceOnUse"><path d="M0 .5 H3 M.5 0 V3" stroke="#000" stroke-opacity=".07" stroke-width=".6"/></pattern>';
+
+  function hat(d){
+    var felt=d==='george'?'#5A3D2B':'#8E5A2C', tipTxt={thread:'#161513',charm:'#A8834A',george:'#A3221A'}[d];
+    var s='<svg viewBox="0 0 420 330" role="img" aria-label="Inside the hat, '+d+' direction">';
+    s+='<rect width="420" height="330" fill="#E8E6DF"/>';
+    s+='<ellipse cx="210" cy="165" rx="198" ry="150" fill="'+felt+'"/>';                                   // brim underside
+    s+='<ellipse cx="210" cy="165" rx="132" ry="104" fill="#7A5634"/>';                                    // sweatband
+    s+='<ellipse cx="210" cy="165" rx="132" ry="104" fill="none" stroke="#5E4127" stroke-width="1"/>';
+    s+='<ellipse cx="210" cy="165" rx="124" ry="96" fill="none" stroke="#E9DCC3" stroke-width="1.4" stroke-dasharray="5 4" opacity=".8"/>'; // hand stitching
+    s+='<ellipse cx="210" cy="165" rx="112" ry="85" fill="#ECE5D5"/>';                                     // satin liner
+    s+='<ellipse cx="210" cy="165" rx="70" ry="52" fill="none" stroke="#D6CCB6" stroke-width="1"/>';        // liner tip seam
+    if(d==='thread') s+=inner('thread',210,160,124,'#161513','--thread:#A3221A')+'<text x="210" y="200" text-anchor="middle" font-family="DM Mono,monospace" font-size="7" letter-spacing="1.4" fill="#161513">NASHVILLE · TENN.</text>';
+    if(d==='charm') s+=inner('charm_jm_leaf',210,154,64,'#A8834A','--gold:#A8834A;--ground:#ECE5D5')+'<text x="210" y="196" text-anchor="middle" font-family="Libre Caslon Display,serif" font-size="8.5" letter-spacing="3" fill="#A8834A">JOSEPH MARTIN · NASHVILLE</text>';
+    if(d==='george') s+=george(210,152,64,'#A3221A','gh')+'<text x="210" y="201" text-anchor="middle" font-family="Barlow Condensed,sans-serif" font-weight="700" font-size="11" letter-spacing=".6" fill="#A3221A">JOSEPH MARTIN</text>';
+    s+='<text x="210" y="258" text-anchor="middle" font-family="DM Mono,monospace" font-size="8" letter-spacing="1.5" fill="'+(d==='charm'?'#D8BC86':'#E9DCC3')+'">7 1/2</text>';  // size on the sweatband
+    return s+'</svg>';
+  }
+  function label(d){
+    var g={thread:['#161513','#ECE7DC'],charm:['#EFE8D8','#161513'],george:['#F1EBDF','#A3221A']}[d];
+    var s='<svg viewBox="0 0 420 170" role="img" aria-label="Woven garment label, '+d+' direction"><defs>'+WEAVE.replace('PID','w'+d)+'</defs>';
+    s+='<rect width="420" height="170" fill="#E8E6DF"/>';
+    s+='<rect x="30" y="38" width="360" height="94" fill="'+g[0]+'"/>';
+    s+='<rect x="30" y="38" width="22" height="94" fill="#000" opacity=".12"/><rect x="368" y="38" width="22" height="94" fill="#000" opacity=".12"/>';
+    s+='<line x1="52" y1="38" x2="52" y2="132" stroke="#000" stroke-opacity=".2"/><line x1="368" y1="38" x2="368" y2="132" stroke="#000" stroke-opacity=".2"/>';
+    s+='<rect x="30" y="38" width="360" height="94" fill="url(#w'+d+')"/>';
+    s+='<path d="M41 44 V126 M379 44 V126" stroke="'+g[1]+'" stroke-opacity=".5" stroke-dasharray="3 3"/>';   // sewing line through the folds
+    if(d==='thread') s+=inner('thread',210,86,236,g[1],'--thread:#C94A3C');
+    if(d==='charm') s+=inner('charm_leaf',210,84,250,g[1],'--gold:#A8834A;--ground:#EFE8D8');
+    if(d==='george') s+=george(118,85,64,'#A3221A','gl')+inner('george_name',250,85,190,'#A3221A');
+    return s+'</svg>';
+  }
+  function card(d){
+    var s='<svg viewBox="0 0 420 300" role="img" aria-label="Printed card, front and back, '+d+' direction"><rect width="420" height="300" fill="#E8E6DF"/>';
+    var F='<g transform="translate(24 22)">', B='<g transform="translate(64 158)">';
+    if(d==='thread'){
+      F+='<rect width="300" height="120" fill="#F7F5EF" stroke="#D3D0C7"/>'+inner('thread',150,52,200,'#161513','--thread:#A3221A')+'<path d="M0 98 H300" stroke="#A3221A" stroke-width="1.6" stroke-dasharray="7 4"/>';
+      B+='<rect width="300" height="120" fill="#161513"/><text x="20" y="34" font-family="DM Mono,monospace" font-size="8.5" letter-spacing="1.2" fill="#F2F1EC">JOSEPH MARTIN, HATMAKER</text><text x="20" y="54" font-family="DM Mono,monospace" font-size="8.5" letter-spacing="1.2" fill="#BDB9B0">1200 VILLA PLACE, SUITE 200</text><text x="20" y="68" font-family="DM Mono,monospace" font-size="8.5" letter-spacing="1.2" fill="#BDB9B0">NASHVILLE, TENNESSEE 37212</text><path d="M20 96 H280" stroke="#E0675A" stroke-width="1.6" stroke-dasharray="7 4"/><circle cx="16" cy="96" r="3" fill="#E0675A"/>';
+    }
+    if(d==='charm'){
+      F+='<rect width="300" height="120" fill="#161513"/>'+inner('charm_leaf',150,60,236,'#F2F1EC','--gold:#C9A465;--ground:#161513');
+      B+='<rect width="300" height="120" fill="#F4F1EA" stroke="#D3D0C7"/>';
+      ['sail','moon','leaf','flower'].forEach(function(k,i){B+=inner('charm_only_'+k,60+i*60,44,24,'#A8834A','--gold:#A8834A;--ground:#F4F1EA');B+='<text x="'+(60+i*60)+'" y="78" text-anchor="middle" font-family="DM Mono,monospace" font-size="6.5" letter-spacing="1" fill="#5C5A54">'+['AHAB','ARTEMIS','ORIS','CERELIA'][i]+'</text>'});
+      B+='<text x="150" y="104" text-anchor="middle" font-family="DM Mono,monospace" font-size="6.5" letter-spacing="1.2" fill="#161513">1200 VILLA PLACE · NASHVILLE, TENNESSEE</text>';
+    }
+    if(d==='george'){
+      F+='<rect width="300" height="120" fill="#F1EBDF" stroke="#D3D0C7"/><clipPath id="cg"><rect width="300" height="120"/></clipPath><g clip-path="url(#cg)">'+george(84,74,150,'#A3221A','gc')+'</g>'+inner('george_name_stack',226,56,96,'#A3221A');
+      B+='<rect width="300" height="120" fill="#A3221A"/>'+inner('george_name',150,46,200,'#F1EBDF')+'<text x="150" y="92" text-anchor="middle" font-family="Barlow Condensed,sans-serif" font-weight="500" font-size="10" letter-spacing="2" fill="#F1EBDF">1200 VILLA PLACE · NASHVILLE</text>';
+    }
+    return s+F+'</g>'+B+'</g></svg>';
+  }
+  document.querySelectorAll('[data-obj]').forEach(function(f){
+    var fn={hat:hat,label:label,card:card}[f.dataset.obj];
+    f.insertAdjacentHTML('afterbegin',fn(f.dataset.d));
+  });
+})();
+</script>
+</body>
+</html>
