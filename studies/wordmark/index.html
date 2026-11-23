@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Joseph Martin — Wordmark studies</title>
+<meta name="description" content="Typographic studies for the Joseph Martin wordmark, tested on the screen, a woven label, a lining stamp and a business card.">
+<meta name="robots" content="noindex">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 32 32%22%3E%3Crect width=%2232%22 height=%2232%22 fill=%22%23141412%22/%3E%3Ctext x=%2216%22 y=%2222%22 font-family=%22Georgia,serif%22 font-size=%2216%22 fill=%22%23EFEDE8%22 text-anchor=%22middle%22%3EJM%3C/text%3E%3C/svg%3E">
+<style>
+@font-face{font-family:"Caslon Display";src:url(../../assets/fonts/libre-caslon-display-latin-400-normal.woff2) format("woff2");font-display:swap}
+@font-face{font-family:"Caslon";src:url(../../assets/fonts/libre-caslon-text-latin-400-normal.woff2) format("woff2");font-display:swap}
+@font-face{font-family:"Caslon";src:url(../../assets/fonts/libre-caslon-text-latin-400-italic.woff2) format("woff2");font-style:italic;font-display:swap}
+@font-face{font-family:"Archivo";src:url(../../assets/fonts/archivo-latin-standard-normal.woff2) format("woff2");font-weight:100 900;font-stretch:62% 125%;font-display:swap}
+@font-face{font-family:"Newsreader";src:url(../../assets/fonts/newsreader-latin-wght-italic.woff2) format("woff2");font-weight:200 800;font-style:italic;font-display:swap}
+@font-face{font-family:"DM Mono";src:url(../../assets/fonts/dm-mono-latin-400-normal.woff2) format("woff2");font-display:swap}
+:root{--paper:#F3F1EC;--ink:#161614;--grey:#64625C;--rule:#CFCCC4;--m:clamp(16px,3vw,48px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 15px/1.5 "DM Mono",ui-monospace,monospace}
+header{padding:28px var(--m) 40px;border-bottom:1px solid var(--ink);display:grid;grid-template-columns:1fr 1fr;gap:24px}
+h1{margin:0;font:400 clamp(28px,3vw,44px)/1.05 "Caslon",serif}
+header p{margin:0;color:var(--grey);max-width:60ch}
+header a{color:var(--ink)}
+.row{display:grid;grid-template-columns:220px repeat(4,1fr);border-bottom:1px solid var(--rule)}
+.row > *{padding:22px 18px;min-width:0}
+.row .lab{border-right:1px solid var(--rule)}
+.lab b{display:block;font-weight:400;font-size:12px;margin-bottom:6px}
+.lab span{color:var(--grey);font-size:12px}
+.cell{display:grid;place-items:center;min-height:200px;border-right:1px solid var(--rule)}
+.cell:last-child{border-right:0}
+.head{font-size:11px;color:var(--grey);text-transform:uppercase;letter-spacing:.08em}
+.row.top .cell{min-height:0;padding:12px 18px;place-items:start}
+.screen{width:100%;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--rule);padding-bottom:10px}
+.screen i{font-style:normal;font-size:9px;color:var(--grey);letter-spacing:.08em}
+.label{width:180px;height:62px;background:#1F1D1A;color:#E9E2D2;display:grid;place-items:center;outline:1px dashed #6E6A62;outline-offset:-5px}
+.stamp{width:150px;height:150px;border-radius:50%;background:#7A5634;color:#E6D3B4;display:grid;place-items:center;text-align:center;box-shadow:inset 0 0 0 6px #7A5634,inset 0 0 0 7px #C9AE85}
+.card{width:220px;height:126px;background:#FBFAF7;box-shadow:0 0 0 1px var(--rule);padding:14px;display:flex;flex-direction:column;justify-content:space-between}
+.card small{font:400 8px/1.4 "DM Mono",monospace;color:var(--grey);letter-spacing:.04em}
+/* candidates */
+.w1{font:400 19px/1 "Caslon Display",serif;letter-spacing:.12em;text-transform:uppercase}
+.w2{font:italic 400 22px/1 "Caslon",serif;letter-spacing:-.01em}
+.w3{font:500 13px/1 "Archivo",sans-serif;font-stretch:125%;letter-spacing:.22em;text-transform:uppercase}
+.w4{font:700 26px/.82 "Archivo",sans-serif;font-stretch:62%;text-transform:uppercase}
+.w5{font:italic 300 24px/1 "Newsreader",serif;letter-spacing:-.02em}
+.w6{font:400 30px/1 "Caslon Display",serif;letter-spacing:.04em}
+.w6 span{font-size:.5em;vertical-align:.5em;padding:0 .12em}
+.stamp .w1{font-size:12px;line-height:1.5}.stamp .w2{font-size:17px}.stamp .w3{font-size:9px;line-height:1.6}.stamp .w4{font-size:22px}.stamp .w5{font-size:19px}.stamp .w6{font-size:40px}
+.label .w1{font-size:12px}.label .w2{font-size:16px}.label .w3{font-size:8.5px}.label .w4{font-size:18px}.label .w5{font-size:17px}.label .w6{font-size:24px}
+.card .w1{font-size:13px}.card .w2{font-size:17px}.card .w3{font-size:9px}.card .w4{font-size:20px}.card .w5{font-size:18px}.card .w6{font-size:24px}
+.notes{padding:32px var(--m) 48px;display:grid;grid-template-columns:repeat(3,1fr);gap:28px;color:var(--grey);font-size:13px}
+.notes h2{font:400 22px/1.1 "Caslon",serif;color:var(--ink);margin:0 0 10px}
+.notes p{margin:0 0 10px}
+@media (max-width:900px){
+  header{grid-template-columns:1fr}
+  .row{grid-template-columns:1fr 1fr}
+  .row .lab{grid-column:1 / 3;border-right:0;border-bottom:1px solid var(--rule);padding-bottom:12px}
+  .row.top{display:none}
+  .cell{min-height:170px;border-bottom:1px solid var(--rule)}
+  .cell:nth-child(odd){border-right:0}
+  .label{width:150px}.card{width:100%;max-width:200px}.stamp{width:124px;height:124px}
+  .notes{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+<header>
+  <h1>Wordmark studies — Joseph Martin</h1>
+  <p>Six typographic directions, each tested at the four places a hatmaker’s name has to live: the screen, a woven label, a lining stamp and a business card. These are explorations, not a replacement. <strong>The current Joseph Martin wordmark has not yet been studied</strong> (the live site was unreachable from this session) and must be compared side by side before anything is chosen. <a href="../../">All studies</a></p>
+</header>
+<main>
+  <div class="row top" aria-hidden="true"><span class="lab head">Candidate</span><span class="cell head">Website header</span><span class="cell head">Woven label</span><span class="cell head">Lining stamp</span><span class="cell head">Business card</span></div>
+  <section class="row" aria-label="Candidate 1">
+    <div class="lab"><b>01 · Caslon Display, spaced capitals</b><span>Study A. The name as a title page. Classical, American printing lineage. Risk: formal, close to many heritage brands.</span></div>
+    <div class="cell"><div class="screen"><span class="w1">Joseph Martin</span><i>MENU</i></div></div>
+    <div class="cell"><div class="label"><span class="w1">Joseph Martin</span></div></div>
+    <div class="cell"><div class="stamp"><span class="w1">Joseph<br>Martin<br>Nashville</span></div></div>
+    <div class="cell"><div class="card"><span class="w1">Joseph Martin</span><small>HATMAKER<br>1200 VILLA PLACE, NASHVILLE</small></div></div>
+  </section>
+  <section class="row" aria-label="Candidate 2">
+    <div class="lab"><b>02 · Caslon italic, lower case</b><span>A signature without a script font. Warm and personal. Risk: reads as editorial rather than as a maker’s mark at small sizes.</span></div>
+    <div class="cell"><div class="screen"><span class="w2">Joseph Martin</span><i>MENU</i></div></div>
+    <div class="cell"><div class="label"><span class="w2">Joseph Martin</span></div></div>
+    <div class="cell"><div class="stamp"><span class="w2">Joseph<br>Martin</span></div></div>
+    <div class="cell"><div class="card"><span class="w2">Joseph Martin</span><small>HATMAKER<br>1200 VILLA PLACE, NASHVILLE</small></div></div>
+  </section>
+  <section class="row" aria-label="Candidate 3">
+    <div class="lab"><b>03 · Archivo expanded, tracked</b><span>Study B. Engineered, quiet, contemporary. Strong on labels. Risk: anonymous; could belong to any modern brand.</span></div>
+    <div class="cell"><div class="screen"><span class="w3">Joseph Martin</span><i>MENU</i></div></div>
+    <div class="cell"><div class="label"><span class="w3">Joseph Martin</span></div></div>
+    <div class="cell"><div class="stamp"><span class="w3">Joseph<br>Martin<br>Nashville TN</span></div></div>
+    <div class="cell"><div class="card"><span class="w3">Joseph Martin</span><small>HATMAKER<br>1200 VILLA PLACE, NASHVILLE</small></div></div>
+  </section>
+  <section class="row" aria-label="Candidate 4">
+    <div class="lab"><b>04 · Archivo condensed, stacked</b><span>Poster weight; recalls stamped workwear and show bills without imitating them. Risk: loud next to delicate felt work.</span></div>
+    <div class="cell"><div class="screen"><span class="w4">Joseph<br>Martin</span><i>MENU</i></div></div>
+    <div class="cell"><div class="label"><span class="w4">Joseph Martin</span></div></div>
+    <div class="cell"><div class="stamp"><span class="w4">Joseph<br>Martin</span></div></div>
+    <div class="cell"><div class="card"><span class="w4">Joseph<br>Martin</span><small>HATMAKER<br>1200 VILLA PLACE, NASHVILLE</small></div></div>
+  </section>
+  <section class="row" aria-label="Candidate 5">
+    <div class="lab"><b>05 · Newsreader italic, light</b><span>Study C. Literary, contemporary, generous. Risk: thin strokes weave poorly; needs a heavier label cut.</span></div>
+    <div class="cell"><div class="screen"><span class="w5">Joseph Martin</span><i>MENU</i></div></div>
+    <div class="cell"><div class="label"><span class="w5">Joseph Martin</span></div></div>
+    <div class="cell"><div class="stamp"><span class="w5">Joseph<br>Martin</span></div></div>
+    <div class="cell"><div class="card"><span class="w5">Joseph Martin</span><small>HATMAKER<br>1200 VILLA PLACE, NASHVILLE</small></div></div>
+  </section>
+  <section class="row" aria-label="Candidate 6">
+    <div class="lab"><b>06 · J·M monogram</b><span>A secondary mark for linings, sweatband stamps and charms, paired with any of the above. Works smallest of all.</span></div>
+    <div class="cell"><div class="screen"><span class="w6">J<span>·</span>M</span><i>MENU</i></div></div>
+    <div class="cell"><div class="label"><span class="w6">J<span>·</span>M</span></div></div>
+    <div class="cell"><div class="stamp"><span class="w6">J<span>·</span>M</span></div></div>
+    <div class="cell"><div class="card"><span class="w6">J<span>·</span>M</span><small>JOSEPH MARTIN, HATMAKER<br>1200 VILLA PLACE, NASHVILLE</small></div></div>
+  </section>
+</main>
+<section class="notes">
+  <div><h2>Early read</h2><p>01 and 06 together are the most complete system: a title-page name for the screen and print, a monogram for the hat itself. 03 is the most legible woven at small sizes. 02 is the most personal.</p></div>
+  <div><h2>What a decision needs</h2><p>The current wordmark beside these. A woven-label proof from the actual mill (thread count limits detail). A hot-stamp test on real lining material. Joseph’s own preference.</p></div>
+  <div><h2>Licensing</h2><p>All faces here are SIL Open Font License: Libre Caslon (Pablo Impallari), Archivo (Omnibus-Type), Newsreader (Production Type), DM Mono (Colophon). A final mark would be redrawn as artwork, not typed.</p></div>
+</section>
+</body>
+</html>

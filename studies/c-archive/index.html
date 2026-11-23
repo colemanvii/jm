@@ -1,0 +1,426 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Joseph Martin, Hatmaker — Study C: The Living Archive</title>
+<meta name="description" content="Concept study C for Joseph Martin, an independent hatmaker in Nashville, Tennessee: the workshop as an evolving archive of hats, materials, tools, notes and people.">
+<meta name="robots" content="noindex">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 32 32%22%3E%3Crect width=%2232%22 height=%2232%22 fill=%22%23141412%22/%3E%3Ctext x=%2216%22 y=%2222%22 font-family=%22Georgia,serif%22 font-size=%2216%22 fill=%22%23EFEDE8%22 text-anchor=%22middle%22%3EJM%3C/text%3E%3C/svg%3E">
+<meta name="theme-color" content="#F5F4F0">
+<link rel="preload" href="../../assets/fonts/newsreader-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+@font-face{font-family:"Newsreader";src:url(../../assets/fonts/newsreader-latin-wght-normal.woff2) format("woff2");font-weight:200 800;font-display:swap}
+@font-face{font-family:"Newsreader";src:url(../../assets/fonts/newsreader-latin-wght-italic.woff2) format("woff2");font-weight:200 800;font-style:italic;font-display:swap}
+@font-face{font-family:"DM Mono";src:url(../../assets/fonts/dm-mono-latin-400-normal.woff2) format("woff2");font-weight:400;font-display:swap}
+@font-face{font-family:"DM Mono";src:url(../../assets/fonts/dm-mono-latin-500-normal.woff2) format("woff2");font-weight:500;font-display:swap}
+
+:root{
+  --paper:#F5F4F0; --ink:#1A1A18; --pencil:#6B6A64; --rule:#D3D1CA; --tone:#E6E3DC;
+  --stamp:#A3331A;   /* archival red: accession numbers, open items */
+  --natural:#D9CDB6; --granite:#66665F; --whiskey:#8E5A2C; --pecan:#5A3D2B;
+  --rust:#9A4A2A; --indigo:#2F3E5C; --twine:#BFA98A; --gold:#B08D3C;
+  --m:clamp(16px,2.6vw,40px); --g:clamp(10px,1.2vw,18px);
+  --serif:"Newsreader",Georgia,serif;
+  --mono:"DM Mono",ui-monospace,"SFMono-Regular",Menlo,monospace;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 17px/1.5 var(--serif);font-optical-sizing:auto;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+button{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--stamp);outline-offset:2px}
+.skip{position:absolute;left:-9999px;top:0;background:var(--ink);color:var(--paper);padding:10px 14px;z-index:100}
+.skip:focus{left:var(--m)}
+.mono{font:400 11px/1.45 var(--mono);letter-spacing:.02em}
+.vh{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+/* ——— masthead: a ledger strip ——— */
+.mast{display:grid;grid-template-columns:auto 1fr auto;gap:24px;align-items:center;padding:12px var(--m);border-bottom:1px solid var(--ink);position:sticky;top:0;background:var(--paper);z-index:10}
+.mast .name{font:italic 400 24px/1 var(--serif);text-decoration:none;letter-spacing:-.01em;padding:6px 0}
+.mast .ledger{display:flex;gap:22px;color:var(--pencil);justify-content:center;flex-wrap:wrap}
+.mast nav{display:flex;gap:20px}
+.mast nav a{font:500 11px/1 var(--mono);text-transform:uppercase;letter-spacing:.06em;text-decoration:none;padding:12px 0}
+.mast nav a:hover{text-decoration:underline;text-underline-offset:4px}
+
+/* ——— intro ——— */
+.intro{display:grid;grid-template-columns:repeat(12,1fr);gap:var(--g);padding:clamp(28px,4vw,64px) var(--m) clamp(24px,3vw,40px)}
+.intro h1{grid-column:1 / 9;margin:0;font:300 clamp(34px,4.6vw,76px)/1.02 var(--serif);letter-spacing:-.025em}
+.intro h1 em{font-weight:300}
+.intro .aside{grid-column:10 / 13;align-self:end;margin:0;font-size:15px;color:var(--pencil)}
+.intro .aside a{color:var(--ink)}
+
+/* ——— filters ——— */
+.filters{display:flex;flex-wrap:wrap;gap:6px 0;align-items:center;padding:0 var(--m) 14px;border-bottom:1px solid var(--rule)}
+.filters .lab{color:var(--pencil);margin-right:14px}
+.filters button{background:none;border:0;padding:10px 12px;cursor:pointer;font:400 13px/1 var(--mono);color:var(--pencil);border-bottom:1px solid transparent}
+.filters button sup{font-size:10px;margin-left:2px}
+.filters button[aria-pressed=true]{color:var(--ink);border-bottom-color:var(--ink)}
+.filters button:hover{color:var(--ink)}
+.filters .status{margin-left:auto;color:var(--pencil)}
+
+/* ——— the archive grid ——— */
+.sheet{list-style:none;margin:0;padding:var(--g) var(--m) clamp(64px,8vw,120px);display:grid;grid-template-columns:repeat(12,minmax(0,1fr));grid-auto-rows:clamp(52px,5.2vw,84px);grid-auto-flow:dense;gap:var(--g)}
+.item{grid-column:span var(--c,3);grid-row:span var(--r,4);min-width:0}
+.item[hidden]{display:none}
+.item > button{all:unset;box-sizing:border-box;display:flex;flex-direction:column;width:100%;height:100%;cursor:pointer;position:relative}
+.item > button:focus-visible{outline:2px solid var(--stamp);outline-offset:3px}
+.surface{flex:1;min-height:0;position:relative;overflow:hidden;background:var(--bg,var(--tone));color:var(--fg,var(--ink));transition:transform .5s cubic-bezier(.2,.7,.1,1)}
+.item > button:hover .surface{transform:translateY(-3px)}
+.meta{display:flex;justify-content:space-between;gap:10px;padding-top:7px}
+.meta .acc{color:var(--stamp)}
+.meta .t{color:var(--ink);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.meta .k{color:var(--pencil);white-space:nowrap;margin-left:auto}
+
+/* surfaces by kind */
+.k-photo .surface::before,.k-photo .surface::after{content:"";position:absolute;width:14px;height:14px;border:solid var(--pencil);opacity:.7}
+.k-photo .surface::before{top:10px;left:10px;border-width:1px 0 0 1px}
+.k-photo .surface::after{bottom:10px;right:10px;border-width:0 1px 1px 0}
+.ph{position:absolute;inset:auto 18px 16px 18px;margin:0;font:400 12px/1.45 var(--mono);color:#55534D}
+.ph b{display:block;font-weight:500;color:var(--stamp);text-transform:uppercase;letter-spacing:.06em;font-size:10px;margin-bottom:4px}
+.k-swatch .surface{display:flex;align-items:flex-end;padding:14px}
+.k-swatch .surface span{font:400 11px/1.3 var(--mono);opacity:.9}
+.k-note .surface{background:transparent;border-top:1px solid var(--ink);padding:14px 0 0}
+.k-note blockquote,.k-note p{margin:0;font:300 clamp(19px,1.6vw,26px)/1.22 var(--serif);letter-spacing:-.01em}
+.k-note cite{display:block;margin-top:12px;font:normal 400 11px/1.4 var(--mono);color:var(--pencil)}
+.k-q .surface{background:transparent;border:1px dashed var(--stamp);padding:14px}
+.k-q p{margin:0;font:italic 300 clamp(18px,1.4vw,22px)/1.25 var(--serif)}
+.k-q .surface .mono{color:var(--stamp);display:block;margin-bottom:10px;text-transform:uppercase;letter-spacing:.06em}
+.k-draw .surface{background:#FFFFFF;border:1px solid var(--rule);display:grid;place-items:center}
+.k-draw svg{width:58%;height:58%}
+.k-draw svg *{fill:none;stroke:var(--ink);stroke-width:1.3;vector-effect:non-scaling-stroke;stroke-linecap:round;stroke-linejoin:round}
+.k-hat .surface{background:var(--bg)}
+.k-hat .tagline{position:absolute;left:14px;right:14px;bottom:12px;display:flex;justify-content:space-between;align-items:baseline;font:400 12px/1 var(--mono)}
+.k-hat .tagline strong{font:400 clamp(30px,3vw,48px)/1 var(--serif);letter-spacing:-.02em}
+.k-hat .ph{inset:16px 18px auto 18px;color:inherit}
+.k-hat .ph b{color:inherit}
+.k-index .surface{background:var(--ink);color:var(--paper);padding:16px;display:flex;flex-direction:column;justify-content:space-between}
+.k-index .big{font:300 clamp(56px,6vw,104px)/.9 var(--serif);letter-spacing:-.04em}
+
+/* ——— detail dialog ——— */
+dialog{border:0;padding:0;width:min(1120px,calc(100% - 2 * var(--m)));max-height:calc(100svh - 2 * var(--m));background:var(--paper);color:var(--ink);box-shadow:0 0 0 1px var(--ink)}
+dialog::backdrop{background:rgba(26,26,24,.55)}
+.dlg{display:grid;grid-template-columns:7fr 5fr;min-height:min(640px,calc(100svh - 80px))}
+.dlg .view{position:relative;background:var(--bg,var(--tone));color:var(--fg,var(--ink));min-height:320px;overflow:hidden}
+.dlg .view .surface{position:absolute;inset:0;transform:none!important}
+.dlg .view .meta{display:none}
+.dlg .view > button{all:unset;display:block;position:absolute;inset:0}
+.dlg .info{padding:20px 24px 28px;display:flex;flex-direction:column;gap:20px;overflow:auto}
+.dlg .bar{display:flex;justify-content:space-between;align-items:center}
+.dlg .bar button{background:none;border:1px solid var(--ink);padding:10px 14px;cursor:pointer;font:500 11px/1 var(--mono);text-transform:uppercase;letter-spacing:.06em}
+.dlg h2{margin:0;font:300 clamp(30px,3vw,44px)/1.05 var(--serif);letter-spacing:-.02em}
+.dlg .desc{margin:0;font-size:18px}
+.dlg dl{display:grid;grid-template-columns:auto 1fr;gap:6px 18px;margin:0;border-top:1px solid var(--rule);padding-top:14px;font:400 12px/1.5 var(--mono)}
+.dlg dt{color:var(--pencil)}
+.dlg dd{margin:0}
+.dlg .go{align-self:flex-start;display:inline-flex;align-items:center;min-height:46px;padding:0 18px;background:var(--ink);color:var(--paper);text-decoration:none;font:500 11px/1 var(--mono);text-transform:uppercase;letter-spacing:.06em}
+.dlg .nav{margin-top:auto;display:flex;justify-content:space-between}
+.dlg .nav button{background:none;border:0;padding:10px 0;cursor:pointer;font:400 12px/1 var(--mono);color:var(--pencil)}
+.dlg .nav button:hover{color:var(--ink)}
+
+/* ——— commission strip & footer ——— */
+.commission{display:grid;grid-template-columns:repeat(12,1fr);gap:var(--g);padding:clamp(56px,7vw,112px) var(--m);border-top:1px solid var(--ink)}
+.commission .acc{grid-column:1 / 3;color:var(--stamp)}
+.commission h2{grid-column:3 / 9;margin:0;font:300 clamp(32px,4vw,64px)/1.04 var(--serif);letter-spacing:-.025em}
+.commission .terms{grid-column:9 / 13;margin:0;font:400 12px/1.6 var(--mono)}
+.commission .terms div{display:flex;justify-content:space-between;border-bottom:1px solid var(--rule);padding:8px 0;gap:12px}
+.commission .terms dt{color:var(--pencil)}
+.commission .terms dd{margin:0;text-align:right}
+.commission .act{grid-column:9 / 13;display:flex;gap:10px;flex-wrap:wrap;margin-top:8px}
+.btn{display:inline-flex;align-items:center;min-height:46px;padding:0 18px;border:1px solid var(--ink);text-decoration:none;font:500 11px/1 var(--mono);text-transform:uppercase;letter-spacing:.06em}
+.btn--ink{background:var(--ink);color:var(--paper)}
+footer{display:grid;grid-template-columns:repeat(12,1fr);gap:var(--g);padding:20px var(--m) 32px;border-top:1px solid var(--rule);color:var(--pencil)}
+footer .n{grid-column:1 / 4;font:italic 400 22px/1 var(--serif);color:var(--ink)}
+footer address{grid-column:4 / 7;font-style:normal}
+footer ul{grid-column:7 / 9;list-style:none;margin:0;padding:0}
+footer p{grid-column:9 / 13;margin:0}
+footer a{text-decoration:none;border-bottom:1px solid var(--rule);display:inline-block;padding:7px 0}
+
+/* ——— motion ——— */
+::view-transition-group(*){animation-duration:.45s;animation-timing-function:cubic-bezier(.2,.7,.1,1)}
+.motion .item{animation:settle .7s cubic-bezier(.2,.7,.1,1) both;animation-delay:calc(var(--i,0) * 35ms)}
+@keyframes settle{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+dialog[open]{animation:pop .3s cubic-bezier(.2,.7,.1,1)}
+@keyframes pop{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){*,::view-transition-group(*){animation:none!important;transition:none!important}}
+
+/* ——— tablet ——— */
+@media (max-width:1024px){
+  .mast .ledger{display:none}
+  .mast{grid-template-columns:1fr auto}
+  .sheet{grid-template-columns:repeat(6,minmax(0,1fr));grid-auto-rows:64px}
+  .item{grid-column:span min(var(--c,3),6)}
+  .intro h1{grid-column:1 / 13}
+  .intro .aside{grid-column:1 / 9;margin-top:12px}
+  .commission h2{grid-column:1 / 13}
+  .commission .acc{grid-column:1 / 13}
+  .commission .terms,.commission .act{grid-column:1 / 9}
+}
+/* ——— phone: a contact sheet, two across ——— */
+@media (max-width:720px){
+  .mono,.ph,.k-swatch .surface span,.k-hat .tagline,.k-note cite{font-size:12px}
+  .ph b{font-size:11px}
+  .mast{padding:8px var(--m)}
+  .mast nav{gap:14px}
+  .mast nav a.hide-s{display:none}
+  .intro{display:block;padding:24px var(--m) 18px}
+  .intro h1{font-size:31px;line-height:1.08}
+  .intro .aside{margin-top:14px;font-size:15px}
+  .filters{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;padding-bottom:6px;-webkit-overflow-scrolling:touch}
+  .filters::-webkit-scrollbar{display:none}
+  .filters .lab,.filters .status{display:none}
+  .filters button{white-space:nowrap;padding:12px 10px}
+  .sheet{grid-template-columns:repeat(2,minmax(0,1fr));grid-auto-rows:auto;gap:22px 12px}
+  .item{grid-column:span var(--cs,1);grid-row:auto}
+  .item .surface{flex:none;aspect-ratio:var(--ars,4/5)}
+  .k-note .surface,.k-q .surface,.k-index .surface{aspect-ratio:auto;min-height:150px}
+  .k-note blockquote,.k-note p{font-size:21px}
+  .meta{flex-wrap:wrap;gap:2px 8px}
+  .meta .t{white-space:normal;flex-basis:100%;order:-1}
+  .ph{font-size:11px;inset:auto 12px 12px 12px}
+  .item[data-span-s="1"] .ph span{display:none}
+  .dlg{grid-template-columns:1fr}
+  .dlg .view{min-height:46svh}
+  dialog{width:100%;max-width:100%;max-height:100svh;height:100svh;margin:0}
+  .commission{display:block}
+  .commission h2{margin:12px 0 28px}
+  .commission .act{margin-top:20px}
+  .btn{flex:1;justify-content:center}
+  footer{display:flex;flex-direction:column;gap:14px}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="mast">
+  <a class="name" href="#top">Joseph Martin</a>
+  <p class="ledger mono" aria-label="Archive status"><span>Workshop archive</span><span>1200 Villa Place, Nashville</span><span id="ledger-count"></span><span id="ledger-date"></span></p>
+  <nav aria-label="Primary">
+    <a href="#archive" class="hide-s">Archive</a>
+    <a href="https://josephbenmartin.com/collections/all">Shop</a>
+    <a href="#commission">Commission</a>
+  </nav>
+</header>
+
+<main id="main">
+  <section class="intro" id="top" aria-labelledby="h1">
+    <h1 id="h1">Everything that goes into a hat, kept in one place: felts, bands, charms, tools, sketches, people, and <em>the hats themselves.</em></h1>
+    <p class="aside">The working archive of Joseph Martin, hatmaker. Made by hand in Nashville. Entries are added as the work happens. <a href="#commission">Have one made</a>.</p>
+  </section>
+
+  <div class="filters" role="toolbar" aria-label="Filter the archive" id="archive">
+    <span class="lab mono">Show</span>
+    <button type="button" aria-pressed="true" data-f="all">All</button>
+    <button type="button" aria-pressed="false" data-f="hats">Hats</button>
+    <button type="button" aria-pressed="false" data-f="materials">Materials</button>
+    <button type="button" aria-pressed="false" data-f="process">Process</button>
+    <button type="button" aria-pressed="false" data-f="people">People</button>
+    <button type="button" aria-pressed="false" data-f="notes">Notes</button>
+    <span class="status mono" id="status" role="status"></span>
+  </div>
+
+  <ul class="sheet" id="sheet">
+    <!-- Each entry: data-cat, data-state (catalogued = verified data; open = placeholder / question) -->
+    <li class="item k-hat" style="--c:5;--r:7;--bg:var(--whiskey);--fg:var(--paper);--cs:2;--ars:4/5" data-cat="hats" data-state="catalogued" data-title="Oris" data-desc="Fur felt in whiskey, with a turkey feather, beadwork finished with a gold leaf charm, and a partial binding at the brim." data-specs="Felt|Fur felt, whiskey;Size|7 ½;Made|To order;Price|$1,625" data-href="https://josephbenmartin.com/products/hb">
+      <button type="button"><div class="surface" style="color:var(--paper)"><p class="ph"><b>To photograph</b><span>Profile, crown height.</span></p><span class="tagline"><strong>Oris</strong><span>$1,625</span></span></div>
+      <div class="meta mono"><span class="acc">JM·H·003</span><span class="t">Oris · whiskey</span><span class="k">Hat</span></div></button>
+    </li>
+    <li class="item k-note" style="--c:3;--r:3;--cs:2" data-cat="notes" data-state="catalogued" data-title="Shop policy" data-desc="From the current website’s shop policy. Kept here because it is the plainest statement of how the work is done." data-specs="Source|josephbenmartin.com, shop policy;Captured|Nov 2026">
+      <button type="button"><div class="surface"><blockquote>“All items are handmade start to finish in our Nashville shop.”</blockquote><cite>Shop policy, josephbenmartin.com</cite></div>
+      <div class="meta mono"><span class="acc">JM·N·001</span><span class="k">Note</span></div></button>
+    </li>
+    <li class="item k-swatch" style="--c:2;--r:3;--bg:var(--natural);--cs:1;--ars:1" data-cat="materials" data-state="catalogued" data-title="Felt: natural, dress weight" data-desc="The felt used for Ahab. Swatch colour is approximate until matched from a physical sample." data-specs="Material|Felt, dress weight;Colour|Natural;Used on|Ahab">
+      <button type="button"><div class="surface"><span>Natural<br>dress weight</span></div>
+      <div class="meta mono"><span class="acc">JM·M·001</span><span class="k">Felt</span></div></button>
+    </li>
+    <li class="item k-swatch" style="--c:2;--r:3;--bg:var(--granite);--fg:var(--paper);--cs:1;--ars:1" data-cat="materials" data-state="catalogued" data-title="Fur felt: granite, dress weight" data-desc="The felt used for Artemis. Swatch colour approximate." data-specs="Material|Fur felt, dress weight;Colour|Granite;Used on|Artemis">
+      <button type="button"><div class="surface"><span>Granite<br>dress weight</span></div>
+      <div class="meta mono"><span class="acc">JM·M·002</span><span class="k">Felt</span></div></button>
+    </li>
+    <li class="item k-draw" style="--c:2;--r:3;--cs:1;--ars:1" data-cat="materials" data-state="catalogued" data-title="Charm: gold sailboat" data-desc="The charm set on Ahab. Drawn here from its description; to be photographed at actual size." data-specs="Object|Charm, gold;Used on|Ahab;Image|Drawing, not a photograph">
+      <button type="button"><div class="surface"><svg viewBox="0 0 100 100" aria-hidden="true"><path d="M28 70 H 76 L 68 82 H 36 Z"/><path d="M52 70 V 16 L 74 62 H 52"/><path d="M48 70 V 30 L 30 62 H 48"/></svg></div>
+      <div class="meta mono"><span class="acc">JM·M·007</span><span class="k">Charm</span></div></button>
+    </li>
+    <li class="item k-photo" style="--c:4;--r:5;--cs:1;--ars:3/4" data-cat="people" data-state="open" data-title="Joseph at the bench" data-desc="The opening photograph of the archive: Joseph working, photographed where the work actually happens." data-brief="Environmental portrait. Bench, window, blocks on the shelf. Joseph working, not posing. Black and white or colour, decided after a test shoot.">
+      <button type="button"><div class="surface"><p class="ph"><b>To photograph</b><span>Joseph at the bench, Villa Place. Working, not posing.</span></p></div>
+      <div class="meta mono"><span class="acc">JM·P·001</span><span class="t">Joseph at the bench</span><span class="k">People</span></div></button>
+    </li>
+    <li class="item k-photo" style="--c:4;--r:4;--cs:1;--ars:1" data-cat="process" data-state="open" data-title="Steam" data-desc="The felt is softened before it can be shaped. A photograph of that moment." data-brief="Hands and steam, tight crop, dark background, raking light.">
+      <button type="button"><div class="surface"><p class="ph"><b>To photograph</b><span>Steam rising off felt. Hands only.</span></p></div>
+      <div class="meta mono"><span class="acc">JM·P·014</span><span class="t">Steam</span><span class="k">Process</span></div></button>
+    </li>
+    <li class="item k-q" style="--c:3;--r:3;--cs:1" data-cat="notes" data-state="open" data-title="What does the stitching mean?" data-desc="An open question for Joseph. His custom stitching carries a meaning he has spoken about publicly; it should be told in his words, not paraphrased." data-specs="Type|Interview question;Status|Open">
+      <button type="button"><div class="surface"><span class="mono">Open question</span><p>What does the stitching mean, and when did you start doing it?</p></div>
+      <div class="meta mono"><span class="acc">JM·Q·001</span><span class="k">Interview</span></div></button>
+    </li>
+    <li class="item k-hat" style="--c:4;--r:6;--bg:var(--granite);--fg:var(--paper);--cs:1;--ars:3/4" data-cat="hats" data-state="catalogued" data-title="Artemis" data-desc="Dress-weight fur felt in granite. A two-tone bow and keeper, a band of twine wrapped twice, and gold moon charms." data-specs="Felt|Fur felt, dress weight, granite;Made|To order, 6–8 weeks;Price|$1,625" data-href="https://josephbenmartin.com/products/artemis">
+      <button type="button"><div class="surface" style="color:var(--paper)"><p class="ph"><b>To photograph</b><span>Three-quarter view, plain ground.</span></p><span class="tagline"><strong>Artemis</strong><span>$1,625</span></span></div>
+      <div class="meta mono"><span class="acc">JM·H·002</span><span class="t">Artemis · granite</span><span class="k">Hat</span></div></button>
+    </li>
+    <li class="item k-swatch" style="--c:2;--r:3;--bg:var(--twine);--cs:1;--ars:1" data-cat="materials" data-state="catalogued" data-title="Band: twine, double wrap" data-desc="Twine wrapped twice around the crown, on Artemis. Colour approximate." data-specs="Material|Twine;Used on|Artemis">
+      <button type="button"><div class="surface"><span>Twine<br>double wrap</span></div>
+      <div class="meta mono"><span class="acc">JM·M·004</span><span class="k">Band</span></div></button>
+    </li>
+    <li class="item k-draw" style="--c:2;--r:3;--cs:1;--ars:1" data-cat="materials" data-state="catalogued" data-title="Charm: gold moon" data-desc="The moon charms on Artemis. Drawn from the description." data-specs="Object|Charm, gold;Used on|Artemis;Image|Drawing, not a photograph">
+      <button type="button"><div class="surface"><svg viewBox="0 0 100 100" aria-hidden="true"><path d="M60 18 A 34 34 0 1 0 82 70 A 26 26 0 1 1 60 18 Z"/></svg></div>
+      <div class="meta mono"><span class="acc">JM·M·008</span><span class="k">Charm</span></div></button>
+    </li>
+    <li class="item k-photo" style="--c:4;--r:5;--cs:2;--ars:3/2" data-cat="people" data-state="open" data-title="A customer, in their own life" data-desc="Real people wearing Joseph’s hats where they actually live and work. Only with their written permission." data-brief="A customer at home or at work, wearing their hat. Natural light, no styling. Signed release required.">
+      <button type="button"><div class="surface"><p class="ph"><b>To photograph · with permission</b><span>A customer wearing their hat, at home or at work.</span></p></div>
+      <div class="meta mono"><span class="acc">JM·P·021</span><span class="t">A customer, in their own life</span><span class="k">People</span></div></button>
+    </li>
+    <li class="item k-index" style="--c:3;--r:4;--cs:1" data-cat="notes" data-state="catalogued" data-title="Turnaround" data-desc="Made-to-order hats are made in six to eight weeks; some listings say about four to six. A custom fur felt hat is about four to six weeks." data-specs="Made to order|6–8 weeks;Custom felt|About 4–6 weeks;Ready-to-wear|Ships when in stock">
+      <button type="button"><div class="surface"><span class="mono">Made to order</span><span class="big">6–8<br><small style="font-size:.4em">weeks</small></span></div>
+      <div class="meta mono"><span class="acc">JM·N·002</span><span class="k">Note</span></div></button>
+    </li>
+    <li class="item k-swatch" style="--c:2;--r:3;--bg:var(--whiskey);--fg:var(--paper);--cs:1;--ars:1" data-cat="materials" data-state="catalogued" data-title="Fur felt: whiskey" data-desc="The felt used for Oris. Colour approximate." data-specs="Material|Fur felt;Colour|Whiskey;Used on|Oris">
+      <button type="button"><div class="surface"><span>Whiskey<br>fur felt</span></div>
+      <div class="meta mono"><span class="acc">JM·M·003</span><span class="k">Felt</span></div></button>
+    </li>
+    <li class="item k-hat" style="--c:3;--r:5;--bg:var(--pecan);--fg:var(--paper);--cs:1;--ars:3/4" data-cat="hats" data-state="catalogued" data-title="Cerelia" data-desc="Western-weight fur felt in pecan. A rust suede accent band, floral and script embroidery, and a gold flower charm." data-specs="Felt|Fur felt, western weight, pecan;Made|To order, about 4–6 weeks;Price|$1,795" data-href="https://josephbenmartin.com/products/primavera">
+      <button type="button"><div class="surface" style="color:var(--paper)"><p class="ph"><b>To photograph</b><span>Embroidery macro, then full view.</span></p><span class="tagline"><strong>Cerelia</strong><span>$1,795</span></span></div>
+      <div class="meta mono"><span class="acc">JM·H·004</span><span class="t">Cerelia · pecan</span><span class="k">Hat</span></div></button>
+    </li>
+    <li class="item k-photo" style="--c:4;--r:4;--cs:1;--ars:1" data-cat="process" data-state="open" data-title="The brim, set" data-desc="The brim flat on the bench before it is given its curve." data-brief="Overhead. Tools in the positions they are actually used. Do not tidy the bench.">
+      <button type="button"><div class="surface"><p class="ph"><b>To photograph</b><span>The brim from above. Don’t tidy the bench.</span></p></div>
+      <div class="meta mono"><span class="acc">JM·P·015</span><span class="t">The brim, set</span><span class="k">Process</span></div></button>
+    </li>
+    <li class="item k-swatch" style="--c:2;--r:3;--bg:var(--rust);--fg:var(--paper);--cs:1;--ars:1" data-cat="materials" data-state="catalogued" data-title="Band: rust suede" data-desc="The accent band on Cerelia. Colour approximate." data-specs="Material|Suede;Colour|Rust;Used on|Cerelia">
+      <button type="button"><div class="surface"><span>Rust suede<br>accent band</span></div>
+      <div class="meta mono"><span class="acc">JM·M·005</span><span class="k">Band</span></div></button>
+    </li>
+    <li class="item k-swatch" style="--c:2;--r:3;--bg:var(--indigo);--fg:var(--paper);--cs:1;--ars:1" data-cat="materials" data-state="catalogued" data-title="Accent: indigo denim" data-desc="The denim accent at the band of Ahab. Colour approximate." data-specs="Material|Denim;Colour|Indigo;Used on|Ahab">
+      <button type="button"><div class="surface"><span>Indigo denim<br>band accent</span></div>
+      <div class="meta mono"><span class="acc">JM·M·006</span><span class="k">Band</span></div></button>
+    </li>
+    <li class="item k-hat" style="--c:4;--r:5;--bg:var(--natural);--fg:var(--ink);--cs:2;--ars:3/2" data-cat="hats" data-state="catalogued" data-title="Ahab" data-desc="Natural dress-weight felt with two-tone ribbons, an indigo denim accent at the band, and a gold sailboat charm." data-specs="Felt|Dress weight, natural;Made|To order;Price|To confirm: listings show $1,675 and $1,395" data-href="https://josephbenmartin.com/products/ahab">
+      <button type="button"><div class="surface"><p class="ph"><b>To photograph</b><span>Crown-down, charm centred.</span></p><span class="tagline"><strong>Ahab</strong><span>Price to confirm</span></span></div>
+      <div class="meta mono"><span class="acc">JM·H·001</span><span class="t">Ahab · natural</span><span class="k">Hat</span></div></button>
+    </li>
+    <li class="item k-draw" style="--c:2;--r:3;--cs:1;--ars:1" data-cat="materials" data-state="catalogued" data-title="Turkey feather" data-desc="Set on Oris. Drawn from the description." data-specs="Object|Feather, turkey;Used on|Oris;Image|Drawing, not a photograph">
+      <button type="button"><div class="surface"><svg viewBox="0 0 100 100" aria-hidden="true"><path d="M30 86 C 34 56, 50 26, 76 12 C 78 40, 62 70, 30 86 Z"/><path d="M24 92 L 70 22"/><path d="M44 66 l 14 -4 M 50 54 l 14 -4 M 56 42 l 12 -4 M 40 76 l -4 -12 M 47 64 l -4 -12"/></svg></div>
+      <div class="meta mono"><span class="acc">JM·M·009</span><span class="k">Adornment</span></div></button>
+    </li>
+    <li class="item k-q" style="--c:3;--r:3;--cs:1" data-cat="notes" data-state="open" data-title="Fourth time’s a charm" data-desc="Joseph has told this story under that title on the current website. It should be republished here in his words, with his approval." data-specs="Type|Story to republish;Source|josephbenmartin.com/pages/fourth-times-a-charm" data-href="https://josephbenmartin.com/pages/fourth-times-a-charm">
+      <button type="button"><div class="surface"><span class="mono">Story · to republish</span><p>“Fourth Time’s a Charm,” told in Joseph’s words.</p></div>
+      <div class="meta mono"><span class="acc">JM·S·001</span><span class="k">Story</span></div></button>
+    </li>
+    <li class="item k-photo" style="--c:3;--r:4;--cs:1;--ars:4/5" data-cat="process" data-state="open" data-title="Tools on the bench" data-desc="The tools Joseph actually uses, photographed where they live. Named and described by Joseph." data-brief="Overhead still life, no arranging beyond what is already there. Each tool named by Joseph in the caption.">
+      <button type="button"><div class="surface"><p class="ph"><b>To photograph</b><span>The tools, as they lie on the bench.</span></p></div>
+      <div class="meta mono"><span class="acc">JM·T·001</span><span class="t">Tools on the bench</span><span class="k">Tools</span></div></button>
+    </li>
+    <li class="item k-photo" style="--c:3;--r:4;--cs:1;--ars:4/5" data-cat="process" data-state="open" data-title="Needle and sweatband" data-desc="Hand stitching at the sweatband." data-brief="Macro. Thread, needle, leather. Shallow depth of field.">
+      <button type="button"><div class="surface"><p class="ph"><b>To photograph</b><span>Hand stitching, macro.</span></p></div>
+      <div class="meta mono"><span class="acc">JM·P·016</span><span class="t">Needle and sweatband</span><span class="k">Process</span></div></button>
+    </li>
+    <li class="item k-swatch" style="--c:2;--r:3;--bg:var(--pecan);--fg:var(--paper);--cs:1;--ars:1" data-cat="materials" data-state="catalogued" data-title="Fur felt: pecan, western weight" data-desc="The felt used for Cerelia. Colour approximate." data-specs="Material|Fur felt, western weight;Colour|Pecan;Used on|Cerelia">
+      <button type="button"><div class="surface"><span>Pecan<br>western weight</span></div>
+      <div class="meta mono"><span class="acc">JM·M·010</span><span class="k">Felt</span></div></button>
+    </li>
+    <li class="item k-photo" style="--c:12;--r:7;--cs:2;--ars:3/2" data-cat="process" data-state="open" data-title="The shop, empty" data-desc="Villa Place at the end of a day, nobody in frame." data-brief="Wide, available light only. Hats on blocks, felt offcuts on the floor if that is how it is.">
+      <button type="button"><div class="surface"><p class="ph"><b>To photograph</b><span>The shop at the end of the day.</span></p></div>
+      <div class="meta mono"><span class="acc">JM·P·030</span><span class="t">The shop, empty</span><span class="k">Workshop</span></div></button>
+    </li>
+  </ul>
+
+  <section class="commission" id="commission" aria-labelledby="cm">
+    <span class="acc mono">JM·C — Commission</span>
+    <h2 id="cm">Have a hat made for you. Any colour, any shape, any detail, starting with a conversation in Nashville or remotely.</h2>
+    <dl class="terms">
+      <div><dt>Custom fur felt</dt><dd>$1,395, all-inclusive</dd></div>
+      <div><dt>Custom straw</dt><dd>$595–$1,150</dd></div>
+      <div><dt>Time</dt><dd>About 4–6 weeks</dd></div>
+      <div><dt>Booking</dt><dd>Currently by waitlist</dd></div>
+    </dl>
+    <div class="act">
+      <a class="btn btn--ink" href="https://josephbenmartin.com/pages/contact">Join the waitlist</a>
+      <a class="btn" href="https://josephbenmartin.com/pages/sizing">Sizing</a>
+    </div>
+  </section>
+</main>
+
+<footer class="mono">
+  <span class="n">Joseph Martin</span>
+  <address>1200 Villa Place, Suite 200<br>Nashville, Tennessee 37212</address>
+  <ul><li><a href="https://www.instagram.com/josephbenmartin/">Instagram</a></li><li><a href="https://josephbenmartin.com/collections/all">Shop</a></li></ul>
+  <p>Concept study C — The Living Archive. Not for publication. “To photograph” entries are placeholders from the shot list; drawings are drawn from product descriptions. Product details: snapshot of josephbenmartin.com, Nov 2026.</p>
+</footer>
+
+<dialog id="dlg" aria-labelledby="dlg-title">
+  <div class="dlg">
+    <div class="view" id="dlg-view"></div>
+    <div class="info">
+      <div class="bar"><span class="mono" id="dlg-acc" style="color:var(--stamp)"></span><button type="button" id="dlg-close">Close</button></div>
+      <h2 id="dlg-title"></h2>
+      <p class="desc" id="dlg-desc"></p>
+      <dl id="dlg-specs"></dl>
+      <a class="go" id="dlg-go" href="#" hidden>View on the shop</a>
+      <div class="nav"><button type="button" id="dlg-prev">← Previous</button><button type="button" id="dlg-next">Next →</button></div>
+    </div>
+  </div>
+</dialog>
+
+<script>
+(function(){
+  var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if(!reduce) document.documentElement.classList.add('motion');
+  var items=[].slice.call(document.querySelectorAll('.item'));
+  items.forEach(function(el,i){el.style.setProperty('--i',i)});
+  var open=items.filter(function(i){return i.dataset.state==='open'}).length;
+  document.getElementById('ledger-count').textContent=items.length+' entries · '+open+' still to photograph';
+  document.getElementById('ledger-date').textContent='Updated '+new Date().toLocaleDateString('en-US',{day:'numeric',month:'short',year:'numeric'});
+
+  // filters
+  var cats={hats:'hats',materials:'materials',process:'process',people:'people',notes:'notes'};
+  var btns=[].slice.call(document.querySelectorAll('.filters button'));
+  btns.forEach(function(b){
+    var f=b.dataset.f, n=f==='all'?items.length:items.filter(function(i){return i.dataset.cat===f}).length;
+    var s=document.createElement('sup');s.textContent=n;b.appendChild(s);
+    b.addEventListener('click',function(){
+      function run(){
+        btns.forEach(function(x){x.setAttribute('aria-pressed',String(x===b))});
+        var shown=0;
+        items.forEach(function(i){var on=f==='all'||i.dataset.cat===f;i.hidden=!on;if(on)shown++});
+        document.getElementById('status').textContent=shown+' shown';
+      }
+      if(document.startViewTransition&&!reduce) document.startViewTransition(run); else run();
+    });
+  });
+
+  // detail view
+  var d=document.getElementById('dlg'), cur=null;
+  function visible(){return items.filter(function(i){return !i.hidden})}
+  function show(el){
+    cur=el;
+    var view=document.getElementById('dlg-view');
+    view.innerHTML='';
+    view.className='view '+[].slice.call(el.classList).filter(function(c){return c.indexOf('k-')===0}).join(' ');
+    var clone=el.querySelector('.surface').cloneNode(true);
+    view.style.setProperty('--bg',getComputedStyle(el).getPropertyValue('--bg')||'');
+    view.appendChild(clone);
+    if(el.dataset.brief){var p=clone.querySelector('.ph span');if(p)p.textContent=el.dataset.brief}
+    document.getElementById('dlg-acc').textContent=el.querySelector('.acc').textContent;
+    document.getElementById('dlg-title').textContent=el.dataset.title;
+    document.getElementById('dlg-desc').textContent=el.dataset.desc||'';
+    var dl=document.getElementById('dlg-specs');dl.innerHTML='';
+    var specs=(el.dataset.specs||'').split(';').filter(Boolean);
+    specs.push('Status|'+(el.dataset.state==='open'?'Open — not yet photographed or confirmed':'Catalogued from public listings'));
+    specs.forEach(function(s){var kv=s.split('|');var dt=document.createElement('dt');dt.textContent=kv[0];var dd=document.createElement('dd');dd.textContent=kv[1];dl.appendChild(dt);dl.appendChild(dd)});
+    var go=document.getElementById('dlg-go');
+    if(el.dataset.href){go.hidden=false;go.href=el.dataset.href;go.textContent=el.dataset.cat==='hats'?'View & order':'Read on the current site'} else go.hidden=true;
+  }
+  items.forEach(function(el){
+    el.querySelector('button').addEventListener('click',function(){show(el);if(d.showModal){d.showModal()}});
+  });
+  document.getElementById('dlg-close').addEventListener('click',function(){d.close()});
+  d.addEventListener('close',function(){if(cur)cur.querySelector('button').focus()});
+  d.addEventListener('click',function(e){if(e.target===d)d.close()});
+  function step(n){var v=visible(),i=v.indexOf(cur);show(v[(i+n+v.length)%v.length])}
+  document.getElementById('dlg-prev').addEventListener('click',function(){step(-1)});
+  document.getElementById('dlg-next').addEventListener('click',function(){step(1)});
+  d.addEventListener('keydown',function(e){if(e.key==='ArrowRight')step(1);if(e.key==='ArrowLeft')step(-1)});
+})();
+</script>
+</body>
+</html>

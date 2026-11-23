@@ -1,0 +1,395 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Joseph Martin, Hatmaker — Study B: The Object</title>
+<meta name="description" content="Concept study B for Joseph Martin, an independent hatmaker in Nashville, Tennessee: the hat as the central subject, its felt as the colour system and its anatomy as the graphic language.">
+<meta name="robots" content="noindex">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 32 32%22%3E%3Crect width=%2232%22 height=%2232%22 fill=%22%23141412%22/%3E%3Ctext x=%2216%22 y=%2222%22 font-family=%22Georgia,serif%22 font-size=%2216%22 fill=%22%23EFEDE8%22 text-anchor=%22middle%22%3EJM%3C/text%3E%3C/svg%3E">
+<meta name="theme-color" content="#8E5A2C">
+<link rel="preload" href="../../assets/fonts/archivo-latin-standard-normal.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+@font-face{font-family:"Archivo";src:url(../../assets/fonts/archivo-latin-standard-normal.woff2) format("woff2");font-weight:100 900;font-stretch:62% 125%;font-display:swap}
+
+:root{
+  /* the colour system is the felt itself (approximate; to be matched from physical samples) */
+  --natural:#D9CDB6; --granite:#66665F; --whiskey:#8E5A2C; --pecan:#5A3D2B;
+  --paper:#F3EFE7; --ink:#1A1917; --black:#111110;
+  --field:var(--whiskey); --on:var(--paper);
+  --m:clamp(16px,3vw,48px);
+  --f:"Archivo",system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 16px/1.55 var(--f);font-variant-numeric:tabular-nums;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+:focus-visible{outline:2px solid currentColor;outline-offset:3px}
+.skip{position:absolute;left:-9999px;top:0;background:var(--ink);color:var(--paper);padding:10px 14px;z-index:100}
+.skip:focus{left:var(--m)}
+.wide{font-stretch:125%;letter-spacing:.06em;text-transform:uppercase}
+.cond{font-stretch:62%;text-transform:uppercase}
+.label{font:500 11px/1.3 var(--f);font-stretch:112%;letter-spacing:.12em;text-transform:uppercase}
+
+/* ——— the field ——— */
+.field{background:var(--field);color:var(--on);transition:background-color .7s cubic-bezier(.3,.7,.2,1),color .7s}
+.hero{min-height:100svh;display:grid;grid-template-columns:minmax(0,1fr);grid-template-rows:auto 1fr auto;padding:0 var(--m)}
+.top{display:flex;justify-content:space-between;align-items:center;padding:18px 0;border-bottom:1px solid color-mix(in srgb,currentColor 30%,transparent)}
+.mark{font:500 15px/1 var(--f);font-stretch:125%;letter-spacing:.2em;text-transform:uppercase;text-decoration:none;padding:10px 0}
+.top nav{display:flex;gap:clamp(16px,2.6vw,40px)}
+.top nav a{font:500 11px/1 var(--f);font-stretch:112%;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;padding:12px 0}
+.top nav a:hover{text-decoration:underline;text-underline-offset:5px}
+
+.stage{position:relative;display:grid;place-items:center;padding:3svh 0;margin:0;overflow-x:clip}
+.drawing{width:min(100%,1040px,calc((100svh - 230px) * 1.9));height:auto;overflow:visible}
+.drawing .ln{fill:none;stroke:currentColor;stroke-width:1.25;vector-effect:non-scaling-stroke;stroke-linecap:round;stroke-linejoin:round}
+.drawing .thin{stroke-width:.75;opacity:.55;stroke-dasharray:3 4}
+.drawing .lead{fill:none;stroke:currentColor;stroke-width:.75;vector-effect:non-scaling-stroke;opacity:.8}
+.drawing text{fill:currentColor;font:500 11px var(--f);font-stretch:112%;letter-spacing:.12em;text-transform:uppercase}
+.drawing .dot{fill:currentColor}
+.stage figcaption{position:absolute;left:0;bottom:2svh;max-width:30ch}
+
+.base{display:grid;grid-template-columns:1fr auto;align-items:end;gap:24px;padding:0 0 22px;border-top:1px solid color-mix(in srgb,currentColor 30%,transparent);padding-top:18px}
+.ident{display:flex;align-items:baseline;gap:clamp(16px,2vw,32px);flex-wrap:wrap}
+.ident h1{margin:0;font:700 clamp(64px,10vw,168px)/.78 var(--f);font-stretch:62%;text-transform:uppercase;letter-spacing:-.005em}
+.ident .meta{display:grid;gap:4px;padding-bottom:6px}
+.ident .meta p{margin:0}
+.ident .meta .price{font:500 clamp(18px,1.6vw,24px)/1 var(--f)}
+.felts{display:flex;gap:10px;align-items:center}
+.felts legend{position:absolute;left:-9999px}
+.felts fieldset{border:0;margin:0;padding:0;display:flex;gap:10px;min-width:0}
+.felt{position:relative}
+.felt input{position:absolute;opacity:0;inset:0;margin:0;cursor:pointer}
+.felt span{display:grid;place-items:end start;width:68px;height:68px;padding:6px;background:var(--c);color:var(--t,var(--paper));border:1px solid color-mix(in srgb,var(--on) 45%,transparent);font:500 9px/1 var(--f);font-stretch:112%;letter-spacing:.12em;text-transform:uppercase;transition:transform .3s}
+.felt input:checked + span{outline:2px solid var(--on);outline-offset:3px}
+.felt input:focus-visible + span{outline:2px dashed var(--on);outline-offset:5px}
+.felt input:hover + span{transform:translateY(-3px)}
+.order{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 22px;background:var(--on);color:var(--field);text-decoration:none;font:600 11px/1 var(--f);font-stretch:112%;letter-spacing:.12em;text-transform:uppercase;transition:background-color .7s,color .7s}
+.order:hover{outline:1px solid var(--on);outline-offset:3px}
+
+/* ——— statement ——— */
+.statement{padding:clamp(80px,12vw,180px) var(--m);display:grid;grid-template-columns:repeat(12,1fr);column-gap:24px}
+.statement h2{grid-column:1 / 10;margin:0;font:400 clamp(32px,4.4vw,72px)/1.04 var(--f);letter-spacing:-.02em}
+.statement p{grid-column:8 / 12;margin:clamp(32px,4vw,56px) 0 0;max-width:40ch}
+
+/* ——— four felts ——— */
+.four{display:flex;height:min(86svh,820px);border-top:1px solid var(--ink)}
+.col{flex:1;display:flex;flex-direction:column;justify-content:space-between;padding:20px clamp(14px,1.6vw,24px) 24px;background:var(--c);color:var(--t,var(--paper));text-decoration:none;transition:flex-grow .8s cubic-bezier(.3,.7,.2,1);min-width:0;overflow:hidden}
+.col:hover,.col:focus-visible{flex-grow:2.2}
+.col:focus-visible{outline-offset:-6px}
+.col .num{display:flex;justify-content:space-between}
+.col h3{margin:0;font:700 clamp(56px,7.4vw,128px)/.8 var(--f);font-stretch:62%;text-transform:uppercase;writing-mode:vertical-rl;transform:rotate(180deg);align-self:flex-start}
+.col .det{display:grid;gap:10px;max-width:34ch;min-width:22ch}
+.col .det p{margin:0;font-size:14px;line-height:1.45}
+.col .det .pr{font:500 18px/1 var(--f);padding-top:10px;border-top:1px solid color-mix(in srgb,currentColor 40%,transparent);display:flex;justify-content:space-between;gap:12px}
+.col .ph-note{font-size:11px}
+
+/* ——— anatomy ——— */
+.anatomy{padding:clamp(80px,11vw,170px) var(--m)}
+.anatomy header{display:grid;grid-template-columns:repeat(12,1fr);column-gap:24px;margin-bottom:clamp(40px,6vw,88px);align-items:end}
+.anatomy header h2{grid-column:1 / 7;margin:0;font:700 clamp(56px,8vw,140px)/.82 var(--f);font-stretch:62%;text-transform:uppercase}
+.anatomy header p{grid-column:8 / 12;margin:0}
+.parts{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--ink);border-left:1px solid var(--ink);margin:0;padding:0;list-style:none}
+.parts li{border-right:1px solid var(--ink);border-bottom:1px solid var(--ink);padding:20px 22px 26px;display:grid;grid-template-rows:auto 1fr auto;gap:18px;min-height:300px}
+.parts .h{display:flex;justify-content:space-between;align-items:baseline}
+.parts h3{margin:0;font:600 22px/1.1 var(--f);font-stretch:100%}
+.parts svg{width:100%;height:96px}
+.parts svg *{fill:none;stroke:var(--ink);stroke-width:1.25;vector-effect:non-scaling-stroke;stroke-linecap:round;stroke-linejoin:round}
+.parts p{margin:0;font-size:14px}
+.parts .in{font-size:13px;border-top:1px solid #CFC8BA;padding-top:10px;color:#4B4842}
+.parts .in b{font-weight:600;color:var(--ink)}
+
+/* ——— commission ——— */
+.commission{background:var(--black);color:var(--paper);padding:clamp(80px,11vw,170px) var(--m) clamp(64px,8vw,120px)}
+.commission h2{margin:0;font:700 clamp(64px,12.5vw,230px)/.8 var(--f);font-stretch:62%;text-transform:uppercase;letter-spacing:-.005em}
+.commission h2 span{display:block}
+.commission .row{display:grid;grid-template-columns:repeat(12,1fr);column-gap:24px;margin-top:clamp(48px,6vw,96px);border-top:1px solid #3B3A37;padding-top:20px}
+.commission dl{grid-column:1 / 9;display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin:0}
+.commission dt{opacity:.7;margin-bottom:8px}
+.commission dd{margin:0;font:500 clamp(18px,1.6vw,24px)/1.25 var(--f)}
+.commission .act{grid-column:9 / 13;display:grid;gap:14px;align-content:start;justify-items:start}
+.commission .act .order{background:var(--paper);color:var(--black)}
+.commission .act a.sub{font:500 11px/1 var(--f);font-stretch:112%;letter-spacing:.12em;text-transform:uppercase;padding:12px 0}
+.commission .act small{opacity:.75;font-size:13px}
+
+footer{background:var(--black);color:#BDB8AE;padding:0 var(--m) 36px;display:grid;grid-template-columns:repeat(12,1fr);column-gap:24px;row-gap:20px;font-size:13px}
+footer > *{border-top:1px solid #3B3A37;padding-top:18px;margin:0}
+footer .mk{grid-column:1 / 5;color:var(--paper)}
+footer address{grid-column:5 / 8;font-style:normal}
+footer ul{grid-column:8 / 10;list-style:none;padding-left:0}
+footer .nt{grid-column:10 / 13;font-size:12px}
+footer a{text-decoration:none;border-bottom:1px solid #55534E;display:inline-block;padding:7px 0}
+
+/* ——— motion ——— */
+.motion .drawing .ln{stroke-dasharray:var(--len,2400);stroke-dashoffset:var(--len,2400);animation:draw 2.2s cubic-bezier(.45,.1,.2,1) .2s forwards}
+.motion .drawing .call{opacity:0;animation:fade .8s ease 1.9s forwards}
+@keyframes draw{to{stroke-dashoffset:0}}
+@keyframes fade{to{opacity:1}}
+.swap{transition:opacity .35s}
+.swapping .swap{opacity:0}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+
+/* ——— tablet ——— */
+@media (max-width:1024px){
+  .four{height:auto;flex-wrap:wrap}
+  .col{flex:1 1 50%;min-height:440px}
+  .col:hover,.col:focus-visible{flex-grow:1}
+  .parts{grid-template-columns:repeat(2,1fr)}
+  .commission dl{grid-column:1 / 13;grid-template-columns:repeat(2,1fr)}
+  .commission .act{grid-column:1 / 13;margin-top:32px}
+}
+/* ——— phone ——— */
+@media (max-width:720px){
+  .top nav a:not(.keep){display:none}
+  .hero{min-height:auto}
+  .stage{padding:20px 0 8px}
+  .drawing{width:100%}
+  .drawing text{font-size:27px;letter-spacing:.08em}
+  .drawing .call.minor{display:none}
+  .stage{place-items:stretch}
+  .stage figcaption{position:static;margin-top:10px;font-size:10px;letter-spacing:.08em;max-width:none}
+  .base{grid-template-columns:minmax(0,1fr);gap:18px}
+  .felts{flex-direction:column;align-items:stretch}
+  .ident h1{font-size:23vw}
+  .ident{gap:12px 18px}
+  .felts{justify-content:space-between}
+  .felts fieldset{gap:8px;width:100%}
+  .felt{flex:1}
+  .felt span{width:100%;height:56px}
+  .order{width:100%}
+  .statement{display:block}
+  .statement h2{font-size:30px;line-height:1.1}
+  .statement p{margin-top:24px}
+  .four{flex-direction:column}
+  .col{min-height:0;flex:none;display:grid;grid-template-columns:auto 1fr;gap:16px;padding:18px var(--m) 22px}
+  .col .num{grid-column:1 / 3}
+  .col h3{writing-mode:horizontal-tb;transform:none;font-size:72px;grid-column:1 / 3}
+  .col .det{grid-column:1 / 3;min-width:0}
+  .anatomy header{display:block}
+  .anatomy header p{margin-top:20px}
+  .parts{grid-template-columns:1fr}
+  .parts li{min-height:0}
+  .commission h2{font-size:20vw}
+  .commission dl{grid-template-columns:1fr 1fr}
+  footer{display:flex;flex-direction:column}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<main id="main">
+  <section class="field hero" id="top" aria-labelledby="hat-name">
+    <header class="top">
+      <a class="mark" href="#top">Joseph Martin</a>
+      <nav aria-label="Primary">
+        <a href="#hats" class="keep">Hats</a>
+        <a href="#anatomy">Anatomy</a>
+        <a href="#commission" class="keep">Commission</a>
+      </nav>
+    </header>
+
+    <figure class="stage" aria-labelledby="stage-cap">
+      <!-- An original study drawing of a western hat's anatomy. Not a drawing of a specific Joseph Martin hat. -->
+      <svg class="drawing" viewBox="0 0 1000 520" role="img" aria-labelledby="draw-t">
+        <title id="draw-t">Line drawing of a western hat in side elevation, with its parts labelled: crown, crease, pinch, band, brim, brim edge.</title>
+        <!-- guides -->
+        <line class="ln thin" x1="60" y1="378" x2="940" y2="378"/>
+        <line class="ln thin" x1="500" y1="40" x2="500" y2="470"/>
+        <!-- brim: a shallow sweep, up at the sides, down at front/back -->
+        <path class="ln" style="--len:1900" d="M118 352 C 170 384, 270 404, 380 408 C 450 411, 550 411, 620 408 C 730 404, 830 384, 882 352 C 892 345, 885 338, 872 340 C 820 352, 720 368, 640 372 L 360 372 C 280 368, 180 352, 128 340 C 115 338, 108 345, 118 352 Z"/>
+        <!-- crown -->
+        <path class="ln" style="--len:1500" d="M352 372 C 346 300, 344 230, 356 168 C 364 128, 392 112, 430 120 C 456 126, 470 140, 500 140 C 530 140, 544 126, 570 120 C 608 112, 636 128, 644 168 C 656 230, 654 300, 648 372"/>
+        <!-- crease -->
+        <path class="ln" style="--len:500" d="M430 120 C 452 150, 476 160, 500 162 C 524 160, 548 150, 570 120"/>
+        <!-- pinch shadow lines -->
+        <path class="ln" style="--len:400" d="M372 190 C 380 230, 382 270, 380 300"/>
+        <path class="ln" style="--len:400" d="M628 190 C 620 230, 618 270, 620 300"/>
+        <!-- band -->
+        <path class="ln" style="--len:700" d="M350 326 C 420 334, 580 334, 650 326"/>
+        <path class="ln" style="--len:700" d="M351 350 C 420 358, 580 358, 649 350"/>
+        <path class="ln" style="--len:200" d="M612 330 l 22 30 M 626 329 l 16 24"/>
+        <!-- callouts -->
+        <g class="call">
+          <circle class="dot" cx="500" cy="152" r="3"/><polyline class="lead" points="500,152 500,64 560,64"/><text x="568" y="68">Crease</text>
+          <circle class="dot" cx="380" cy="240" r="3"/><polyline class="lead" points="380,240 250,240 226,216"/><text x="218" y="212" text-anchor="end">Pinch</text>
+          <circle class="dot" cx="618" cy="160" r="3"/><polyline class="lead" points="618,160 760,160"/><text x="768" y="164">Crown</text>
+          <circle class="dot" cx="520" cy="340" r="3"/><polyline class="lead" points="520,340 740,290 780,290"/><text x="788" y="294">Band</text>
+          <circle class="dot" cx="250" cy="388" r="3"/><polyline class="lead" points="250,388 220,450 170,450"/><text x="162" y="454" text-anchor="end">Brim</text>
+        </g>
+        <g class="call minor">
+          <circle class="dot" cx="878" cy="346" r="3"/><polyline class="lead" points="878,346 900,430 850,450"/><text x="842" y="454" text-anchor="end">Brim edge</text>
+          <text x="512" y="490" style="opacity:.7">Centre line</text>
+        </g>
+      </svg>
+      <figcaption class="label" id="stage-cap">Study drawing · anatomy of a western hat. To be replaced by a photograph of the hat below, with the same annotations.</figcaption>
+    </figure>
+
+    <div class="base">
+      <div class="ident swap" aria-live="polite">
+        <h1 id="hat-name" data-k="name">Oris</h1>
+        <div class="meta">
+          <p class="label" data-k="felt">Fur felt · Whiskey</p>
+          <p class="label" data-k="spec">Size 7 ½ · Made to order</p>
+          <p class="price" data-k="price">$1,625</p>
+        </div>
+      </div>
+      <div class="felts">
+        <fieldset>
+          <legend>Choose a felt</legend>
+          <label class="felt"><input type="radio" name="felt" value="natural"><span style="--c:var(--natural);--t:var(--ink)">Natural</span></label>
+          <label class="felt"><input type="radio" name="felt" value="granite"><span style="--c:var(--granite)">Granite</span></label>
+          <label class="felt"><input type="radio" name="felt" value="whiskey" checked><span style="--c:var(--whiskey)">Whiskey</span></label>
+          <label class="felt"><input type="radio" name="felt" value="pecan"><span style="--c:var(--pecan)">Pecan</span></label>
+        </fieldset>
+        <a class="order swap" data-k="href" href="https://josephbenmartin.com/products/hb">Order</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="statement" aria-labelledby="st">
+    <h2 id="st">Four felts, four hats. Each one made by hand, start to finish, in a shop on Villa Place in Nashville.</h2>
+    <p>Western shapes and dress fedoras in fur felt and straw. Made-to-order hats take six to eight weeks; ready-to-wear ships when it is on the shelf; a custom hat can be any colour, any shape.</p>
+  </section>
+
+  <section class="four" id="hats" aria-label="The hats">
+    <a class="col" href="https://josephbenmartin.com/products/ahab" style="--c:var(--natural);--t:var(--ink)">
+      <span class="num label"><span>01</span><span>Natural</span></span>
+      <h3>Ahab</h3>
+      <span class="det">
+        <p>Natural dress-weight felt. Two-tone ribbons, an indigo denim accent at the band, a gold sailboat charm.</p>
+        <span class="ph-note label">Photograph to come</span>
+        <span class="pr"><span>Made to order</span><span title="Listings disagree: $1,675 product page, $1,395 collection page">Price to confirm*</span></span>
+      </span>
+    </a>
+    <a class="col" href="https://josephbenmartin.com/products/artemis" style="--c:var(--granite)">
+      <span class="num label"><span>02</span><span>Granite</span></span>
+      <h3>Artemis</h3>
+      <span class="det">
+        <p>Dress-weight fur felt. A two-tone bow and keeper, twine wrapped twice, gold moon charms.</p>
+        <span class="ph-note label">Photograph to come</span>
+        <span class="pr"><span>Made to order</span><span>$1,625</span></span>
+      </span>
+    </a>
+    <a class="col" href="https://josephbenmartin.com/products/hb" style="--c:var(--whiskey)">
+      <span class="num label"><span>03</span><span>Whiskey</span></span>
+      <h3>Oris</h3>
+      <span class="det">
+        <p>Fur felt with a turkey feather, beadwork and a gold leaf charm, and a partial binding at the brim.</p>
+        <span class="ph-note label">Photograph to come</span>
+        <span class="pr"><span>Size 7 ½</span><span>$1,625</span></span>
+      </span>
+    </a>
+    <a class="col" href="https://josephbenmartin.com/products/primavera" style="--c:var(--pecan)">
+      <span class="num label"><span>04</span><span>Pecan</span></span>
+      <h3>Cerelia</h3>
+      <span class="det">
+        <p>Western-weight fur felt. A rust suede accent band, floral and script embroidery, a gold flower charm.</p>
+        <span class="ph-note label">Photograph to come</span>
+        <span class="pr"><span>4–6 weeks</span><span>$1,795</span></span>
+      </span>
+    </a>
+  </section>
+
+  <section class="anatomy" id="anatomy" aria-labelledby="an">
+    <header>
+      <h2 id="an">Anatomy</h2>
+      <p>A hat is a handful of parts, each one a decision. These are the parts, and where they show up in Joseph’s current hats.</p>
+    </header>
+    <ol class="parts">
+      <li>
+        <div class="h"><h3>Felt</h3><span class="label">01</span></div>
+        <svg viewBox="0 0 300 96" aria-hidden="true"><path d="M70 86 C 66 50, 70 22, 110 14 C 130 10, 170 10, 190 14 C 230 22, 234 50, 230 86 Z"/><path d="M20 86 H 280"/></svg>
+        <p>The body of the hat. Weight decides how it holds a shape: dress weight is lighter and finer; western weight is heavier and stiffer.</p>
+        <p class="in"><b>In the current hats:</b> natural and granite (dress weight), pecan (western weight), whiskey.</p>
+      </li>
+      <li>
+        <div class="h"><h3>Band</h3><span class="label">02</span></div>
+        <svg viewBox="0 0 300 96" aria-hidden="true"><path d="M20 38 H 280 M 20 58 H 280"/><path d="M200 38 l 18 34 M 214 38 l 14 26"/></svg>
+        <p>Sits where crown meets brim. The first thing people notice, and the easiest place to make a hat personal.</p>
+        <p class="in"><b>In the current hats:</b> twine wrapped twice (Artemis); rust suede (Cerelia); an indigo denim accent (Ahab).</p>
+      </li>
+      <li>
+        <div class="h"><h3>Bow &amp; keeper</h3><span class="label">03</span></div>
+        <svg viewBox="0 0 300 96" aria-hidden="true"><path d="M150 48 C 120 20, 96 24, 100 48 C 96 72, 120 76, 150 48 Z M 150 48 C 180 20, 204 24, 200 48 C 204 72, 180 76, 150 48 Z"/><path d="M144 40 h 12 v 16 h -12 Z"/></svg>
+        <p>The knot of ribbon on the band, and the small loop that holds it. A detail measured in millimetres.</p>
+        <p class="in"><b>In the current hats:</b> a two-tone bow and keeper (Artemis); two-tone ribbons (Ahab).</p>
+      </li>
+      <li>
+        <div class="h"><h3>Binding</h3><span class="label">04</span></div>
+        <svg viewBox="0 0 300 96" aria-hidden="true"><path d="M20 60 C 90 74, 210 74, 280 60"/><path d="M20 52 C 90 66, 160 68, 190 66" /></svg>
+        <p>A ribbon folded over the brim edge. It protects the edge and draws a line around the hat; leaving part of it off is a choice.</p>
+        <p class="in"><b>In the current hats:</b> a partial brim binding (Oris).</p>
+      </li>
+      <li>
+        <div class="h"><h3>Adornment</h3><span class="label">05</span></div>
+        <svg viewBox="0 0 300 96" aria-hidden="true"><path d="M60 70 L 90 70 L 84 78 L 66 78 Z M 75 70 V 24 L 92 62 H 75"/><path d="M150 26 a 22 22 0 1 0 22 30 a 17 17 0 1 1 -22 -30 Z"/><path d="M226 74 C 220 50, 232 30, 252 22 C 256 44, 246 64, 226 74 Z M 226 74 L 246 40"/></svg>
+        <p>Charms, feathers, beadwork. Small objects with private meanings, added last.</p>
+        <p class="in"><b>In the current hats:</b> gold sailboat, moon, leaf and flower charms; a turkey feather; beadwork.</p>
+      </li>
+      <li>
+        <div class="h"><h3>Embroidery</h3><span class="label">06</span></div>
+        <svg viewBox="0 0 300 96" aria-hidden="true"><path d="M30 60 c 20 -30, 40 -30, 60 0 s 40 30, 60 0 s 40 -30, 60 0 s 40 30, 60 0" stroke-dasharray="5 5"/><circle cx="60" cy="40" r="8"/><circle cx="180" cy="40" r="8"/></svg>
+        <p>Thread worked into the felt itself. The most labour, the least room for error.</p>
+        <p class="in"><b>In the current hats:</b> floral and script embroidery (Cerelia).</p>
+      </li>
+    </ol>
+  </section>
+
+  <section class="commission" id="commission" aria-labelledby="cm">
+    <h2 id="cm"><span>Any colour.</span><span>Any shape.</span><span>$1,395.</span></h2>
+    <div class="row">
+      <dl>
+        <div><dt class="label">Custom fur felt</dt><dd>$1,395, all-inclusive</dd></div>
+        <div><dt class="label">Custom straw</dt><dd>$595–$1,150</dd></div>
+        <div><dt class="label">Time</dt><dd>About 4–6 weeks</dd></div>
+        <div><dt class="label">Consultation</dt><dd>Nashville or remote</dd></div>
+      </dl>
+      <div class="act">
+        <a class="order" href="https://josephbenmartin.com/pages/contact">Join the waitlist</a>
+        <a class="sub" href="https://josephbenmartin.com/pages/sizing">How to measure your size</a>
+        <small>Commissions are currently taken from a waitlist.</small>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <p class="mk wide label">Joseph Martin</p>
+  <address>1200 Villa Place, Suite 200<br>Nashville, Tennessee 37212</address>
+  <ul><li><a href="https://www.instagram.com/josephbenmartin/">Instagram</a></li><li><a href="https://josephbenmartin.com/collections/all">Shop</a></li></ul>
+  <p class="nt">Concept study B — The Object. Not for publication. Felt colours are approximations; the drawing is a generic study, not a Joseph Martin hat. Product details: snapshot of josephbenmartin.com listings, Nov 2026. *Needs confirmation.</p>
+</footer>
+
+<script>
+(function(){
+  var hats={
+    natural:{name:'Ahab',felt:'Dress-weight felt · Natural',spec:'Made to order · 6–8 weeks',price:'Price to confirm*',href:'https://josephbenmartin.com/products/ahab',c:'var(--natural)',on:'var(--ink)',theme:'#D9CDB6'},
+    granite:{name:'Artemis',felt:'Fur felt, dress weight · Granite',spec:'Made to order · 6–8 weeks',price:'$1,625',href:'https://josephbenmartin.com/products/artemis',c:'var(--granite)',on:'var(--paper)',theme:'#66665F'},
+    whiskey:{name:'Oris',felt:'Fur felt · Whiskey',spec:'Size 7 ½ · Made to order',price:'$1,625',href:'https://josephbenmartin.com/products/hb',c:'var(--whiskey)',on:'var(--paper)',theme:'#8E5A2C'},
+    pecan:{name:'Cerelia',felt:'Fur felt, western weight · Pecan',spec:'Made to order · 4–6 weeks',price:'$1,795',href:'https://josephbenmartin.com/products/primavera',c:'var(--pecan)',on:'var(--paper)',theme:'#5A3D2B'}
+  };
+  var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if(!reduce) document.documentElement.classList.add('motion');
+  var root=document.documentElement, base=document.querySelector('.base'), theme=document.querySelector('meta[name=theme-color]');
+  function apply(k){
+    var h=hats[k];
+    root.style.setProperty('--field',h.c); root.style.setProperty('--on',h.on); theme.content=h.theme;
+    base.querySelector('[data-k=name]').textContent=h.name;
+    base.querySelector('[data-k=felt]').textContent=h.felt;
+    base.querySelector('[data-k=spec]').textContent=h.spec;
+    base.querySelector('[data-k=price]').textContent=h.price;
+    var a=base.querySelector('[data-k=href]'); a.href=h.href; a.setAttribute('aria-label','Order '+h.name);
+  }
+  document.querySelectorAll('input[name=felt]').forEach(function(r){
+    r.addEventListener('change',function(){
+      if(reduce){apply(r.value);return}
+      base.classList.add('swapping');
+      setTimeout(function(){apply(r.value);base.classList.remove('swapping')},300);
+    });
+  });
+  apply('whiskey');
+})();
+</script>
+</body>
+</html>
