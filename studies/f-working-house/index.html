@@ -1,0 +1,318 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Joseph Martin — Study F: The Working House</title>
+<meta name="description" content="Concept study F for Joseph Martin, hatmaker in Nashville. Joseph first, then the hats in their felts, then the world around the work.">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#F2F1EC">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 32 32%22%3E%3Crect width=%2232%22 height=%2232%22 fill=%22%23161513%22/%3E%3Ctext x=%2216%22 y=%2222%22 font-family=%22Georgia,serif%22 font-style=%22italic%22 font-size=%2216%22 fill=%22%23F2F1EC%22 text-anchor=%22middle%22%3EJM%3C/text%3E%3C/svg%3E">
+<link rel="preload" href="../../assets/fonts/instrument-serif-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../../assets/fonts/instrument-serif-latin-400-italic.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="f.css">
+<style>
+/* ——— I. Joseph ——— */
+.hero{padding-top:clamp(20px,2.4vw,36px);padding-bottom:clamp(40px,5vw,80px);align-items:stretch}
+.hero .name{grid-column:1 / 8;display:flex;flex-direction:column;justify-content:space-between;gap:28px}
+.hero .ledger{color:var(--ink)}
+.hero h1{margin:0;font:400 clamp(96px,14.6vw,250px)/.78 var(--serif);letter-spacing:-.035em;margin-left:-.04em}
+.hero h1 span{display:block}
+.hero h1 em{font-style:italic;letter-spacing:-.045em;padding-left:.42em}
+.hero .lede{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));column-gap:var(--g);border-top:1px solid var(--ink);padding-top:16px}
+.hero .lede p{grid-column:1 / 5;margin:0;font:400 clamp(21px,1.7vw,26px)/1.22 var(--serif)}
+.hero .ways{grid-column:5 / 8;list-style:none;margin:0;padding:0;font:400 11.5px/1.5 var(--mono);letter-spacing:.06em;text-transform:uppercase}
+.hero .ways li{display:flex;justify-content:space-between;gap:10px;padding:5px 0;border-bottom:1px solid var(--rule)}
+.hero .ways li span:last-child{color:var(--pencil);text-align:right}
+.hero .acts{display:flex;gap:28px;margin-top:20px}
+.hero .portrait{grid-column:8 / 13;display:grid;grid-template-rows:1fr auto;gap:10px}
+.hero .portrait .plate{min-height:clamp(420px,46vw,700px)}
+
+/* ——— II. The hats: felt is the colour system ——— */
+.hats{padding-block:clamp(40px,5vw,72px) 0}
+.hats .chap{border-color:currentColor}
+.hats .chap p{color:inherit;opacity:.85}
+.stage{align-items:end}
+.stage .draw{grid-column:1 / 9;position:relative}
+.stage .draw .ledger{margin-top:8px}
+.stage .info{grid-column:9 / 13;display:grid;gap:18px;padding-bottom:4px}
+.stage .info h3{margin:0;font:italic 400 clamp(84px,9vw,156px)/.82 var(--serif);letter-spacing:-.03em}
+.stage .info p{margin:0;font-size:16px;max-width:34ch}
+.stage dl{margin:0;border-top:1px solid currentColor;font:400 12px/1.4 var(--mono);letter-spacing:.06em;text-transform:uppercase}
+.stage dl div{display:flex;justify-content:space-between;gap:12px;padding:8px 0;border-bottom:1px solid color-mix(in srgb,currentColor 30%,transparent)}
+.stage dd{margin:0;text-align:right}
+.stage .btns .btn{color:inherit}
+.felts{display:grid;grid-template-columns:repeat(4,1fr) auto;margin-top:clamp(28px,4vw,56px);border-top:1px solid currentColor}
+.felts button{all:unset;cursor:pointer;display:grid;grid-template-columns:auto 1fr auto;gap:12px;align-items:center;padding:16px 16px 16px 0;font:400 12px/1.2 var(--mono);letter-spacing:.07em;text-transform:uppercase;border-right:1px solid color-mix(in srgb,currentColor 30%,transparent);margin-right:16px}
+.felts button:focus-visible{outline:2px solid currentColor;outline-offset:-2px}
+.felts .sw{width:22px;height:22px;border:1px solid currentColor}
+.felts .n{font:italic 400 22px/1 var(--serif);letter-spacing:0;text-transform:none}
+.felts button[aria-checked="true"]{box-shadow:inset 0 -3px 0 currentColor}
+.felts .all{display:flex;align-items:center;font:500 14px/1 var(--sans);text-decoration:none;padding:16px 0;white-space:nowrap}
+.felts .all:hover{text-decoration:underline;text-underline-offset:4px}
+
+/* ——— III. The maker ——— */
+.maker{padding-block:clamp(72px,9vw,144px) clamp(48px,6vw,96px)}
+.maker .say{grid-column:1 / 6;align-self:start}
+.maker .say p.stmt{margin:0 0 28px;font:400 clamp(30px,2.9vw,46px)/1.08 var(--serif);letter-spacing:-.012em;text-wrap:balance}
+.maker .say blockquote{margin:0 0 14px;padding:18px 0 0;border-top:1px dashed var(--pencil);font:italic 400 clamp(22px,1.8vw,28px)/1.2 var(--serif);color:var(--pencil)}
+.maker .say small{display:block;font:400 11px/1.5 var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--red);margin-bottom:28px}
+.maker .say .acts{display:flex;gap:26px;flex-wrap:wrap}
+.maker figure{grid-column:7 / 13;margin:0;display:grid;gap:10px}
+.maker figure .plate{aspect-ratio:3/2}
+.steps{grid-column:1 / 13;list-style:none;margin:clamp(48px,6vw,96px) 0 0;padding:0;display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--ink)}
+.steps li{padding:14px 20px 0 0;border-right:1px solid var(--rule);margin-right:20px}
+.steps li:last-child{border-right:0}
+.steps .num{color:var(--pencil)}
+.steps b{display:block;font:italic 400 30px/1.1 var(--serif);margin:8px 0 6px}
+.steps p{margin:0;font-size:15px;color:var(--pencil);max-width:28ch}
+.steps .tc{color:var(--red);font:400 11px/1.4 var(--mono);letter-spacing:.06em;text-transform:uppercase;margin-top:8px}
+
+/* ——— IV. Around the work: supporting, deliberately smaller ——— */
+.world{padding-block:clamp(56px,7vw,112px);background:var(--paper-2);border-top:1px solid var(--rule)}
+.world .row{align-items:start;row-gap:40px}
+.world figure{margin:0;display:grid;gap:10px;align-content:start}
+.world .w1{grid-column:1 / 5}
+.world .w2{grid-column:5 / 8;margin-top:12%}
+.world .w3{grid-column:8 / 13}
+.world img{width:100%;height:auto;background:#fff}
+.world figcaption b{display:block;font:italic 400 24px/1.1 var(--serif);margin-bottom:2px}
+.world figcaption span{font-size:14px;color:var(--pencil)}
+.club{display:grid;grid-template-rows:auto 1fr auto;gap:18px;background:var(--stock);color:var(--club-ink);padding:18px;text-decoration:none;aspect-ratio:4/5;border:1px solid var(--club-ink);view-transition-name:mcdc-card}
+.club .mono{display:flex;justify-content:space-between;border-bottom:1px solid var(--club-ink);padding-bottom:10px}
+.club .lock{font:400 clamp(52px,5.4vw,92px)/.8 var(--serif);letter-spacing:-.05em;margin:0;align-self:end}
+.club .lock em{color:var(--signal);font-style:italic}
+.club .george{width:46%;aspect-ratio:958/1000;justify-self:end;margin-top:-18%;background:var(--signal);-webkit-mask:url(../../assets/mcdc/cowboy-george-line.png) center/contain no-repeat;mask:url(../../assets/mcdc/cowboy-george-line.png) center/contain no-repeat}
+.club .foot2{display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(--club-ink);padding-top:10px}
+.club:hover .lock em{text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:8px}
+.world .more{grid-column:1 / 13;display:flex;justify-content:space-between;align-items:baseline;border-top:1px solid var(--ink);padding-top:14px}
+.world .more p{margin:0;font:400 clamp(22px,1.8vw,28px)/1.2 var(--serif)}
+
+/* ——— V. Commission (from A: the most persuasive chapter, kept on ink) ——— */
+.commission{background:var(--ink);color:var(--paper);padding-block:clamp(64px,8vw,128px)}
+.commission .chap{border-color:rgba(242,241,236,.4)}
+.commission .big{grid-column:3 / 10;margin:0 0 clamp(36px,5vw,72px);font:400 clamp(44px,5vw,86px)/.98 var(--serif);letter-spacing:-.02em}
+.commission .big em{font-style:italic}
+.terms{grid-column:3 / 13;display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid rgba(242,241,236,.4);margin:0}
+.terms div{padding:14px 18px 18px 0}
+.terms dt{font:400 11px/1.4 var(--mono);letter-spacing:.07em;text-transform:uppercase;color:rgba(242,241,236,.6);margin-bottom:8px}
+.terms dd{margin:0;font:400 clamp(22px,1.9vw,30px)/1.15 var(--serif)}
+.commission .act{grid-column:3 / 13;display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;margin-top:clamp(28px,3vw,44px);border-top:1px solid rgba(242,241,236,.2);padding-top:22px}
+.commission .act small{font:400 11px/1.5 var(--mono);letter-spacing:.06em;text-transform:uppercase;color:rgba(242,241,236,.6)}
+
+@media (max-width:1024px){
+  .hero .name{grid-column:1 / 13}
+  .hero .portrait{grid-column:1 / 13;margin-top:32px}
+  .hero .portrait .plate{min-height:0;aspect-ratio:4/5}
+  .stage .draw,.stage .info{grid-column:1 / 13}
+  .stage .info{margin-top:24px}
+  .felts{grid-template-columns:repeat(2,1fr)}
+  .felts .all{grid-column:1 / 3}
+  .maker .say,.maker figure{grid-column:1 / 13}
+  .maker figure{margin-top:36px}
+  .steps{grid-template-columns:repeat(2,1fr);row-gap:28px}
+  .world .w1{grid-column:1 / 7}.world .w2{grid-column:7 / 13;margin-top:0}.world .w3{grid-column:1 / 13}
+  .commission .big,.terms,.commission .act{grid-column:1 / 13}
+  .terms{grid-template-columns:repeat(2,1fr)}
+}
+@media (max-width:640px){
+  .hero{padding-top:14px}
+  .hero h1{font-size:28.5vw;line-height:.8}
+  .hero h1 em{padding-left:.28em}
+  .hero .lede{display:block}
+  .hero .ways{margin-top:16px}
+  .hero .acts{justify-content:space-between}
+  .hero .portrait{margin-top:28px}
+  .stage .info h3{font-size:96px}
+  .felts button{padding:14px 10px 14px 0;margin-right:10px;grid-template-columns:auto 1fr}
+  .felts button .num{display:none}
+  .felts .n{font-size:20px}
+  .steps{grid-template-columns:1fr}
+  .steps li{border-right:0;margin:0;border-bottom:1px solid var(--rule);padding-bottom:16px}
+  .world .w1,.world .w2{grid-column:1 / 13}
+  .world .w2{width:72%;justify-self:end}
+  .club{aspect-ratio:auto;min-height:420px}
+  .club .lock{font-size:64px}
+  .club .george{width:40%;margin-top:0}
+  .world .more{flex-direction:column;gap:12px}
+  .terms{grid-template-columns:1fr}
+  .terms div{border-bottom:1px solid rgba(242,241,236,.2)}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="top wrap">
+  <a class="mark" href="./" aria-label="Joseph Martin, home">Joseph <em>Martin</em></a>
+  <nav aria-label="Primary"><ul>
+    <li><a href="hats.html">Hats</a></li>
+    <li><a href="maker.html">The maker</a></li>
+    <li><a href="archive.html">Archive</a></li>
+    <li><a href="#commission">Commission</a></li>
+  </ul></nav>
+  <div class="right"><a class="opt" href="https://josephbenmartin.com/collections/all">Shop ↗</a><button class="menu-btn" type="button" id="menu-open" aria-haspopup="dialog" aria-controls="menu">Menu</button></div>
+</header>
+<dialog class="menu" id="menu" aria-label="Menu"><div class="sheet">
+  <div class="bar"><span class="mark" style="font:400 22px/1 var(--serif)">Joseph <em>Martin</em></span><button class="menu-btn" style="display:inline-block" type="button" data-close>Close</button></div>
+  <ol><li><a href="hats.html">Hats</a></li><li><a href="maker.html">The maker</a></li><li><a href="archive.html">Archive</a></li><li><a href="#commission"><em>Commission</em></a></li></ol>
+  <div class="foot"><a href="https://josephbenmartin.com/collections/all">Shop ↗</a><span>1200 Villa Place, Nashville</span></div>
+</div></dialog>
+
+<main id="main">
+  <!-- I. Joseph -->
+  <section class="hero grid wrap" aria-labelledby="h1">
+    <div class="name">
+      <p class="ledger rise"><b>Hatmaker</b><span>1200 Villa Place, Nashville, Tennessee</span><span>Commissions by waitlist</span></p>
+      <h1 id="h1"><span class="rise d2">Joseph</span> <span class="rise d3"><em>Martin</em></span></h1>
+      <div class="rise d4">
+        <div class="lede">
+          <p>Western hats and dress fedoras, made by hand from start to finish in a shop on Villa Place.</p>
+          <ul class="ways" aria-label="Three ways to have a hat">
+            <li><span>Ready-to-wear</span><span>From the shelf</span></li>
+            <li><span>Made to order</span><span>Named designs</span></li>
+            <li><span>Custom</span><span>From $595</span></li>
+          </ul>
+        </div>
+        <div class="acts"><a class="go" href="hats.html">See the hats</a><a class="go" href="#commission">Have one made</a></div>
+      </div>
+    </div>
+    <figure class="portrait">
+      <div class="plate" role="img" aria-label="Placeholder for the opening portrait of Joseph Martin"><p class="brief"><b>Photograph to come · frontispiece</b>Joseph at the bench on Villa Place. Window light from the left, eye level, waist up. A hat in his hands, not on his head. Looking at the camera.</p></div>
+      <p class="ledger"><b>JM·P·001</b><span>Joseph Martin, Villa Place</span><span class="gap">To photograph</span></p>
+    </figure>
+  </section>
+
+  <!-- II. The hats -->
+  <section class="hats felt wrap" id="hats" aria-labelledby="h-hats" style="--felt:var(--whiskey)" data-tone="dark">
+    <div class="chap"><span class="num">II</span><h2 id="h-hats">The <em>hats</em></h2><p>Four made-to-order designs, each in its own felt. The felt is the colour of the page.</p></div>
+    <div class="stage grid">
+      <div class="draw">
+        <div id="stage-draw" data-hat="oris" data-callouts data-draw></div>
+        <div id="stage-legend"></div>
+        <p class="ledger"><b id="stage-no">JM·H·003</b><span>Study drawing, not the exact shape of the hat</span><span>Photograph to replace it, same annotations</span></p>
+      </div>
+      <div class="info" aria-live="polite">
+        <h3 id="stage-name">Oris</h3>
+        <p id="stage-line"></p>
+        <dl id="stage-specs"></dl>
+        <div class="btns"><a class="btn btn--line" id="stage-view" href="hat.html?h=oris">View the hat <span>→</span></a></div>
+      </div>
+    </div>
+    <div class="felts" role="radiogroup" aria-label="Choose a felt">
+      <!-- filled by script -->
+    </div>
+  </section>
+
+  <!-- III. The maker -->
+  <section class="maker wrap" aria-labelledby="h-maker">
+    <div class="chap"><span class="num">III</span><h2 id="h-maker">The <em>maker</em></h2><p>The hands, the shop and the story, in Joseph’s own words once they are recorded.</p></div>
+    <div class="grid">
+      <div class="say">
+        <p class="stmt">Every hat on this site was made by hand, start to finish, in the Nashville shop.</p>
+        <blockquote>A sentence from Joseph about why he makes hats, chosen with him after the interview.</blockquote>
+        <small>Gap · No words are put in Joseph’s mouth</small>
+        <div class="acts"><a class="go" href="maker.html">The maker</a><a class="go" href="https://josephbenmartin.com/pages/fourth-times-a-charm">“Fourth Time’s a Charm” ↗</a></div>
+      </div>
+      <figure>
+        <div class="plate" role="img" aria-label="Placeholder for a photograph of Joseph at work"><p class="brief"><b>Photograph to come · at work</b>Wide. Joseph at the bench mid-task, not looking up. Hands and face both readable. Steam if it is there.</p></div>
+        <p class="ledger"><b>JM·P·002</b><span>At the bench</span><span class="gap">To photograph</span></p>
+      </figure>
+      <ol class="steps" aria-label="How a commission works">
+        <li><span class="num">01</span><b>Conversation</b><p>In person in Nashville, or remotely: what you wear, where you go, what the hat is for.</p></li>
+        <li><span class="num">02</span><b>Fit</b><p>Head size and shape, taken in the shop or guided at home with the sizing notes.</p><p class="tc">Process to confirm</p></li>
+        <li><span class="num">03</span><b>Making</b><p>Felt, shape, band and details, made start to finish on Villa Place.</p><p class="tc">Process to confirm</p></li>
+        <li><span class="num">04</span><b>Handover</b><p>Collected at the shop or sent to you.</p><p class="tc">Process to confirm</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- IV. Around the work -->
+  <section class="world wrap" aria-labelledby="h-world">
+    <div class="chap"><span class="num">IV</span><h2 id="h-world">Around the <em>work</em></h2><p>Posters, drawings and a driving club: the things that grow up around a hat shop. Supporting, never in front of the hats.</p></div>
+    <div class="grid row">
+      <figure class="w1">
+        <img src="../../assets/jm/hatmaker-double-decker-1339.webp" srcset="../../assets/jm/hatmaker-double-decker-640.webp 640w, ../../assets/jm/hatmaker-double-decker-1339.webp 1339w" sizes="(max-width:640px) 92vw, 32vw" width="1339" height="1841" loading="lazy" decoding="async" alt="Poster: JOSEPH MARTIN HATMAKER in heavy white slab letters over a violet sky, a red double-decker bus on the horizon and a cowboy on horseback in the grass">
+        <figcaption><b>Double Decker Arts Festival</b><span>Poster · Oxford, Mississippi · April 2024</span></figcaption>
+        <p class="ledger"><b>JM·D·001</b><span>Poster</span><span>Real work</span></p>
+      </figure>
+      <figure class="w2">
+        <img src="../../assets/jm/cowboy-george-1280.webp" srcset="../../assets/jm/cowboy-george-640.webp 640w, ../../assets/jm/cowboy-george-1280.webp 1280w" sizes="(max-width:640px) 66vw, 22vw" width="1280" height="1280" loading="lazy" decoding="async" alt="Cowboy George: a long-eared dog in a wide-brimmed hat with a cigarette, red ink drawing">
+        <figcaption><b>Cowboy George</b><span>The Joseph Martin mascot · red ink</span></figcaption>
+        <p class="ledger"><b>JM·D·002</b><span>Drawing</span><span>Real work</span></p>
+      </figure>
+      <div class="w3">
+        <a class="club" href="../../music-city-driving-club/" aria-label="Music City Driving Club, Capsule 001">
+          <span class="mono"><span>Capsule No. 001</span><span>For the long way around</span></span>
+          <p class="lock">Music City <em>Driving</em> Club.</p>
+          <span class="george" aria-hidden="true"></span>
+          <span class="foot2 mono"><span>A cream jacket and its patches</span><span>Enter →</span></span>
+        </a>
+        <p class="ledger" style="margin-top:10px"><b>JM·C·001</b><span>Printed on its own stock</span><span>No members, dates or partners announced</span></p>
+      </div>
+      <div class="more"><p>Hats, felts, charms, drawings and open questions, kept as the work happens.</p><a class="go" href="archive.html">The archive</a></div>
+    </div>
+  </section>
+
+  <!-- V. Commission -->
+  <section class="commission on-dark wrap" id="commission" aria-labelledby="h-com">
+    <div class="chap"><span class="num">V</span><h2 id="h-com">Have one <em>made</em></h2><p>Commissions are currently taken from a waitlist.</p></div>
+    <div class="grid">
+      <p class="big">Any colour, any shape, any detail. <em>Made once, for one head.</em></p>
+      <dl class="terms">
+        <div><dt>Custom fur felt</dt><dd>$1,395, all-inclusive</dd></div>
+        <div><dt>Custom straw</dt><dd>$595–$1,150</dd></div>
+        <div><dt>Time</dt><dd>About 4–6 weeks*</dd></div>
+        <div><dt>Where</dt><dd>Villa Place, or remotely</dd></div>
+      </dl>
+      <div class="act">
+        <div class="btns"><a class="btn btn--solid" href="https://josephbenmartin.com/pages/contact">Join the waitlist <span>↗</span></a><a class="btn btn--line" href="https://josephbenmartin.com/pages/sizing">Sizing <span>↗</span></a></div>
+        <small>*Turnaround is quoted as 4–6 and 6–8 weeks in different places. One figure to confirm with Joseph.</small>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <p class="big">Joseph <em>Martin</em></p>
+    <div class="cols grid">
+      <address>Joseph Martin, Hatmaker<br>1200 Villa Place, Suite 200<br>Nashville, Tennessee 37212</address>
+      <ul><li><a href="https://josephbenmartin.com/collections/all">Shop</a></li><li><a href="https://josephbenmartin.com/pages/contact">Contact and waitlist</a></li><li><a href="https://www.instagram.com/josephbenmartin/">Instagram</a></li></ul>
+      <p class="ways mono">Ready-to-wear · Made to order · Custom</p>
+      <p class="note">Concept study F, The Working House. Not for publication. Photographs are labelled placeholders; posters and drawings are real work made for Joseph Martin. Product details: snapshot of josephbenmartin.com, Nov 2026. *To confirm.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="f.js"></script>
+<script>
+JM.mount();
+(function(){
+  var sec=document.getElementById('hats'), felts=sec.querySelector('.felts');
+  var html=JM.ORDER.map(function(k,i){var h=JM.HATS[k];return '<button type="button" role="radio" aria-checked="'+(k==='oris')+'" data-k="'+k+'"'+(k==='oris'?'':' tabindex="-1"')+'><span class="sw" style="background:'+h.hex+'"></span><span class="n">'+h.feltName+'</span><span class="num">0'+(i+1)+'</span></button>'}).join('');
+  felts.innerHTML=html+'<a class="all" href="hats.html">All hats →</a>';
+  var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function show(k,focus){
+    var h=JM.HATS[k];
+    sec.style.setProperty('--felt',h.hex); sec.dataset.tone=h.tone;
+    document.getElementById('stage-draw').innerHTML=JM.hatSVG(k,{callouts:true,draw:!reduce,id:'stage'});
+    document.getElementById('stage-legend').innerHTML=JM.legend(k);
+    document.getElementById('stage-name').textContent=h.name;
+    document.getElementById('stage-no').textContent=h.no;
+    document.getElementById('stage-line').textContent=h.line;
+    document.getElementById('stage-specs').innerHTML=h.specs.map(function(s){return '<div><dt>'+s[0]+'</dt><dd>'+JM.fr(s[1])+'</dd></div>'}).join('');
+    document.getElementById('stage-view').href='hat.html?h='+k;
+    felts.querySelectorAll('button').forEach(function(b){var on=b.dataset.k===k;b.setAttribute('aria-checked',on);b.tabIndex=on?0:-1;if(on&&focus)b.focus()});
+  }
+  felts.addEventListener('click',function(e){var b=e.target.closest('button');if(b)show(b.dataset.k)});
+  felts.addEventListener('keydown',function(e){
+    var keys=JM.ORDER,cur=keys.indexOf(felts.querySelector('[aria-checked="true"]').dataset.k);
+    if(e.key==='ArrowRight'||e.key==='ArrowDown'){e.preventDefault();show(keys[(cur+1)%4],true)}
+    if(e.key==='ArrowLeft'||e.key==='ArrowUp'){e.preventDefault();show(keys[(cur+3)%4],true)}
+  });
+  show('oris');
+})();
+</script>
+</body>
+</html>

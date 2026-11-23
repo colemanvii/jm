@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Joseph Martin — Archive (Study F)</title>
+<meta name="description" content="The working archive of Joseph Martin: hats, felts, charms, drawings, the club and open questions.">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#F2F1EC">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 32 32%22%3E%3Crect width=%2232%22 height=%2232%22 fill=%22%23161513%22/%3E%3Ctext x=%2216%22 y=%2222%22 font-family=%22Georgia,serif%22 font-style=%22italic%22 font-size=%2216%22 fill=%22%23F2F1EC%22 text-anchor=%22middle%22%3EJM%3C/text%3E%3C/svg%3E">
+<link rel="preload" href="../../assets/fonts/instrument-serif-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../../assets/fonts/instrument-serif-latin-400-italic.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="f.css">
+<style>
+.mast{padding-block:clamp(32px,4vw,64px) clamp(24px,3vw,40px);align-items:end}
+.mast h1{grid-column:1 / 7;margin:0;font:400 clamp(96px,12vw,210px)/.8 var(--serif);letter-spacing:-.04em;margin-left:-.03em}
+.mast h1 em{font-style:italic}
+.mast .side{grid-column:8 / 13;display:grid;gap:18px}
+.mast .side .ledger{margin:0}
+.mast .side p:not(.ledger){margin:0;font:400 clamp(21px,1.7vw,26px)/1.22 var(--serif)}
+.bar{position:sticky;top:64px;z-index:5;background:var(--paper);border-top:1px solid var(--ink);border-bottom:1px solid var(--rule);display:flex;justify-content:space-between;align-items:center;gap:16px}
+.filters{display:flex;gap:4px;overflow-x:auto;scrollbar-width:none}
+.filters button{all:unset;cursor:pointer;padding:16px 12px 14px 0;margin-right:12px;font:400 12px/1 var(--mono);letter-spacing:.07em;text-transform:uppercase;white-space:nowrap;border-bottom:2px solid transparent;color:var(--pencil)}
+.filters button sup{font-size:9px;margin-left:3px}
+.filters button[aria-pressed="true"]{color:var(--ink);border-bottom-color:var(--ink)}
+.filters button:focus-visible{outline:2px solid var(--ink);outline-offset:-2px}
+.bar .count{white-space:nowrap;color:var(--pencil)}
+.sheet-grid{list-style:none;margin:0;padding-top:clamp(24px,3vw,40px);padding-bottom:clamp(64px,8vw,128px);display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(28px,3vw,44px) var(--g)}
+.sheet-grid li{display:grid;gap:8px;align-content:start}
+.sheet-grid li.w2{grid-column:span 2}
+.sheet-grid li[hidden]{display:none}
+.entry{all:unset;cursor:pointer;display:block;width:100%;box-sizing:border-box}
+.entry:focus-visible{outline:2px solid var(--ink);outline-offset:4px}
+.surf{aspect-ratio:4/5;position:relative;overflow:hidden;display:grid}
+li.w2 .surf{aspect-ratio:auto;height:100%;min-height:0}
+.sheet-grid li.w2 .entry{height:100%}
+.sheet-grid li.w2{grid-template-rows:1fr auto}
+.surf .ttl{position:absolute;left:14px;bottom:12px;font:italic 400 clamp(30px,2.6vw,44px)/1 var(--serif)}
+.surf .pr{position:absolute;right:14px;bottom:14px;font:400 12px/1 var(--mono);letter-spacing:.04em}
+.surf.hat [data-hat]{align-self:center;padding:0 10%}
+.surf.img{background:var(--paper-2);place-items:center;padding:8%}
+.surf.img img{max-height:100%;width:auto;max-width:100%;object-fit:contain;box-shadow:0 1px 0 rgba(0,0,0,.08)}
+.surf.charm{background:#fff;border:1px solid var(--rule);place-items:center}
+.surf.charm svg{width:46%;height:46%}
+.surf.charm svg *{fill:none;stroke:var(--ink);stroke-width:1.4;vector-effect:non-scaling-stroke;stroke-linecap:round;stroke-linejoin:round}
+.surf.sw{align-content:end;padding:14px;font:400 11.5px/1.4 var(--mono);letter-spacing:.06em;text-transform:uppercase}
+.surf.note{border-top:1px solid var(--ink);align-content:start;padding:16px 0 0;font:400 clamp(22px,1.8vw,28px)/1.18 var(--serif)}
+.surf.note small{display:block;margin-top:12px;font:400 11px/1.4 var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--pencil)}
+.surf.q{border:1px dashed var(--red);padding:16px;align-content:start;font:italic 400 clamp(22px,1.8vw,28px)/1.18 var(--serif);color:var(--pencil)}
+.surf.q small{display:block;margin-bottom:10px;font:400 11px/1.4 var(--mono);font-style:normal;letter-spacing:.06em;text-transform:uppercase;color:var(--red)}
+.surf.big{background:var(--ink);color:var(--paper);padding:16px;align-content:space-between}
+.surf.big b{font:400 clamp(80px,8vw,140px)/.8 var(--serif);letter-spacing:-.03em}
+.surf.big b em{font-size:.4em;font-style:italic;letter-spacing:0;margin-left:.2em}
+.surf.club{background:var(--stock);color:var(--club-ink);border:1px solid var(--club-ink);padding:16px;align-content:space-between}
+.surf.club .lock{font:400 clamp(48px,4.6vw,80px)/.8 var(--serif);letter-spacing:-.05em;max-width:6ch}
+.surf.club .lock em{color:var(--signal);font-style:italic}
+.surf.club .george{position:absolute;right:16px;bottom:16px;width:38%;aspect-ratio:958/1000;background:var(--signal);-webkit-mask:url(../../assets/mcdc/cowboy-george-line.png) center/contain no-repeat;mask:url(../../assets/mcdc/cowboy-george-line.png) center/contain no-repeat}
+.sheet-grid .ledger{border-top-color:var(--rule)}
+.sheet-grid .ledger .t{color:var(--ink);text-transform:none;font-family:var(--sans);letter-spacing:0;font-size:14px}
+.entry:hover .ttl,.entry:hover .lock em{text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:6px}
+/* detail */
+dialog.detail{border:0;padding:0;width:min(1100px,94vw);max-height:92svh;background:var(--paper);color:var(--ink);box-shadow:0 0 0 1px var(--ink)}
+dialog.detail::backdrop{background:rgba(22,21,19,.72)}
+.dwrap{display:grid;grid-template-columns:1.2fr 1fr}
+.dwrap .surf{aspect-ratio:4/5;height:auto}
+.dwrap .surf.img{position:relative;display:block}
+.dwrap .surf.img img{position:absolute;left:6%;top:6%;width:88%;height:88%;max-width:none;max-height:none;object-fit:contain;box-shadow:none}
+.dwrap .meta{padding:clamp(20px,2.4vw,36px);display:grid;gap:18px;align-content:start}
+.dwrap h2{margin:0;font:italic 400 clamp(44px,4.4vw,72px)/.9 var(--serif);letter-spacing:-.02em}
+.dwrap p{margin:0;font-size:16px}
+.dwrap dl{margin:0;border-top:1px solid var(--ink);font:400 12px/1.4 var(--mono);letter-spacing:.06em;text-transform:uppercase}
+.dwrap dl div{display:flex;justify-content:space-between;gap:12px;padding:9px 0;border-bottom:1px solid var(--rule)}
+.dwrap dd{margin:0;text-align:right}
+.dwrap .x{justify-self:end}
+@media (max-width:1024px){
+  .mast h1,.mast .side{grid-column:1 / 13}
+  .mast .side{margin-top:24px}
+  .sheet-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .bar .count{display:none}
+}
+@media (max-width:640px){
+  .mast h1{font-size:30vw}
+  .bar{top:56px}
+  .sheet-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:24px 10px}
+  .sheet-grid li.w2 .surf{aspect-ratio:8/5;height:auto}
+  .surf .ttl{font-size:28px;left:10px;bottom:8px}
+  .surf .pr{display:none}
+  .surf.note,.surf.q{font-size:19px}
+  .surf.big b{font-size:72px}
+  .surf.club .lock{font-size:40px}
+  .sheet-grid .ledger span:not(.t):not(:first-child){display:none}
+  .dwrap{grid-template-columns:1fr}
+  .dwrap .surf{aspect-ratio:1}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="top wrap">
+  <a class="mark" href="./" aria-label="Joseph Martin, home">Joseph <em>Martin</em></a>
+  <nav aria-label="Primary"><ul>
+    <li><a href="hats.html">Hats</a></li>
+    <li><a href="maker.html">The maker</a></li>
+    <li><a href="archive.html" aria-current="page">Archive</a></li>
+    <li><a href="./#commission">Commission</a></li>
+  </ul></nav>
+  <div class="right"><a class="opt" href="https://josephbenmartin.com/collections/all">Shop ↗</a><button class="menu-btn" type="button" id="menu-open" aria-haspopup="dialog" aria-controls="menu">Menu</button></div>
+</header>
+<dialog class="menu" id="menu" aria-label="Menu"><div class="sheet">
+  <div class="bar"><span class="mark" style="font:400 22px/1 var(--serif)">Joseph <em>Martin</em></span><button class="menu-btn" style="display:inline-block" type="button" data-close>Close</button></div>
+  <ol><li><a href="hats.html">Hats</a></li><li><a href="maker.html">The maker</a></li><li><a href="archive.html">Archive</a></li><li><a href="./#commission"><em>Commission</em></a></li></ol>
+  <div class="foot"><a href="https://josephbenmartin.com/collections/all">Shop ↗</a><span>1200 Villa Place, Nashville</span></div>
+</div></dialog>
+
+
+<main id="main">
+  <section class="mast grid wrap" aria-labelledby="h1">
+    <h1 id="h1" class="rise">The <em>archive</em></h1>
+    <div class="side rise d2">
+      <p>Hats, felts, charms, drawings, the club and the questions still open, kept as the work happens. Every object on the site has a number here.</p>
+      <p class="ledger" id="mast-ledger" style="color:var(--ink)"></p>
+    </div>
+  </section>
+  <div class="bar wrap">
+    <div class="filters" role="group" aria-label="Show" id="filters"></div>
+    <span class="count mono" id="count" aria-live="polite"></span>
+  </div>
+  <ol class="sheet-grid wrap" id="grid"></ol>
+</main>
+<dialog class="detail" id="detail" aria-labelledby="d-title"><div class="dwrap" id="dbody"></div></dialog>
+<footer class="foot">
+  <div class="wrap">
+    <p class="big">Joseph <em>Martin</em></p>
+    <div class="cols grid">
+      <address>Joseph Martin, Hatmaker<br>1200 Villa Place, Suite 200<br>Nashville, Tennessee 37212</address>
+      <ul><li><a href="https://josephbenmartin.com/collections/all">Shop</a></li><li><a href="https://josephbenmartin.com/pages/contact">Contact and waitlist</a></li><li><a href="https://www.instagram.com/josephbenmartin/">Instagram</a></li></ul>
+      <p class="ways mono">Ready-to-wear · Made to order · Custom</p>
+      <p class="note">Concept study F, The Working House. Not for publication. Photographs are labelled placeholders; posters and drawings are real work made for Joseph Martin. Product details: snapshot of josephbenmartin.com, Nov 2026. *To confirm.</p>
+    </div>
+  </div>
+</footer>
+
+
+<script src="f.js"></script>
+<script>
+(function(){
+  var H=JM.HATS, esc=JM.esc;
+  var CHARM={
+    sail:'<svg viewBox="0 0 100 100" aria-hidden="true"><path d="M28 70 H 76 L 68 82 H 36 Z"/><path d="M52 70 V 16 L 74 62 H 52"/><path d="M48 70 V 30 L 30 62 H 48"/></svg>',
+    moon:'<svg viewBox="0 0 100 100" aria-hidden="true"><path d="M60 18 A 34 34 0 1 0 82 70 A 26 26 0 1 1 60 18 Z"/></svg>',
+    leaf:'<svg viewBox="0 0 100 100" aria-hidden="true"><path d="M30 86 C 34 56, 50 26, 76 12 C 78 40, 62 70, 30 86 Z"/><path d="M24 92 L 70 22"/></svg>'
+  };
+  function hat(k,w){var h=H[k];return {id:h.no,cat:'hats',w:w,title:h.name,kind:'hat',k:k,sub:h.feltName+' · '+h.weight,body:h.line,meta:[['Felt',h.specs[0][1]],['Price',h.price]],link:['hat.html?h='+k,'View the hat →']}}
+  var E=[
+    hat('oris',2),
+    {id:'JM·N·001',cat:'notes',kind:'note',title:'Shop policy',html:'“All items are handmade start to finish in our Nashville shop.”<small>Shop policy · josephbenmartin.com</small>',body:'From the product pages of the current shop.',meta:[['Source','josephbenmartin.com'],['Status','Verified']]},
+    {id:'JM·M·001',cat:'materials',kind:'sw',hex:'var(--natural)',light:1,title:'Natural felt',sub:'Dress weight',body:'Used on Ahab. Colour on screen is an estimate.',meta:[['Weight','Dress'],['In','Ahab']]},
+    {id:'JM·D·001',cat:'drawings',kind:'img',src:'../../assets/jm/hatmaker-double-decker-640.webp',big:'../../assets/jm/hatmaker-double-decker-1339.webp',alt:'Poster: JOSEPH MARTIN HATMAKER over a violet sky, a red double-decker bus and a cowboy on horseback',title:'Double Decker Arts Festival',sub:'Poster',body:'Poster for Joseph Martin, Hatmaker, at the Double Decker Arts Festival, Oxford, Mississippi, April 26–27, 2024.',meta:[['Type','Poster'],['Date','April 2024'],['Status','Real work']]},
+    hat('artemis',1),
+    {id:'JM·M·005',cat:'materials',kind:'charm',svg:'moon',title:'Moon charms',sub:'Gold · Artemis',body:'Drawn from the listing’s description. A drawing, not a photograph.',meta:[['In','Artemis'],['Status','To photograph']]},
+    {id:'JM·Q·001',cat:'notes',kind:'q',title:'Open question',html:'<small>Open question</small>What does the stitching mean, and when did you start doing it?',body:'The TV feature mentions “the meaning behind his custom stitching”. The answer belongs to Joseph.',meta:[['For','The interview'],['Status','Open']]},
+    {id:'JM·D·002',cat:'drawings',kind:'img',src:'../../assets/jm/cowboy-george-640.webp',big:'../../assets/jm/cowboy-george-1280.webp',alt:'Cowboy George: a long-eared dog in a wide-brimmed hat with a cigarette, red ink',title:'Cowboy George',sub:'The mascot · red ink',body:'The Joseph Martin mascot, in red ink. Also drawn into the Music City Driving Club study.',meta:[['Type','Drawing'],['Ink','Red'],['Status','Real work']]},
+    {id:'JM·C·001',cat:'club',kind:'club',w:2,title:'Music City Driving Club',sub:'Capsule No. 001',body:'A cream racing jacket and the patches that go on it, drawn from a single sheet of drawings made in November 2024. No members, dates, sponsors or partners are announced.',meta:[['Capsule','001'],['Status','Study']],link:['../../music-city-driving-club/','Enter the club →']},
+    {id:'JM·M·002',cat:'materials',kind:'sw',hex:'var(--granite)',title:'Granite felt',sub:'Dress weight',body:'Used on Artemis. Colour on screen is an estimate.',meta:[['Weight','Dress'],['In','Artemis']]},
+    hat('cerelia',1),
+    {id:'JM·M·006',cat:'materials',kind:'charm',svg:'sail',title:'Sailboat charm',sub:'Gold · Ahab',body:'Drawn from the listing’s description. A drawing, not a photograph.',meta:[['In','Ahab'],['Status','To photograph']]},
+    {id:'JM·D·003',cat:'drawings',kind:'img',src:'../../assets/jm/martin-survives-640.webp',big:'../../assets/jm/martin-survives-1100.webp',alt:'Framed red-ink poster: Martin Survives!',title:'Martin Survives!',sub:'Poster',body:'One year as a full-time craftsman.',meta:[['Type','Poster'],['Status','Real work']]},
+    {id:'JM·D·004',cat:'drawings',kind:'img',src:'../../assets/jm/dont-call-it-luck-640.webp',big:'../../assets/jm/dont-call-it-luck-1100.webp',alt:'Framed red-ink poster: Don’t Call It Luck!',title:'Don’t Call It Luck!',sub:'Poster',body:'Companion poster, same red.',meta:[['Type','Poster'],['Status','Real work']]},
+    {id:'JM·M·003',cat:'materials',kind:'sw',hex:'var(--whiskey)',title:'Whiskey felt',sub:'Fur felt',body:'Used on Oris. Colour on screen is an estimate.',meta:[['In','Oris']]},
+    {id:'JM·N·002',cat:'notes',kind:'big',title:'Made to order',html:'<span class="mono">Made to order</span><b>6–8<em>weeks</em></b>',body:'The shop’s stated turnaround for made-to-order hats. Custom felt is quoted at about 4–6 weeks; one figure to confirm.',meta:[['Source','Shop policy'],['Status','To confirm']]},
+    hat('ahab',2),
+    {id:'JM·M·007',cat:'materials',kind:'charm',svg:'leaf',title:'Gold leaf charm',sub:'Oris',body:'Finishes the beadwork on Oris. A drawing, not a photograph.',meta:[['In','Oris'],['Status','To photograph']]},
+    {id:'JM·M·004',cat:'materials',kind:'sw',hex:'var(--pecan)',title:'Pecan felt',sub:'Western weight',body:'Used on Cerelia. Colour on screen is an estimate.',meta:[['Weight','Western'],['In','Cerelia']]},
+    {id:'JM·S·001',cat:'notes',kind:'note',title:'Fourth Time’s a Charm',html:'“Fourth Time’s a Charm”<small>Story · on the current site · to republish in full</small>',body:'Joseph’s own story, already published on his site.',meta:[['Status','To republish']],link:['https://josephbenmartin.com/pages/fourth-times-a-charm','Read it ↗']},
+    {id:'JM·P·018',cat:'notes',kind:'ph',title:'The shop, end of day',body:'The bench left as it is. Nothing tidied.',meta:[['Status','To photograph']]}
+  ];
+  var CATS=[['all','All'],['hats','Hats'],['materials','Materials'],['drawings','Drawings'],['club','Club'],['notes','Notes']];
+  function surf(e,big){
+    var s;
+    if(e.kind==='hat'){var h=H[e.k];s='<div class="surf hat felt" style="--felt:'+h.hex+'" data-tone="'+h.tone+'"><div data-hat="'+e.k+'" id="'+(big?'d-':'g-')+e.k+'"></div><span class="ttl">'+h.name+'</span><span class="pr">'+h.price+'</span></div>'}
+    else if(e.kind==='img'){s='<div class="surf img"><img src="'+(big?e.big:e.src)+'" alt="'+esc(e.alt)+'"'+(big?'':' loading="lazy"')+' decoding="async"></div>'}
+    else if(e.kind==='charm'){s='<div class="surf charm">'+CHARM[e.svg]+'</div>'}
+    else if(e.kind==='sw'){s='<div class="surf sw" style="background:'+e.hex+';color:'+(e.light?'var(--ink)':'var(--paper)')+'">'+e.title+'<br>'+e.sub+'</div>'}
+    else if(e.kind==='note'){s='<div class="surf note">'+e.html+'</div>'}
+    else if(e.kind==='q'){s='<div class="surf q">'+e.html+'</div>'}
+    else if(e.kind==='big'){s='<div class="surf big">'+e.html+'</div>'}
+    else if(e.kind==='club'){s='<div class="surf club"><span class="mono">Capsule No. 001</span><span class="lock">Music City <em>Driving</em> Club.</span><span class="george" aria-hidden="true"></span></div>'}
+    else {s='<div class="surf plate plate--paper"><p class="brief"><b>To photograph</b>'+esc(e.body)+'</p></div>'}
+    return s;
+  }
+  var grid=document.getElementById('grid');
+  grid.innerHTML=E.map(function(e,i){
+    var gap=e.meta.some(function(m){return /To photograph|Open|To confirm|To republish/.test(m[1])});
+    return '<li data-cat="'+e.cat+'"'+(e.w===2?' class="w2"':'')+'><button class="entry" type="button" data-i="'+i+'" aria-label="'+esc(e.title)+', '+e.id+'">'+surf(e)+'</button><p class="ledger"><b>'+e.id+'</b><span class="t">'+esc(e.title)+'</span>'+(gap?'<span class="gap">'+e.meta[e.meta.length-1][1]+'</span>':'<span>'+e.cat+'</span>')+'</p></li>'}).join('');
+  var toPh=E.filter(function(e){return e.meta.some(function(m){return m[1]==='To photograph'})}).length;
+  document.getElementById('mast-ledger').innerHTML='<b>'+E.length+' entries</b><span>'+toPh+' to photograph</span><span>Updated 23 Nov 2026</span>';
+  var f=document.getElementById('filters');
+  f.innerHTML=CATS.map(function(c){var n=c[0]==='all'?E.length:E.filter(function(e){return e.cat===c[0]}).length;return '<button type="button" aria-pressed="'+(c[0]==='all')+'" data-c="'+c[0]+'">'+c[1]+'<sup>'+n+'</sup></button>'}).join('');
+  var count=document.getElementById('count');
+  function apply(c){
+    var run=function(){var n=0;grid.querySelectorAll('li').forEach(function(li){var on=c==='all'||li.dataset.cat===c;li.hidden=!on;if(on)n++});count.textContent='Showing '+n+' of '+E.length;
+      f.querySelectorAll('button').forEach(function(b){b.setAttribute('aria-pressed',b.dataset.c===c)})};
+    if(document.startViewTransition&&!matchMedia('(prefers-reduced-motion: reduce)').matches)document.startViewTransition(run);else run();
+  }
+  f.addEventListener('click',function(e){var b=e.target.closest('button');if(b)apply(b.dataset.c)});
+  apply('all');
+  var d=document.getElementById('detail'),db=document.getElementById('dbody'),last;
+  grid.addEventListener('click',function(ev){var b=ev.target.closest('.entry');if(!b)return;last=b;var e=E[+b.dataset.i];
+    db.innerHTML=surf(e,true)+'<div class="meta"><button class="menu-btn x" style="display:inline-block" type="button" data-x>Close</button><p class="ledger"><b>'+e.id+'</b><span>'+e.cat+'</span></p><h2 id="d-title">'+esc(e.title)+'</h2><p>'+esc(e.body)+'</p><dl>'+e.meta.map(function(m){return '<div><dt>'+m[0]+'</dt><dd>'+JM.fr(m[1])+'</dd></div>'}).join('')+'</dl>'+(e.link?'<a class="btn btn--line" href="'+e.link[0]+'">'+e.link[1]+'</a>':'')+'</div>';
+    db.querySelectorAll('[data-hat]').forEach(function(el){el.innerHTML=JM.hatSVG(el.dataset.hat,{id:el.id})});
+    d.showModal()});
+  d.addEventListener('click',function(ev){if(ev.target===d||ev.target.closest('[data-x]'))d.close()});
+  d.addEventListener('close',function(){if(last)last.focus({preventScroll:true})});
+  JM.mount();
+})();
+</script>
+</body>
+</html>

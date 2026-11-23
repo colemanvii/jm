@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Joseph Martin — The maker (Study F)</title>
+<meta name="description" content="Joseph Martin, hatmaker on Villa Place, Nashville: the shop, the story and the hands, with every gap labelled.">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#F2F1EC">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 32 32%22%3E%3Crect width=%2232%22 height=%2232%22 fill=%22%23161513%22/%3E%3Ctext x=%2216%22 y=%2222%22 font-family=%22Georgia,serif%22 font-style=%22italic%22 font-size=%2216%22 fill=%22%23F2F1EC%22 text-anchor=%22middle%22%3EJM%3C/text%3E%3C/svg%3E">
+<link rel="preload" href="../../assets/fonts/instrument-serif-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../../assets/fonts/instrument-serif-latin-400-italic.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="f.css">
+<style>
+.front{padding-block:clamp(28px,3vw,48px) clamp(56px,7vw,112px);align-items:stretch}
+.front figure{grid-column:1 / 6;display:grid;gap:10px}
+.front .plate{aspect-ratio:4/5}
+.front .title{grid-column:7 / 13;display:flex;flex-direction:column;justify-content:space-between;gap:36px;border-left:1px solid var(--rule);padding-left:var(--g)}
+.front h1{margin:0;font:400 clamp(84px,9.6vw,172px)/.8 var(--serif);letter-spacing:-.035em}
+.front h1 span{display:block}
+.front h1 em{font-style:italic;padding-left:.36em}
+.front .sub{font:italic 400 clamp(28px,2.4vw,40px)/1 var(--serif);margin:14px 0 0}
+.contents{list-style:none;margin:0;padding:0;border-top:1px solid var(--ink)}
+.contents a{display:grid;grid-template-columns:3em 1fr auto;gap:10px;align-items:baseline;padding:11px 0;border-bottom:1px solid var(--rule);text-decoration:none}
+.contents b{font:italic 400 26px/1 var(--serif)}
+.contents span:last-child{font-size:14px;color:var(--pencil)}
+.contents a:hover b{text-decoration:underline;text-underline-offset:5px;text-decoration-thickness:1px}
+.ch{padding-block:clamp(56px,7vw,112px)}
+.ch + .ch{border-top:1px solid var(--rule)}
+.facts{grid-column:3 / 8;margin:0;border-top:1px solid var(--ink)}
+.facts div{display:grid;grid-template-columns:10em 1fr;gap:14px;padding:12px 0;border-bottom:1px solid var(--rule)}
+.facts dt{font:400 11.5px/1.5 var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--pencil)}
+.facts dd{margin:0;font:400 21px/1.25 var(--serif)}
+.ch .wide{grid-column:9 / 13;display:grid;gap:10px;align-content:start}
+.ch .wide .plate{aspect-ratio:4/5}
+.gapbox{grid-column:3 / 8;border:1px dashed var(--pencil);padding:clamp(20px,2.4vw,32px);display:grid;gap:14px;align-content:start}
+.gapbox .mono{color:var(--red)}
+.gapbox p{margin:0;font:italic 400 clamp(24px,2vw,32px)/1.2 var(--serif);color:var(--pencil)}
+.gapbox small{font-size:14px;color:var(--pencil)}
+.posters{grid-column:9 / 13;display:grid;grid-template-columns:1fr 1fr;gap:var(--g);align-content:start}
+.posters figure{display:grid;gap:8px}
+.posters img{width:100%;height:auto}
+.posters figcaption b{display:block;font:italic 400 20px/1.1 var(--serif)}
+.posters figcaption span{font-size:13px;color:var(--pencil)}
+.posters .ledger{grid-column:1 / 3}
+.hands{list-style:none;margin:0;padding:0;grid-column:1 / 13;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:var(--g)}
+.hands li{display:grid;gap:10px;align-content:start}
+.hands li:nth-child(even){margin-top:clamp(28px,5vw,80px)}
+.hands .plate{aspect-ratio:3/4}
+.hands b{font:italic 400 26px/1 var(--serif)}
+.qs{grid-column:3 / 13;list-style:none;margin:0;padding:0;counter-reset:q;columns:2;column-gap:var(--g)}
+.qs li{break-inside:avoid;display:grid;grid-template-columns:2.6em 1fr;padding:12px 0;border-top:1px solid var(--rule);font:400 clamp(20px,1.6vw,24px)/1.25 var(--serif)}
+.qs li::before{counter-increment:q;content:"Q" counter(q);font:400 11px/2 var(--mono);letter-spacing:.06em;color:var(--red)}
+.ch .note{grid-column:3 / 13;margin:24px 0 0;font:400 11.5px/1.5 var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--pencil)}
+.end{background:var(--ink);color:var(--paper);padding-block:clamp(56px,7vw,112px)}
+.end .grid{align-items:end}
+.end p{grid-column:1 / 8;margin:0;font:400 clamp(40px,4.4vw,76px)/.98 var(--serif);letter-spacing:-.02em}
+.end p em{font-style:italic}
+.end .btns{grid-column:9 / 13;justify-content:flex-end}
+@media (max-width:1024px){
+  .front figure,.front .title{grid-column:1 / 13}
+  .front .title{border-left:0;padding-left:0;margin-top:32px}
+  .facts,.gapbox,.qs,.ch .note{grid-column:1 / 13}
+  .ch .wide,.posters{grid-column:1 / 13;margin-top:32px}
+  .ch .wide .plate{aspect-ratio:3/2}
+  .hands{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .qs{columns:1}
+  .end p,.end .btns{grid-column:1 / 13}
+  .end .btns{justify-content:flex-start;margin-top:28px}
+}
+@media (max-width:640px){
+  .front h1{font-size:27vw}
+  .facts div{grid-template-columns:1fr;gap:2px}
+  .hands{column-gap:10px}
+  .hands li:nth-child(even){margin-top:36px}
+  .hands b{font-size:22px}
+  .hands .brief span{display:none}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="top wrap">
+  <a class="mark" href="./" aria-label="Joseph Martin, home">Joseph <em>Martin</em></a>
+  <nav aria-label="Primary"><ul>
+    <li><a href="hats.html">Hats</a></li>
+    <li><a href="maker.html" aria-current="page">The maker</a></li>
+    <li><a href="archive.html">Archive</a></li>
+    <li><a href="./#commission">Commission</a></li>
+  </ul></nav>
+  <div class="right"><a class="opt" href="https://josephbenmartin.com/collections/all">Shop ↗</a><button class="menu-btn" type="button" id="menu-open" aria-haspopup="dialog" aria-controls="menu">Menu</button></div>
+</header>
+<dialog class="menu" id="menu" aria-label="Menu"><div class="sheet">
+  <div class="bar"><span class="mark" style="font:400 22px/1 var(--serif)">Joseph <em>Martin</em></span><button class="menu-btn" style="display:inline-block" type="button" data-close>Close</button></div>
+  <ol><li><a href="hats.html">Hats</a></li><li><a href="maker.html">The maker</a></li><li><a href="archive.html">Archive</a></li><li><a href="./#commission"><em>Commission</em></a></li></ol>
+  <div class="foot"><a href="https://josephbenmartin.com/collections/all">Shop ↗</a><span>1200 Villa Place, Nashville</span></div>
+</div></dialog>
+
+
+<main id="main">
+  <section class="front grid wrap" aria-labelledby="h1">
+    <figure>
+      <div class="plate" role="img" aria-label="Placeholder for a portrait of Joseph Martin"><p class="brief"><b>Photograph to come · portrait</b>Head and shoulders, looking at a hat rather than the lens. Black and white, 4:5. Joseph chooses the frame.</p></div>
+      <p class="ledger"><b>JM·P·003</b><span>Joseph Martin</span><span class="gap">To photograph</span></p>
+    </figure>
+    <div class="title">
+      <div>
+        <p class="ledger" style="color:var(--ink)"><b>The maker</b><span>Nashville, Tennessee</span></p>
+        <h1 id="h1" class="rise" style="margin-top:28px"><span>Joseph</span><em>Martin</em></h1>
+        <p class="sub rise d2">Hatmaker</p>
+      </div>
+      <ol class="contents rise d3" aria-label="On this page">
+        <li><a href="#shop"><span class="num">I</span><b>The shop</b><span>What is known</span></a></li>
+        <li><a href="#story"><span class="num">II</span><b>The story</b><span>In his words, to come</span></a></li>
+        <li><a href="#hands"><span class="num">III</span><b>The hands</b><span>Four photographs</span></a></li>
+        <li><a href="#questions"><span class="num">IV</span><b>Questions</b><span>For the interview</span></a></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="ch wrap" id="shop" aria-labelledby="h-shop">
+    <div class="chap"><span class="num">I</span><h2 id="h-shop">The <em>shop</em></h2><p>Only what Joseph’s own pages say. Everything else waits for him.</p></div>
+    <div class="grid">
+      <dl class="facts">
+        <div><dt>Where</dt><dd>1200 Villa Place, Suite 200, Nashville, Tennessee</dd></div>
+        <div><dt>What</dt><dd>Traditional western styles and dress fedoras, in fur felt and straw</dd></div>
+        <div><dt>How</dt><dd>Handmade start to finish in the Nashville shop</dd></div>
+        <div><dt>Three ways</dt><dd>Ready-to-wear, made to order, and custom</dd></div>
+        <div><dt>Commissions</dt><dd>Taken from a waitlist, because of the bespoke nature of the work and demand</dd></div>
+      </dl>
+      <figure class="wide">
+        <div class="plate plate--paper" role="img" aria-label="Placeholder for a photograph of the shop"><p class="brief"><b>Photograph to come · the shop</b>Wide: the bench, the blocks, the window. Joseph small in the frame, working, unaware of the camera.</p></div>
+        <p class="ledger"><b>JM·P·004</b><span>Villa Place</span><span class="gap">To photograph</span></p>
+      </figure>
+    </div>
+  </section>
+
+  <section class="ch wrap" id="story" aria-labelledby="h-story">
+    <div class="chap"><span class="num">II</span><h2 id="h-story">The <em>story</em></h2><p>He has told it once already, as “Fourth Time’s a Charm”. It belongs here, in full, in his words.</p></div>
+    <div class="grid">
+      <div class="gapbox">
+        <span class="mono">Gap · biography, 150–250 words</span>
+        <p>How Joseph came to hats, written with him from a recorded conversation. Nothing paraphrased from secondary sources.</p>
+        <small>Background mentioned in third-party listings is not used until Joseph confirms it and the wording.</small>
+        <a class="go" href="https://josephbenmartin.com/pages/fourth-times-a-charm">Read “Fourth Time’s a Charm” on the current site ↗</a>
+      </div>
+      <div class="posters">
+        <figure><img src="../../assets/jm/martin-survives-640.webp" srcset="../../assets/jm/martin-survives-640.webp 640w, ../../assets/jm/martin-survives-1100.webp 1100w" sizes="(max-width:640px) 45vw, 16vw" width="640" height="800" loading="lazy" decoding="async" alt="Framed red-ink poster: Martin Survives!, with a rider on a galloping horse"><figcaption><b>Martin Survives!</b><span>One year as a full-time craftsman</span></figcaption></figure>
+        <figure><img src="../../assets/jm/dont-call-it-luck-640.webp" srcset="../../assets/jm/dont-call-it-luck-640.webp 640w, ../../assets/jm/dont-call-it-luck-1100.webp 1100w" sizes="(max-width:640px) 45vw, 16vw" width="640" height="800" loading="lazy" decoding="async" alt="Framed red-ink poster: Don't Call It Luck!, a cowboy riding a bucking horse"><figcaption><b>Don’t Call It Luck!</b><span>Companion poster, same red</span></figcaption></figure>
+        <p class="ledger"><b>JM·D·003–004</b><span>Posters</span><span>Real work</span></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="ch wrap" id="hands" aria-labelledby="h-hands">
+    <div class="chap"><span class="num">III</span><h2 id="h-hands">The <em>hands</em></h2><p>Four photographs that show the work rather than describe it. Steam, shape, edge, thread.</p></div>
+    <div class="grid">
+      <ol class="hands">
+        <li><div class="plate" role="img" aria-label="Placeholder: steam"><p class="brief"><b>JM·P·014</b><span>Steam rising off felt. Hands only.</span></p></div><b>Steam</b><span class="num">To photograph</span></li>
+        <li><div class="plate" role="img" aria-label="Placeholder: shaping the crown"><p class="brief"><b>JM·P·015</b><span>Hands only, felt still damp. Tight crop, raking light.</span></p></div><b>The crown</b><span class="num">To photograph</span></li>
+        <li><div class="plate" role="img" aria-label="Placeholder: setting the brim"><p class="brief"><b>JM·P·016</b><span>Overhead: the brim flat on the bench, tools where they are actually used.</span></p></div><b>The brim</b><span class="num">To photograph</span></li>
+        <li><div class="plate" role="img" aria-label="Placeholder: stitching"><p class="brief"><b>JM·P·017</b><span>Needle and thread at the sweatband. Macro.</span></p></div><b>The stitch</b><span class="num">To photograph</span></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="ch wrap" id="questions" aria-labelledby="h-q">
+    <div class="chap"><span class="num">IV</span><h2 id="h-q"><em>Questions</em></h2><p>The page above is finished by answering these. About sixty minutes, recorded; quotes used only as Joseph approves them.</p></div>
+    <div class="grid">
+      <ol class="qs">
+        <li>You titled your story “Fourth Time’s a Charm”. What were the first three?</li>
+        <li>Why Nashville?</li>
+        <li>Walk me through a hat from the felt body to the box.</li>
+        <li>What does your stitching mean, and when did you start doing it?</li>
+        <li>Which decision on a hat do most people never notice?</li>
+        <li>What will you turn down?</li>
+        <li>What is a hat for, in 2026?</li>
+        <li>What should someone feel the first time they put one on?</li>
+      </ol>
+      <p class="note">Full list in docs/CONTENT.md · Interview not yet recorded</p>
+    </div>
+  </section>
+
+  <section class="end on-dark wrap" aria-label="Commission">
+    <div class="grid">
+      <p>Have one made, <em>by Joseph.</em></p>
+      <div class="btns"><a class="btn btn--solid" href="./#commission">Commission <span>→</span></a><a class="btn btn--line" href="hats.html">The hats <span>→</span></a></div>
+    </div>
+  </section>
+</main>
+<footer class="foot">
+  <div class="wrap">
+    <p class="big">Joseph <em>Martin</em></p>
+    <div class="cols grid">
+      <address>Joseph Martin, Hatmaker<br>1200 Villa Place, Suite 200<br>Nashville, Tennessee 37212</address>
+      <ul><li><a href="https://josephbenmartin.com/collections/all">Shop</a></li><li><a href="https://josephbenmartin.com/pages/contact">Contact and waitlist</a></li><li><a href="https://www.instagram.com/josephbenmartin/">Instagram</a></li></ul>
+      <p class="ways mono">Ready-to-wear · Made to order · Custom</p>
+      <p class="note">Concept study F, The Working House. Not for publication. Photographs are labelled placeholders; posters and drawings are real work made for Joseph Martin. Product details: snapshot of josephbenmartin.com, Nov 2026. *To confirm.</p>
+    </div>
+  </div>
+</footer>
+
+
+<script src="f.js"></script>
+<script>JM.mount();</script>
+</body>
+</html>

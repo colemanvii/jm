@@ -5,7 +5,7 @@ Creative direction: Tangerine. **This is not the live site.** Nothing here chang
 
 ## Status
 
-Phases 1–3 (discovery, three concept studies, comparative critique) are done, plus Study D. **The next step needs a decision: which direction to develop.** See [docs/CRITIQUE.md](docs/CRITIQUE.md).
+Phases 1–3 (discovery, three concept studies, comparative critique) are done, plus Studies D and E. **Study F is the current synthesis**: a side-by-side review of A–E, five pages in one language, a direct comparison with E, and a critique. See [docs/STUDY-F.md](docs/STUDY-F.md). It is a recommendation, not an approved direction.
 
 | Study | Path | Idea |
 |---|---|---|
@@ -13,6 +13,8 @@ Phases 1–3 (discovery, three concept studies, comparative critique) are done, 
 | B — The Object | `studies/b-object/` | The hat first: felt as colour system, anatomy as graphic language |
 | C — The Living Archive | `studies/c-archive/` | The workshop first: a filterable archive of hats, materials, process, people, notes |
 | D — The World | `studies/d-world/` | Joseph first, then his world: hats, drawings, people, Music City Driving Club. Seen through the lens of DropOut Companies (see [docs/STUDY-D.md](docs/STUDY-D.md)) |
+| E — The House | `studies/e-house/` | Joseph as the central personality; real posters and drawings; the Music City Driving Club as an extension |
+| **F — The Working House** | `studies/f-working-house/` | The synthesis: Joseph first, the hats in their felts (B), the maker (A), the world around the work kept smaller (E), an edited archive (C). Five pages: home, hats, one hat, maker, archive |
 | Wordmark | `studies/wordmark/` | Six typographic directions on screen, label, lining and card |
 | Study 001 | `studies/001/` | The original first study, unchanged |
 
@@ -33,6 +35,9 @@ Requires Playwright (a local or global install is fine).
 ```sh
 node tools/render.mjs          # screenshots at 1440×900, 834×1112 and iPhone 13; fails on horizontal overflow or console errors
 node tools/interact.mjs        # exercises the contents menu (A), felt switcher (B), filters and detail view (C)
+node tools/render.mjs f        # Study F's five pages only
+node tools/interact-f.mjs      # Study F: felt switcher, every hat page, archive filters and dialog, phone menu
+node tools/compare.mjs         # Study E and Study F homepages under identical conditions → screenshots/compare/
 ```
 
 Screenshots are written to `screenshots/`. Lighthouse results are recorded in `docs/CRITIQUE.md`.
@@ -48,6 +53,7 @@ docs/
   REFERENCES.md         13 references and the principles taken from them
   CRITIQUE.md           comparative critique, recommendation, measured results
   STUDY-D.md            Study D research (DropOut Companies), principles, rationale, critique
+  STUDY-F.md            review of A–E from the renders, the Study F synthesis, E vs F, critique, next steps
   DECISIONS.md          design decision log and typography notes
   PHOTOGRAPHY.md        photography standards and full shot list
   CONTENT.md            facts to confirm, interview questions, copy needed
