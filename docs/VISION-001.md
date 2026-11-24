@@ -59,6 +59,7 @@ Changes from iteration 002 of MCDC: re-set in Archivo (Instrument Serif, DM Mono
 
 ## Still required
 
+- **Shot O1, a hat front view framed to Fig. 01**, so See the hats can cut from the drawing to the same hat on the hats page. Spec and tethering overlay: [shots/O1-FRONT.md](shots/O1-FRONT.md).
 - **Product photography:** each hat in profile on a matched ground (O1) so the annotations sit on the real hat; three-quarter, crown-down and detail macros (O2–O4).
 - **The portrait at full resolution** (the supplied file is 1,124 px wide); a close portrait (M2); **shop photography** (H1–H5).
 - **Calibrated felt swatches** (T1) to correct on-screen colours.

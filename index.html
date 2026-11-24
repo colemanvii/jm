@@ -12,6 +12,11 @@
 <link rel="stylesheet" href="assets/vision/vision.css">
 <style>
 .home-base h1{font-size:clamp(72px,12vw,210px)}
+.home-base .acts{gap:28px}
+#stage-cap{max-width:none;white-space:nowrap}
+.tlink{display:inline-flex;align-items:center;min-height:48px;padding:0 2px;text-decoration:none;font:500 11px/1 var(--f);font-stretch:112%;letter-spacing:.12em;text-transform:uppercase;color:var(--on);opacity:.85}
+.tlink span{padding-bottom:5px;border-bottom:1px solid color-mix(in srgb,currentColor 55%,transparent)}
+.tlink:hover{opacity:1}.tlink:hover span{border-bottom-color:currentColor}
 .intro{grid-column:1 / 10}
 .intro-p{grid-column:8 / 12;margin:clamp(32px,4vw,56px) 0 0;max-width:42ch}
 .contents{margin-top:clamp(72px,9vw,140px)}
@@ -36,6 +41,8 @@
 @media (max-width:1024px){.cm .facts,.cm .act{grid-column:1 / 13}.cm .act{margin-top:32px}}
 @media (max-width:760px){
   .home-base h1{font-size:23vw}
+  .home-base .acts{gap:4px}
+  .tlink{width:100%;justify-content:center}
   .intro-p{margin-top:24px}
   .maker .txt,.club .txt{margin-top:28px}
   .cm h2{font-size:20vw}
@@ -60,7 +67,7 @@
 
     <figure class="stage" aria-labelledby="stage-cap">
       <svg class="drawing" viewBox="0 0 1000 520" role="img" aria-labelledby="draw-t">
-        <title id="draw-t">Line drawing of a western hat in side elevation.</title>
+        <title id="draw-t">Fig. 01: line drawing of a western hat, front view, with construction guides.</title>
         <line class="ln thin" x1="60" y1="378" x2="940" y2="378"/>
         <line class="ln thin" x1="500" y1="40" x2="500" y2="470"/>
         <path class="ln" style="--len:1900" d="M118 352 C 170 384, 270 404, 380 408 C 450 411, 550 411, 620 408 C 730 404, 830 384, 882 352 C 892 345, 885 338, 872 340 C 820 352, 720 368, 640 372 L 360 372 C 280 368, 180 352, 128 340 C 115 338, 108 345, 118 352 Z"/>
@@ -73,7 +80,7 @@
         <path class="ln" style="--len:200" d="M612 330 l 22 30 M 626 329 l 16 24"/>
         <g class="call minor"><text x="512" y="490" style="opacity:.7">Centre line</text></g>
       </svg>
-      <figcaption class="label" id="stage-cap">Study drawing · a western hat in profile. To be replaced by a photograph of a Joseph Martin hat (shot O1).</figcaption>
+      <figcaption class="label" id="stage-cap">Fig. 01 — Western hat, front view</figcaption>
     </figure>
 
     <div class="base home-base">
@@ -87,7 +94,7 @@
       </div>
       <div class="acts">
         <a class="btn" href="hats/index.html">See the hats</a>
-        <a class="btn ghost" href="commission/index.html">Commission</a>
+        <a class="tlink" href="commission/index.html"><span>Commission a hat</span></a>
       </div>
     </div>
   </section>
